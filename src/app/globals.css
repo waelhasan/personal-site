@@ -8,10 +8,16 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0, 0.1;
+  --background-end-rgb: 0, 0, 0;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
+    --background-start-rgb: 0, 10, 21, 0.8;
     --background-end-rgb: 0, 0, 0;
   }
 }

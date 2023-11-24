@@ -20,7 +20,7 @@ export default function RootLayout({
       <body
         className={inter.className}
         style={{
-          // overflow: "hidden"
+          overflowX: "hidden"
         }}>
         <Navbar />
         {children}

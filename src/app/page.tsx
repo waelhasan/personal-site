@@ -148,7 +148,7 @@ const ReasonsToHireMe = () => (
         <Important level={3} color="var(--foreground-section-title-rgb)">Why would you hire me?</Important>
       </figcaption>
       <ul>
-        {info.reasonsToHireMe.map(reason => <li style={{ fontSize: "1.5rem" }}>{reason}</li>)}
+        {info.reasonsToHireMe.map(reason => <li key={reason} style={{ fontSize: "1.5rem" }}>{reason}</li>)}
       </ul>
     </div>
   </figure>

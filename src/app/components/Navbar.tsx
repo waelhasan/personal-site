@@ -20,7 +20,7 @@ const LanguageSwitcher = () => (
 const Navbar = () => {
     return (
         <header style={{ padding: "10px" }}>
-            <LanguageSwitcher />
+            {/* <LanguageSwitcher /> */}
         </header>
     )
 }

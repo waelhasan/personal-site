@@ -116,8 +116,8 @@ export default function Home() {
           Hi there, <br/>I am
           <Important level={1}>{info.fullName}</Important>,
           a <Title title={info.title} />, with <Important level={3}>8</Important> years of total web development experience,
-          <Important level={3}>6</Important> of them using <Important level={4}>MERN</Important> stack.
-          I am a testing enthusiast, I thrive to have a 100% test coverage for all of my codes, whether they are a frontend projects,
+          <Important level={3}>6</Important> of them using <Important level={3}>MERN</Important> stack.
+          I am a testing enthusiast, I thrive to have a <Important level={3}>100%</Important> test coverage for all of my codes, whether they are a frontend projects,
           or a backend projects.
 
           <DownloadCVButton />

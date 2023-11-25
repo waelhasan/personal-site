@@ -21,7 +21,11 @@ export default function RootLayout({
         className={inter.className}
         style={{
           height: "100vh",
-          overflowX: "hidden"
+          overflowX: "hidden",
+          color: "var(--foreground-rgb)",
+          background: `linear-gradient(to bottom,
+                          transparent,
+                          var(--background-end-rgb)) var(--background-start-rgb)`
         }}>
         <Navbar />
         {children}

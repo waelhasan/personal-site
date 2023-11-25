@@ -169,22 +169,20 @@ const ReasonsToHireMeOrNotToHireMe = () => (
   }}>
     <div style={{ flex: 1 }}>
       <TitlesSection title="Why would you hire me?">
-        <ul>
+        <ul style={{ padding: "0 1rem" }}>
           {info.reasonsToHireMe.map(reason => <li key={reason} style={{
             fontSize: "1.5rem",
-            listStyle: "circle",
-            listStylePosition: "inside"
+            listStyle: "circle"
           }}>{reason}</li>)}
         </ul>
       </TitlesSection >
     </div>
     <div style={{ flex: 1 }}>
       <TitlesSection title="Why not to hire me?" titleColor="rgb(177 49 112)">
-        <ul>
+        <ul style={{ padding: "0 1rem" }}>
           {info.reasonsNotToHireMe.map(reason => <li key={reason} style={{
             fontSize: "1.5rem",
-            listStyle: "circle",
-            listStylePosition: "inside"
+            listStyle: "circle"
           }}>{reason}</li>)}
         </ul>
       </TitlesSection >

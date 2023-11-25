@@ -16,10 +16,12 @@ const LanguageSwitcher = () => (
     </select>
 )
 
-export default () => {
+const Navbar = () => {
     return (
         <header style={{ padding: "10px" }}>
             <LanguageSwitcher />
         </header>
     )
-} 
+}
+
+export default Navbar

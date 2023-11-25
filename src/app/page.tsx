@@ -26,13 +26,30 @@ const Skill = ({ title }: { title: string }) => (
 )
 
 const Skills = () => (
-  <div style={{
-    display: "flex",
-    flexWrap: "wrap",
-    maxWidth: "1200px"
+  <figure style={{
+    position: "relative",
+    border: "1px solid cyan",
+    borderRadius: "30px",
+    padding: "2rem",
+    margin: "0 2rem"
   }}>
-    {info.skills.map(skill => <Skill key={skill} title={skill} />)}
-  </div>
+    <div style={{
+      marginTop: "5rem",
+      display: "flex",
+      flexWrap: "wrap",
+      maxWidth: "1200px"
+    }}>
+      <figcaption style={{
+        position: "absolute",
+        left: "50%",
+        top: "1rem",
+        transform: "translateX(-50%)",
+      }}>
+        <Important level={2} color="aquamarine">Skills</Important>
+      </figcaption>
+      {info.skills.map(skill => <Skill key={skill} title={skill} />)}
+    </div>
+  </figure>
 )
 
 const LevelsToFontSizeMap = {
@@ -43,13 +60,39 @@ const LevelsToFontSizeMap = {
   5: "1rem",
 }
 
-const Important = ({ level, children }: {
+const Important = ({ level, color = "cyan", children }: {
   level: keyof typeof LevelsToFontSizeMap,
-  children: string
+  children: string,
+  color?: string
 }) => (
-  <strong style={{ fontSize: LevelsToFontSizeMap[level], color: "cyan" }}>
+  <strong style={{ fontSize: LevelsToFontSizeMap[level], color: color }}>
     {children}
   </strong>
+)
+
+const DownloadCVButton = () => (
+  <a
+    download={true}
+    href="/cv.pdf"
+    style={{
+      display: "block",
+      padding: "1rem 2rem",
+      border: "1px solid cyan",
+      borderRadius: "50px",
+      width: "fit-content",
+      margin: "2rem 0"
+    }}>
+    Download my CV
+  </a>
+)
+
+const Title = ({ title }: { title: string }) => (
+  <span style={{
+    textDecorationLine: "underline",
+    textDecorationStyle: "wavy",
+    textDecorationColor: "mediumaquamarine",
+    textDecorationThickness: "5px"
+  }}>{title}</span>
 )
 
 export default function Home() {
@@ -66,16 +109,18 @@ export default function Home() {
         display: "flex",
         maxWidth: "1200px",
         padding: "2rem",
-        marginBottom: "1rem"
+        marginBottom: "1rem",
+        alignItems: "center"
       }}>
         <div style={{ fontSize: "2rem" }}>
-          Hi, I am
+          Hi there, <br/>I am
           <Important level={1}>{info.fullName}</Important>,
-          a {info.title}, with <Important level={3}>8</Important> years of total web development experience,
+          a <Title title={info.title} />, with <Important level={3}>8</Important> years of total web development experience,
           <Important level={3}>6</Important> of them using <Important level={4}>MERN</Important> stack.
           I am a testing enthusiast, I thrive to have a 100% test coverage for all of my codes, whether they are a frontend projects,
           or a backend projects.
-          <a download={true} href="/cv.pdf">Download my CV</a>
+
+          <DownloadCVButton />
         </div>
         <Image width="500" height="500" src="/pic1.png" alt="Wael Hasan picture" />
       </div>

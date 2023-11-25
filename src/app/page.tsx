@@ -50,7 +50,7 @@ const TitlesSection = ({
 }) => (
   <figure style={{
     position: "relative",
-    border: "1px solid var(--foreground-rgb-important)",
+    border: `1px solid ${titleColor}`,
     borderRadius: "30px",
     padding: "2rem",
     margin: "2rem"
@@ -66,7 +66,7 @@ const TitlesSection = ({
         left: "50%",
         top: "1rem",
         transform: "translateX(-50%)",
-        borderBottom: "1px solid var(--foreground-section-title-rgb)",
+        borderBottom: `1px solid ${titleColor}`,
         borderRadius: "50%",
         padding: "1.2rem 2rem"
       }}>

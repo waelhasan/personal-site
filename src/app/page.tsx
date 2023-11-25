@@ -40,7 +40,7 @@ const TitledSection = ({
       marginTop: "5rem",
       display: "flex",
       flexWrap: "wrap",
-      maxWidth: "1200px"
+      maxWidth: "900px"
     }}>
       <figcaption style={{
         position: "absolute",

@@ -33,13 +33,13 @@ const Skill = ({ title }: { title: string }) => (
   </span>
 )
 
-const Skills = () => (
+const TitlesSection = ({ title, children }: { title: string, children: React.ReactNode }) => (
   <figure style={{
     position: "relative",
     border: "1px solid var(--foreground-rgb-important)",
     borderRadius: "30px",
     padding: "2rem",
-    margin: "0 2rem"
+    margin: "2rem"
   }}>
     <div style={{
       marginTop: "5rem",
@@ -52,12 +52,21 @@ const Skills = () => (
         left: "50%",
         top: "1rem",
         transform: "translateX(-50%)",
+        borderBottom: "1px solid var(--foreground-section-title-rgb)",
+        borderRadius: "50%",
+        padding: "1.2rem 2rem"
       }}>
-        <Important level={2} color="var(--foreground-section-title-rgb)">Skills</Important>
+        <Important level={4} color="var(--foreground-section-title-rgb)">{title}</Important>
       </figcaption>
-      {info.skills.map(skill => <Skill key={skill} title={skill} />)}
+      {children}
     </div>
   </figure>
+)
+
+const Skills = () => (
+  <TitlesSection title="Skills">
+    {info.skills.map(skill => <Skill key={skill} title={skill} />)}
+  </TitlesSection >
 )
 
 const LevelsToFontSizeMap = {
@@ -126,32 +135,15 @@ const Intorduction = () => (
 )
 
 const ReasonsToHireMe = () => (
-  <figure style={{
-    position: "relative",
-    border: "1px solid var(--foreground-rgb-important)",
-    borderRadius: "30px",
-    padding: "2rem",
-    margin: "2rem"
-  }}>
-    <div style={{
-      marginTop: "5rem",
-      display: "flex",
-      flexWrap: "wrap",
-      maxWidth: "1200px"
-    }}>
-      <figcaption style={{
-        position: "absolute",
-        left: "50%",
-        top: "1rem",
-        transform: "translateX(-50%)",
-      }}>
-        <Important level={3} color="var(--foreground-section-title-rgb)">Why would you hire me?</Important>
-      </figcaption>
-      <ul>
-        {info.reasonsToHireMe.map(reason => <li key={reason} style={{ fontSize: "1.5rem" }}>{reason}</li>)}
-      </ul>
-    </div>
-  </figure>
+  <TitlesSection title="Why would you hire me?">
+    <ul>
+      {info.reasonsToHireMe.map(reason => <li key={reason} style={{
+        fontSize: "1.5rem",
+        listStyle: "circle",
+        listStylePosition: "inside"
+      }}>{reason}</li>)}
+    </ul>
+  </TitlesSection >
 )
 
 export default function Home() {

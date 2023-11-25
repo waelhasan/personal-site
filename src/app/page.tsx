@@ -2,6 +2,7 @@ import Image from "next/image"
 
 const info = {
   fullName: "Wael Hasan",
+  nationality: "Egypian",
   title: "Senior Full-Stack JS/TS web developer",
   technicalSkills: ['HTML5', 'CSS3', 'Javascript', 'Typescript', 'Nodejs', 'Expressjs', 'RESTful API design', 'Graphql', 'Reactjs', 'Redux', 'Nextjs', 'Jest', 'Cypress', 'Storybook', 'SQL', 'Sequelize ORM', 'Mongodb', 'Mongoose ODM', 'Contentful', 'Git', 'Github', 'Linux', 'Bash', 'Design patterns', 'Gulp', 'Socket.io', 'Deepstream', 'Redis', 'Docker', 'AWS', 'TypeORM', 'JSON', 'JSON schema', 'Mocha', 'Chai', 'Enzyme', 'SASS', 'Yeoman'],
   softSkills: ['Teamwork', 'Leadership', 'Humility', 'Problem-Solving', 'Self-starter', 'Pragmatic', 'Communication', 'Collaboration', 'Mentorship', 'Lifelong learner'],
@@ -121,7 +122,11 @@ const Title = ({ title }: { title: string }) => (
     textDecorationStyle: "wavy",
     textDecorationColor: "var(--foreground-decoration-rgb)",
     textDecorationThickness: "5px"
-  }}>{title}</span>
+  }}>
+    <Important level={3} color="var(--foreground-golden-rgb)">
+      {title}
+    </Important>
+  </span>
 )
 
 const Intorduction = () => (
@@ -135,7 +140,7 @@ const Intorduction = () => (
     <div style={{ fontSize: "2rem" }}>
       Hi there, <br />I am
       <Important level={1}>{info.fullName}</Important>,
-      a <Title title={info.title} />, with <Important level={3}>8</Important> years of total web development experience,
+      an {info.nationality} <Title title={info.title} />, with <Important level={3}>8</Important> years of total web development experience,
       <Important level={3}>6</Important> of them using <Important level={3}>MERN</Important> stack.
       I am a testing enthusiast, I thrive to have a <Important level={3}>100%</Important> test coverage for all of my codes, whether they are a frontend projects,
       or a backend projects.

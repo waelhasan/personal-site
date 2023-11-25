@@ -39,7 +39,7 @@ const Skill = ({ title }: { title: string }) => (
   </span>
 )
 
-const TitlesSection = ({
+const TitledSection = ({
   title,
   titleColor = "var(--foreground-section-title-rgb)",
   children
@@ -82,14 +82,14 @@ const Skills = () => (
     display: "flex"
   }}>
     <div style={{ flex: 1 }}>
-      <TitlesSection title="Technical skills">
+      <TitledSection title="Technical skills">
         {info.technicalSkills.map(skill => <Skill key={skill} title={skill} />)}
-      </TitlesSection >
+      </TitledSection >
     </div>
     <div style={{ flex: 1 }}>
-      <TitlesSection title="Soft skills">
+      <TitledSection title="Soft skills">
         {info.softSkills.map(skill => <Skill key={skill} title={skill} />)}
-      </TitlesSection >
+      </TitledSection >
     </div>
   </div>
 )
@@ -168,24 +168,24 @@ const ReasonsToHireMeOrNotToHireMe = () => (
     display: "flex"
   }}>
     <div style={{ flex: 1 }}>
-      <TitlesSection title="Why would you hire me?">
+      <TitledSection title="Why would you hire me?">
         <ul style={{ padding: "0 1rem" }}>
           {info.reasonsToHireMe.map(reason => <li key={reason} style={{
             fontSize: "1.5rem",
             listStyle: "circle"
           }}>{reason}</li>)}
         </ul>
-      </TitlesSection >
+      </TitledSection >
     </div>
     <div style={{ flex: 1 }}>
-      <TitlesSection title="Why not to hire me?" titleColor="rgb(177 49 112)">
+      <TitledSection title="Why not to hire me?" titleColor="rgb(177 49 112)">
         <ul style={{ padding: "0 1rem" }}>
           {info.reasonsNotToHireMe.map(reason => <li key={reason} style={{
             fontSize: "1.5rem",
             listStyle: "circle"
           }}>{reason}</li>)}
         </ul>
-      </TitlesSection >
+      </TitledSection >
     </div>
   </div>
 )

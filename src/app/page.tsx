@@ -3,7 +3,8 @@ import Image from "next/image"
 const info = {
   fullName: "Wael Hasan",
   title: "Senior Full-Stack JS/TS web developer",
-  skills: ['HTML5', 'CSS3', 'Javascript', 'Typescript', 'Nodejs', 'Expressjs', 'RESTful API design', 'Graphql', 'Reactjs', 'Redux', 'Nextjs', 'Jest', 'Cypress', 'Storybook', 'SQL', 'Sequelize ORM', 'Mongodb', 'Mongoose ODM', 'Contentful', 'Git', 'Github', 'Linux', 'Bash', 'Design patterns', 'Gulp', 'Socket.io', 'Deepstream', 'Redis', 'Docker', 'AWS', 'TypeORM', 'JSON', 'JSON schema', 'Mocha', 'Chai', 'Enzyme', 'SASS', 'Yeoman', 'Teamwork', 'Leadership', 'Humility', 'Problem-Solving', 'Self-starter', 'Pragmatic', 'Communication', 'Collaboration', 'Mentorship', 'Lifelong learner'],
+  technicalSkills: ['HTML5', 'CSS3', 'Javascript', 'Typescript', 'Nodejs', 'Expressjs', 'RESTful API design', 'Graphql', 'Reactjs', 'Redux', 'Nextjs', 'Jest', 'Cypress', 'Storybook', 'SQL', 'Sequelize ORM', 'Mongodb', 'Mongoose ODM', 'Contentful', 'Git', 'Github', 'Linux', 'Bash', 'Design patterns', 'Gulp', 'Socket.io', 'Deepstream', 'Redis', 'Docker', 'AWS', 'TypeORM', 'JSON', 'JSON schema', 'Mocha', 'Chai', 'Enzyme', 'SASS', 'Yeoman'],
+  softSkills: ['Teamwork', 'Leadership', 'Humility', 'Problem-Solving', 'Self-starter', 'Pragmatic', 'Communication', 'Collaboration', 'Mentorship', 'Lifelong learner'],
   reasonsToHireMe: [
     "Passion for being a better software engineer",
     "Passion for learning more about technology in general and JS in particular",
@@ -64,9 +65,20 @@ const TitlesSection = ({ title, children }: { title: string, children: React.Rea
 )
 
 const Skills = () => (
-  <TitlesSection title="Skills">
-    {info.skills.map(skill => <Skill key={skill} title={skill} />)}
-  </TitlesSection >
+  <div style={{
+    display: "flex"
+  }}>
+    <div style={{ flex: 1 }}>
+      <TitlesSection title="Technical skills">
+        {info.technicalSkills.map(skill => <Skill key={skill} title={skill} />)}
+      </TitlesSection >
+    </div>
+    <div style={{ flex: 1 }}>
+      <TitlesSection title="Soft skills">
+        {info.softSkills.map(skill => <Skill key={skill} title={skill} />)}
+      </TitlesSection >
+    </div>
+  </div>
 )
 
 const LevelsToFontSizeMap = {

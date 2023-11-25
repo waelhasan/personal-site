@@ -16,17 +16,23 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ar">
+    <html lang="ar" style={{
+      height: "100%",
+      width: "100vw",
+      overflowX: "hidden",
+      fontFamily: "sans-serif",
+      color: "var(--foreground-rgb)",
+      background: `linear-gradient(
+                      to bottom,
+                      transparent,
+                      var(--background-end-rgb)) var(--background-start-rgb)`
+    }}>
       <body
         className={inter.className}
         style={{
-          height: "fit-content",
-          overflowX: "hidden",
-          fontFamily: "sans-serif",
-          color: "var(--foreground-rgb)",
-          background: `linear-gradient(to bottom,
-                          transparent,
-                          var(--background-end-rgb)) var(--background-start-rgb)`
+          height: "100%",
+          width: "100%",
+          overflowX: "hidden"
         }}>
         <Navbar />
         {children}

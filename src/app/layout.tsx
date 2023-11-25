@@ -20,7 +20,7 @@ export default function RootLayout({
       <body
         className={inter.className}
         style={{
-          height: "100vh",
+          height: "fit-content",
           overflowX: "hidden",
           fontFamily: "sans-serif",
           color: "var(--foreground-rgb)",

@@ -8,6 +8,7 @@
   --background-start-rgb: rgb(214, 219, 220);
   --background-end-rgb: rgb(255, 255, 255);
   --foreground-section-title-rgb: rgb(46 141 109);
+  --foreground-decoration-rgb: rgb(39 135 102);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -18,6 +19,8 @@
     --background-start-rgb: rgba(0, 10, 21, 0.8);
     --background-end-rgb: rgb(0, 0, 0);
     --foreground-section-title-rgb: rgb(127 255 212);
+    /*mediumaquamarine*/
+    --foreground-decoration-rgb: rgb(102 205 170);
   }
 }
 

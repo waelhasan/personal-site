@@ -98,7 +98,7 @@ const Title = ({ title }: { title: string }) => (
   <span style={{
     textDecorationLine: "underline",
     textDecorationStyle: "wavy",
-    textDecorationColor: "mediumaquamarine",
+    textDecorationColor: "var(--foreground-decoration-rgb)",
     textDecorationThickness: "5px"
   }}>{title}</span>
 )

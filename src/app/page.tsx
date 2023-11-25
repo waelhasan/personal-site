@@ -13,6 +13,10 @@ const info = {
     "Passion for building well engineered useful stuff and see people use it happily",
     "Good team player",
     "A lazy developer that searches for the simplest best way to make the code as reliable, self-documenting, and maintainable as possible; so it takes less effort for any change from me or my colleagues"
+  ],
+  reasonsNotToHireMe: [
+    "To do repetitive work, that does not leverage my technical skills",
+    "If you work on an industry that contradicts with my faith and believs, or I prefer to stay away from, which are: porn, weaponary, racism, and insurance."
   ]
 }
 
@@ -35,7 +39,15 @@ const Skill = ({ title }: { title: string }) => (
   </span>
 )
 
-const TitlesSection = ({ title, children }: { title: string, children: React.ReactNode }) => (
+const TitlesSection = ({
+  title,
+  titleColor = "var(--foreground-section-title-rgb)",
+  children
+}: {
+  title: string,
+  titleColor?: string,
+  children: React.ReactNode
+}) => (
   <figure style={{
     position: "relative",
     border: "1px solid var(--foreground-rgb-important)",
@@ -58,7 +70,7 @@ const TitlesSection = ({ title, children }: { title: string, children: React.Rea
         borderRadius: "50%",
         padding: "1.2rem 2rem"
       }}>
-        <Important level={4} color="var(--foreground-section-title-rgb)">{title}</Important>
+        <Important level={4} color={titleColor}>{title}</Important>
       </figcaption>
       {children}
     </div>
@@ -151,16 +163,33 @@ const Intorduction = () => (
   </div>
 )
 
-const ReasonsToHireMe = () => (
-  <TitlesSection title="Why would you hire me?">
-    <ul>
-      {info.reasonsToHireMe.map(reason => <li key={reason} style={{
-        fontSize: "1.5rem",
-        listStyle: "circle",
-        listStylePosition: "inside"
-      }}>{reason}</li>)}
-    </ul>
-  </TitlesSection >
+const ReasonsToHireMeOrNotToHireMe = () => (
+  <div style={{
+    display: "flex"
+  }}>
+    <div style={{ flex: 1 }}>
+      <TitlesSection title="Why would you hire me?">
+        <ul>
+          {info.reasonsToHireMe.map(reason => <li key={reason} style={{
+            fontSize: "1.5rem",
+            listStyle: "circle",
+            listStylePosition: "inside"
+          }}>{reason}</li>)}
+        </ul>
+      </TitlesSection >
+    </div>
+    <div style={{ flex: 1 }}>
+      <TitlesSection title="Why not to hire me?" titleColor="rgb(177 49 112)">
+        <ul>
+          {info.reasonsNotToHireMe.map(reason => <li key={reason} style={{
+            fontSize: "1.5rem",
+            listStyle: "circle",
+            listStylePosition: "inside"
+          }}>{reason}</li>)}
+        </ul>
+      </TitlesSection >
+    </div>
+  </div>
 )
 
 export default function Home() {
@@ -173,7 +202,7 @@ export default function Home() {
       alignItems: "center"
     }}>
       <Intorduction />
-      <ReasonsToHireMe />
+      <ReasonsToHireMeOrNotToHireMe />
       <Skills />
     </main>
   )

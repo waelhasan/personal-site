@@ -22,7 +22,7 @@ export default function RootLayout({
         style={{
           overflowX: "hidden"
         }}>
-        <Navbar />
+        {/* <Navbar /> */}
         {children}
       </body>
     </html>

@@ -3,9 +3,9 @@
 const LanguageSwitcher = () => (
     <select
         style={{
-            color: "rgb(var(--foreground-rgb))",
-            backgroundColor: "rgb(var(--background-start-rgb))",
-            border: "1px solid rgb(var(--foreground-rgb))",
+            color: "var(--foreground-rgb)",
+            backgroundColor: "var(--background-start-rgb)",
+            border: "1px solid var(--foreground-rgb)",
             padding: "1rem",
             float: "right"
         }}

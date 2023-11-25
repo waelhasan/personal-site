@@ -3,7 +3,15 @@ import Image from "next/image"
 const info = {
   fullName: "Wael Hasan",
   title: "Senior Full-Stack JS/TS web developer",
-  skills: ['HTML5', 'CSS3', 'Javascript', 'Typescript', 'Nodejs', 'Expressjs', 'RESTful API design', 'Graphql', 'Reactjs', 'Redux', 'Nextjs', 'Jest', 'Cypress', 'Storybook', 'SQL', 'Sequelize ORM', 'Mongodb', 'Mongoose ODM', 'Contentful', 'Git', 'Github', 'Linux', 'Bash', 'Design patterns', 'Gulp', 'Socket.io', 'Deepstream', 'Redis', 'Docker', 'AWS', 'TypeORM', 'JSON', 'JSON schema', 'Mocha', 'Chai', 'Enzyme', 'SASS', 'Yeoman', 'Teamwork', 'Leadership', 'Humility', 'Problem-Solving', 'Self-starter', 'Pragmatic', 'Communication', 'Collaboration', 'Mentorship', 'Lifelong learner']
+  skills: ['HTML5', 'CSS3', 'Javascript', 'Typescript', 'Nodejs', 'Expressjs', 'RESTful API design', 'Graphql', 'Reactjs', 'Redux', 'Nextjs', 'Jest', 'Cypress', 'Storybook', 'SQL', 'Sequelize ORM', 'Mongodb', 'Mongoose ODM', 'Contentful', 'Git', 'Github', 'Linux', 'Bash', 'Design patterns', 'Gulp', 'Socket.io', 'Deepstream', 'Redis', 'Docker', 'AWS', 'TypeORM', 'JSON', 'JSON schema', 'Mocha', 'Chai', 'Enzyme', 'SASS', 'Yeoman', 'Teamwork', 'Leadership', 'Humility', 'Problem-Solving', 'Self-starter', 'Pragmatic', 'Communication', 'Collaboration', 'Mentorship', 'Lifelong learner'],
+  reasonsToHireMe: [
+    "Passion for being a better software engineer",
+    "Passion for learning more about technology in general and JS in particular",
+    "Fast learner",
+    "Passion for building well engineered useful stuff and see people use it happily",
+    "Good team player",
+    "A lazy developer that searches for the simplest best way to make the code as reliable, self-documenting, and maintainable as possible; so it takes less effort for any change from me or my colleagues"
+  ]
 }
 
 const CustomizedListItem = ({ children }: { children: string }) => (
@@ -15,7 +23,7 @@ const Skill = ({ title }: { title: string }) => (
     display: "inline-block",
     fontSize: "1rem",
     fontStyle: "italic",
-    border: "1px solid cyan",
+    border: "1px solid var(--foreground-rgb-important)",
     padding: "1rem",
     margin: "10px 10px",
     borderRadius: "10px",
@@ -28,7 +36,7 @@ const Skill = ({ title }: { title: string }) => (
 const Skills = () => (
   <figure style={{
     position: "relative",
-    border: "1px solid cyan",
+    border: "1px solid var(--foreground-rgb-important)",
     borderRadius: "30px",
     padding: "2rem",
     margin: "0 2rem"
@@ -45,7 +53,7 @@ const Skills = () => (
         top: "1rem",
         transform: "translateX(-50%)",
       }}>
-        <Important level={2} color="aquamarine">Skills</Important>
+        <Important level={2} color="var(--foreground-section-title-rgb)">Skills</Important>
       </figcaption>
       {info.skills.map(skill => <Skill key={skill} title={skill} />)}
     </div>
@@ -60,7 +68,7 @@ const LevelsToFontSizeMap = {
   5: "1rem",
 }
 
-const Important = ({ level, color = "cyan", children }: {
+const Important = ({ level, color = "var(--foreground-rgb-important)", children }: {
   level: keyof typeof LevelsToFontSizeMap,
   children: string,
   color?: string
@@ -77,7 +85,7 @@ const DownloadCVButton = () => (
     style={{
       display: "block",
       padding: "1rem 2rem",
-      border: "1px solid cyan",
+      border: "1px solid var(--foreground-rgb-important)",
       borderRadius: "50px",
       width: "fit-content",
       margin: "2rem 0"
@@ -117,6 +125,35 @@ const Intorduction = () => (
   </div>
 )
 
+const ReasonsToHireMe = () => (
+  <figure style={{
+    position: "relative",
+    border: "1px solid var(--foreground-rgb-important)",
+    borderRadius: "30px",
+    padding: "2rem",
+    margin: "2rem"
+  }}>
+    <div style={{
+      marginTop: "5rem",
+      display: "flex",
+      flexWrap: "wrap",
+      maxWidth: "1200px"
+    }}>
+      <figcaption style={{
+        position: "absolute",
+        left: "50%",
+        top: "1rem",
+        transform: "translateX(-50%)",
+      }}>
+        <Important level={3} color="var(--foreground-section-title-rgb)">Why would you hire me?</Important>
+      </figcaption>
+      <ul>
+        {info.reasonsToHireMe.map(reason => <li style={{ fontSize: "1.5rem" }}>{reason}</li>)}
+      </ul>
+    </div>
+  </figure>
+)
+
 export default function Home() {
   return (
     <main style={{
@@ -128,6 +165,7 @@ export default function Home() {
       alignItems: "center"
     }}>
       <Intorduction />
+      <ReasonsToHireMe />
       <Skills />
     </main>
   )

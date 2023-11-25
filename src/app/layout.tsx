@@ -22,6 +22,7 @@ export default function RootLayout({
         style={{
           height: "100vh",
           overflowX: "hidden",
+          fontFamily: "sans-serif",
           color: "var(--foreground-rgb)",
           background: `linear-gradient(to bottom,
                           transparent,

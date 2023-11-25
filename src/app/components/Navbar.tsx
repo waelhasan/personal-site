@@ -5,7 +5,8 @@ const LanguageSwitcher = () => (
         style={{
             color: "var(--foreground-rgb)",
             backgroundColor: "var(--background-start-rgb)",
-            border: "1px solid var(--foreground-rgb)",
+            border: "1px solid var(--foreground-decoration-rgb)",
+            borderRadius: "10px",
             padding: "1rem",
             float: "right"
         }}

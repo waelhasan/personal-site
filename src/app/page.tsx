@@ -157,7 +157,6 @@ const ReasonsToHireMe = () => (
 export default function Home() {
   return (
     <main style={{
-      height: "100vh",
       width: "100vw",
       display: "flex",
       flexDirection: "column",

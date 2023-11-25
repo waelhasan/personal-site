@@ -20,9 +20,10 @@ export default function RootLayout({
       <body
         className={inter.className}
         style={{
+          height: "100vh",
           overflowX: "hidden"
         }}>
-        {/* <Navbar /> */}
+        <Navbar />
         {children}
       </body>
     </html>

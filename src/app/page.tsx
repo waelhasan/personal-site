@@ -265,9 +265,9 @@ export default function Home() {
       justifyContent: "center",
       alignItems: "center"
     }}>
-      {/* <Intorduction />
+      <Intorduction />
       <ReasonsToHireMeOrNotToHireMe />
-      <Skills /> */}
+      <Skills />
       <Experiences />
     </main>
   )

@@ -171,6 +171,75 @@ const ReasonsToHireMeOrNotToHireMe = () => (
   </div>
 )
 
+const Experiences = () => (
+  <section style={{
+    position: "relative",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    textAlign: "center",
+    fontSize: "2rem",
+    margin: "2rem 0",
+    transform: "translateX(-50%)"
+  }}>
+    <h1 style={{
+      position: "absolute",
+      left: "100%",
+      top: "0",
+      transform: "translateX(-50%)",
+      borderBottom: "1px solid var(--foreground-section-title-rgb)",
+      borderRadius: "50%"
+    }}>
+      <Important level={4} color="var(--foreground-section-title-rgb)">Employment history</Important>
+    </h1>
+    <div style={{
+      display: "flex",
+      flexDirection: "row",
+      height: `${info.experience.length * 15}rem`,
+      marginTop: "7rem"
+    }}>
+      <div style={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "flex-end",
+        borderRight: "1px solid var(--foreground-section-title-rgb)",
+        padding: "1rem",
+        justifyContent: "flex-start",
+        flex: "1"
+      }}>
+        {info.experience.map((experience, index) => {
+          const isOdd = index % 2 === 0
+          const fromTo = new Date(experience.from).getFullYear() + " - " + new Date(experience.to).getFullYear()
+          return (
+            <article
+              key={fromTo}
+              style={{
+                textAlign: isOdd ? "left" : "right",
+                width: "fit-content",
+                maxWidth: "50rem",
+                fontSize: "1.4rem",
+                margin: "1rem 0",
+                padding: "1rem",
+                border: "1px solid var(--foreground-section-title-rgb)",
+                borderBottomRightRadius: "40px",
+                [isOdd ? "borderTopRightRadius" : "borderTopLeftRadius"]: "40px",
+                borderBottomLeftRadius: "40px",
+                ...(isOdd ? { transform: "translateX(calc(100% + 2rem))" } : {})
+              }}>
+              <div>
+                {fromTo}
+              </div>
+              <h1>{experience.title}</h1>
+              <h2>{experience.company.name} ({experience.type[0] + experience.type.slice(1).toLocaleLowerCase()})</h2>
+              <h3 style={{ textAlign: "justify" }}>{experience.summary}</h3>
+            </article>
+          )
+        })}
+      </div>
+    </div>
+  </section>
+)
+
 export default function Home() {
   return (
     <main style={{
@@ -182,6 +251,7 @@ export default function Home() {
       <Intorduction />
       <ReasonsToHireMeOrNotToHireMe />
       <Skills />
+      <Experiences />
     </main>
   )
 }

@@ -15,5 +15,76 @@ export default {
   reasonsNotToHireMe: [
     "To do repetitive work, that does not leverage my technical skills",
     "If you work on an industry that contradicts with my faith and believs, or I prefer to stay away from, which are: porn, weaponary, racism, and insurance."
+  ],
+  experience: [
+    {
+      title: "SENIOR FULL-STACK JS/TS SOFTWARE ENGINEER",
+      company: {
+        name: "Andela"
+      },
+      from: "2019-11-01T08:08:34.527Z",
+      to: "2022-08-24T08:08:34.527Z",
+      summary: "Worked as a contractor SSE with Andela Inc, which outsourced me to work with Understood for All Inc (remotely). I developed, maintained, tested, and documented multiple Front-end(s) and back-end(s), using technologies such as: JS, TS, Nodejs, Reactjs, Nextjs, Graphql, Contentful, ...etc.",
+      type: "REMOTE",
+      skills: ["JS", "TS", "Nodejs", "Reactjs", "Nextjs", "Graphql", "Contentful"]
+    },
+    {
+      title: "SENIOR FULL-STACK JAVASCRIPT SOFTWARE ENGINEER",
+      company: {
+        name: "Index Group"
+      },
+      from: "2018-10-01T08:08:34.527Z",
+      to: "2019-10-01T08:08:34.527Z",
+      summary: "Worked for Index Group mainly as a Back-end senior developer.",
+      type: "ONSITE",
+      skills: ["JS", "TS", "Nodejs", "Expressjs", "RESTful services", "Mongodb", "Mongoose", "Deepstream"]
+    },
+    {
+      title: "SENIOR FULL-STACK SOFTWARE ENGINEER",
+      company: {
+        name: "Asma Systems"
+      },
+      from: "2015-01-01T08:08:34.527Z",
+      to: "2018-02-01T08:08:34.527Z",
+      summary: `Build user interfaces, web services, data layers ... etc. By using:
+      - Node js (Sequelize, Mocha and Chai ... etc) on the back end
+      - Express js and handlebars, Ext js, or React js on the front end.
+      - MongeDB as a database`,
+      type: "ONSITE",
+      skills: ["JS", "Nodejs", "Reactjs"]
+    },
+    {
+      title: "JAVA EE DEVELOPER",
+      company: {
+        name: "Truemega Technology Solutions"
+      },
+      from: "2014-08-01T08:08:34.527Z",
+      to: "2014-12-01T08:08:34.527Z",
+      summary: "Develop and maintain java EE projects, using jsf, primefaces, EJBs ... etc.",
+      type: "ONSITE",
+      skills: ["Java", "JEE", "EJB", "PrimeFaces", "JS"]
+    },
+    {
+      title: "A FREELANCER DEVELOPER",
+      company: {
+        name: "Self employed"
+      },
+      from: "2011-09-01T08:08:34.527Z",
+      to: "2014-08-01T08:08:34.527Z",
+      summary: "Develop and maintain different types of software systems.",
+      type: "REMOTE",
+      skills: []
+    },
+    {
+      title: "RESEARCH ASSISTANT",
+      company: {
+        name: "C.A.I.R.O Center"
+      },
+      from: "2010-09-01T08:08:34.527Z",
+      to: "2011-11-01T08:08:34.527Z",
+      summary: "Image processing development using C++ and OpenCV.",
+      type: "ONSITE",
+      skills: ["C++", "OpenCV"]
+    }
   ]
 }

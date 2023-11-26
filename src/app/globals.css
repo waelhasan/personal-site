@@ -7,6 +7,7 @@
   --foreground-rgb-important: rgb(39 132 145);
   --background-start-rgb: rgb(230 239 241);
   --background-end-rgb: rgb(209 223 233);
+  --darker-bg-rgb: rgb(213 225 213);
   --foreground-section-title-rgb: rgb(46 141 109);
   --foreground-decoration-rgb: rgb(39 135 102);
   --foreground-golden-rgb: rgb(196 162 10);
@@ -20,6 +21,7 @@
     --foreground-rgb-important: rgb(0, 255, 255);
     --background-start-rgb: rgba(0, 10, 21, 0.9);
     --background-end-rgb: rgb(0, 0, 0);
+    --darker-bg-rgb: rgb(0 0 0);
     --foreground-section-title-rgb: rgb(127 255 212);
     /*mediumaquamarine*/
     --foreground-decoration-rgb: rgb(102 205 170);

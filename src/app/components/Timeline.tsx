@@ -86,7 +86,7 @@ const Timeline = ({ title, elements }: { title: string, elements: TimelineElemen
                                     [isOdd ? "borderTopRightRadius" : "borderTopLeftRadius"]: "40px",
                                     borderBottomLeftRadius: "40px",
                                     ...(isOdd ? { transform: "translateX(calc(100% + 2rem))" } : {}),
-                                    backgroundColor: "rgb(3 6 3)"
+                                    backgroundColor: "var(--darker-bg-rgb)"
                                 }}>
                                 <div style={{ fontFamily: "monospace" }}>
                                     {fromTo}

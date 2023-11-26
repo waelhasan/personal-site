@@ -5,8 +5,8 @@
 :root {
   --foreground-rgb: rgb(0, 0, 0);
   --foreground-rgb-important: rgb(39 132 145);
-  --background-start-rgb: rgb(214, 219, 220);
-  --background-end-rgb: rgb(255, 255, 255);
+  --background-start-rgb: rgb(230 239 241);
+  --background-end-rgb: rgb(209 223 233);
   --foreground-section-title-rgb: rgb(46 141 109);
   --foreground-decoration-rgb: rgb(39 135 102);
   --foreground-golden-rgb: rgb(196 162 10);

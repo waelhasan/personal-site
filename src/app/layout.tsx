@@ -37,6 +37,7 @@ export default function RootLayout({
         }}>
         <UnderconstructionNotice />
         <Navbar />
+        <FreedomSupportNotice />
         {children}
       </body>
     </html>

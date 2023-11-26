@@ -9,11 +9,11 @@ interface TimelineElement {
     from: string
     to: string
     summary: string
-    type: "BACKEND" | "FONTEND" | "BOTH"
+    type: string //"BACKEND" | "FONTEND" | "BOTH"
     skills: string[]
 }
 
-const Experiences = ({ elements }: { elements: TimelineElement[] }) => (
+export default ({ title, elements }: { title: string, elements: TimelineElement[] }) => (
     <section style={{
         position: "relative",
         display: "flex",
@@ -32,7 +32,7 @@ const Experiences = ({ elements }: { elements: TimelineElement[] }) => (
             borderBottom: "1px solid var(--foreground-section-title-rgb)",
             borderRadius: "50%"
         }}>
-            <Important level={4} color="var(--foreground-section-title-rgb)">Employment history</Important>
+            <Important level={4} color="var(--foreground-section-title-rgb)">{title}</Important>
         </h1>
         <div style={{
             display: "flex",
@@ -66,13 +66,13 @@ const Experiences = ({ elements }: { elements: TimelineElement[] }) => (
                                 borderRadius: "50%",
                                 transform: `translate(1.5rem, 1.5rem)`
                             }} />
-                            {/* The line that fills the gap between the role box and the timeline */}
+                            {/* The line that fills the gap between individual boxes and the timeline */}
                             <span style={{
                                 width: "1rem",
                                 borderTop: "1px solid var(--foreground-section-title-rgb)",
                                 transform: `translate(${isOdd ? 2 : 1}rem, 1.06rem)`
                             }} />
-                            {/* The box that shows role details */}
+                            {/* The box that shows element details */}
                             <article
                                 key={fromTo}
                                 style={{
@@ -85,7 +85,8 @@ const Experiences = ({ elements }: { elements: TimelineElement[] }) => (
                                     borderBottomRightRadius: "40px",
                                     [isOdd ? "borderTopRightRadius" : "borderTopLeftRadius"]: "40px",
                                     borderBottomLeftRadius: "40px",
-                                    ...(isOdd ? { transform: "translateX(calc(100% + 2rem))" } : {})
+                                    ...(isOdd ? { transform: "translateX(calc(100% + 2rem))" } : {}),
+                                    backgroundColor: "rgb(3 6 3)"
                                 }}>
                                 <div style={{ fontFamily: "monospace" }}>
                                     {fromTo}
@@ -96,7 +97,7 @@ const Experiences = ({ elements }: { elements: TimelineElement[] }) => (
                                 <br />
                                 <Important level={6}>
                                     {experience.company.name + ` (${experience.type[0] + experience.type.slice(1).toLocaleLowerCase()})`}
-                                </Important>,
+                                </Important>
                                 <details>
                                     <summary style={{ transition: "all 0.5s" }}>
                                         Read more

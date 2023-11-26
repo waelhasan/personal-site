@@ -3,7 +3,7 @@ import { Skills } from "./components/Skills"
 import Intorduction from "./components/Intorduction";
 import UnderconstructionNotice from "./components/UnderconstructionNotice";
 import ReasonsToHireMeOrNotToHireMe from "./components/ReasonsToHireMeOrNotToHireMe";
-import Experiences from "./components/Experiences";
+import Timeline from "./components/Timeline";
 
 export default function Home() {
   return (
@@ -17,7 +17,8 @@ export default function Home() {
       <Intorduction fullName={info.fullName} nationality={info.nationality} title={info.title} />
       <ReasonsToHireMeOrNotToHireMe reasonsNotToHireMe={info.reasonsNotToHireMe} reasonsToHireMe={info.reasonsToHireMe} />
       <Skills softSkills={info.softSkills} technicalSkills={info.technicalSkills} />
-      <Experiences experience={info.experience} />
+      <Timeline title="Employment history" elements={info.experience} />
+      <Timeline title="Main projects" elements={info.projects} />
     </main>
   )
 }

@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import Navbar from './components/Navbar'
+import FreedomSupportNotice from './components/FreedomSupportNotice'
+import UnderconstructionNotice from './components/UnderconstructionNotice'
 
 export const metadata: Metadata = {
   title: 'Wael Hasan',
@@ -28,10 +30,12 @@ export default function RootLayout({
       }}>
       <body
         style={{
+          position: "relative",
           height: "100%",
           width: "100%",
           overflowX: "hidden"
         }}>
+        <UnderconstructionNotice />
         <Navbar />
         {children}
       </body>

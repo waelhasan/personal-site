@@ -49,9 +49,8 @@ const Introduction = ({ fullName, nationality, title }: IntrodcutionProps) => (
             <Important level={1}>{fullName}</Important>,
             an {nationality} <Title title={title} />, with <Important level={3}>8</Important> years of total web development experience,
             <Important level={3}>6</Important> of them using <Important level={3}>MERN</Important> stack.
-            I am a testing enthusiast, I thrive to have a <Important level={3}>100%</Important> test coverage for all of my codes, whether they are a frontend projects,
-            or a backend projects.
-
+            I am a testing enthusiast, I thrive to have a <Important level={3}>100%</Important> test coverage for all of my codes, whether they are frontend projects,
+            or backend projects.
             <DownloadCVButton />
         </div>
         <Image width="500" height="500" src="/pic1.png" alt="Wael Hasan picture" />

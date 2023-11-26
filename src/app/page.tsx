@@ -212,11 +212,22 @@ const Experiences = () => (
           const fromTo = `${fromDate} - ${toDate}`
           return (
             <>
+              {/* The circle in timeline */}
+              <span style={{
+                width: "1rem",
+                height: "1rem",
+                backgroundColor: "var(--foreground-section-title-rgb)",
+                border: "1px solid var(--foreground-section-title-rgb)",
+                borderRadius: "50%",
+                transform: `translate(1.5rem, 1.5rem)`
+              }} />
+              {/* The line that fills the gap between the role box and the timeline */}
               <span style={{
                 width: "1rem",
                 borderTop: "1px solid var(--foreground-section-title-rgb)",
                 transform: `translate(${isOdd ? 2 : 1}rem, 1.06rem)`
               }} />
+              {/* The box that shows role details */}
               <article
                 key={fromTo}
                 style={{

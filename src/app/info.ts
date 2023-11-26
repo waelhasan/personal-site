@@ -86,5 +86,73 @@ export default {
       type: "ONSITE",
       skills: ["C++", "OpenCV"]
     }
+  ],
+  projects: [
+    {
+      title: "Graphql layer",
+      company: {
+        name: "Andela"
+      },
+      from: "2021-11-01T08:08:34.527Z",
+      to: "2022-08-24T08:08:34.527Z",
+      summary: "Created and maintained a Graphql Backend layer. It is an intermediate layer, that allows different Front-ends (Web and Mobile) to call a single Back-end layer, which in turn takes care of calling individual specialized RESTful Back-end services, and other third party services.",
+      type: "BACKEND",
+      skills: ["JS", "Nodejs", "Graphql", "Contentful", "Redis", "Jest"]
+    },
+    {
+      title: "Community admin",
+      company: {
+        name: "Andela"
+      },
+      from: "2021-11-01T08:08:34.527Z",
+      to: "2022-08-24T08:08:34.527Z",
+      summary: "An internal Nextjs Front-end for administration tasks related to Wunder App community.",
+      type: "FRONTEND",
+      skills: ["Ts", "Reactjs", "Graphql", "Contentful", "Cypress"]
+    },
+    {
+      title: "Contentful-chameleon",
+      company: {
+        name: "Andela"
+      },
+      from: "2020-11-01T08:08:34.527Z",
+      to: "2020-08-24T08:08:34.527Z",
+      summary: "An internal Nodejs package for mocking Contentful's RESTful/Graphql APIs. Used in e2e tests of other projects.",
+      type: "BACKEND",
+      skills: ["JS", "TS", "Nodejs", "Graphql", "Contentful", "Jest"]
+    },
+    {
+      title: "Camgen",
+      company: {
+        name: "Andela"
+      },
+      from: "2020-11-01T08:08:34.527Z",
+      to: "2020-08-24T08:08:34.527Z",
+      summary: "An internal yeoman generator for creating new web Front-ends that depends on a specific Contentful structure, and creates that structure on Contentful on behalf of the user.",
+      type: "FRONTEND",
+      skills: ["JS", "Yeoman", "Contentful", "Jest"]
+    },
+    {
+      title: "Mosaic",
+      company: {
+        name: "Andela"
+      },
+      from: "2019-11-01T08:08:34.527Z",
+      to: "2019-08-24T08:08:34.527Z",
+      summary: "An internal Contentful App which allows content creators to add data that belongs to dynamic content types.",
+      type: "FRONTEND",
+      skills: ["TS", "Reactjs", "Graphql", "Contentful", "Jest"]
+    },
+    {
+      title: "Sekkah system",
+      company: {
+        name: "Freelancing"
+      },
+      from: "2018-11-01T08:08:34.527Z",
+      to: "2018-08-24T08:08:34.527Z",
+      summary: "Designed the architecture of 'sekkah' system",
+      type: "BOTH",
+      skills: ["JS", "HTML5", "CSS3", "Nodejs", "Expressjs", "Socket.io", "Mongodb", "Mongoose", "Reactjs", "Redeux"]
+    }
   ]
 }

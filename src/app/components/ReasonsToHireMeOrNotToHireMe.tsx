@@ -10,7 +10,7 @@ const ReasonsToHireMeOrNotToHireMe = ({ reasonsNotToHireMe, reasonsToHireMe }: R
         display: "flex"
     }}>
         <div style={{ flex: 1 }}>
-            <TitledSection title="Why would you hire me?">
+            <TitledSection title="Why to you hire me?">
                 <ul style={{ padding: "0 1rem" }}>
                     {reasonsToHireMe.map(reason => <li key={reason} style={{
                         fontSize: "1.5rem",

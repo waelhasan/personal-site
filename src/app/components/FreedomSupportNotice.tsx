@@ -1,4 +1,4 @@
-export default () => (
+const FreedomSupportNotice = () => (
     <div style={{
         textAlign: "center",
         fontSize: "1.5rem",
@@ -13,3 +13,5 @@ export default () => (
         I support Palestinians 🇵🇸, Ukranians 🇺🇦, and any people that fights for their freedom and dignity
     </div>
 )
+
+export default FreedomSupportNotice

@@ -5,7 +5,7 @@ interface ReasonsToHireMeOrNotToHireMeProps {
     reasonsNotToHireMe: string[]
 }
 
-export default ({ reasonsNotToHireMe, reasonsToHireMe }: ReasonsToHireMeOrNotToHireMeProps) => (
+const ReasonsToHireMeOrNotToHireMe = ({ reasonsNotToHireMe, reasonsToHireMe }: ReasonsToHireMeOrNotToHireMeProps) => (
     <div style={{
         display: "flex"
     }}>
@@ -31,3 +31,5 @@ export default ({ reasonsNotToHireMe, reasonsToHireMe }: ReasonsToHireMeOrNotToH
         </div>
     </div>
 )
+
+export default ReasonsToHireMeOrNotToHireMe

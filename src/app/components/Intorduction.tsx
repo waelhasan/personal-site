@@ -36,7 +36,7 @@ interface IntrodcutionProps {
     title: string
 }
 
-export default ({ fullName, nationality, title }: IntrodcutionProps) => (
+const Introduction = ({ fullName, nationality, title }: IntrodcutionProps) => (
     <div style={{
         display: "flex",
         maxWidth: "1200px",
@@ -57,3 +57,5 @@ export default ({ fullName, nationality, title }: IntrodcutionProps) => (
         <Image width="500" height="500" src="/pic1.png" alt="Wael Hasan picture" />
     </div>
 )
+
+export default Introduction

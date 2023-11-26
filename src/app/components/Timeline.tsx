@@ -13,7 +13,7 @@ interface TimelineElement {
     skills: string[]
 }
 
-export default ({ title, elements }: { title: string, elements: TimelineElement[] }) => (
+const Timeline = ({ title, elements }: { title: string, elements: TimelineElement[] }) => (
     <section style={{
         position: "relative",
         display: "flex",
@@ -113,3 +113,5 @@ export default ({ title, elements }: { title: string, elements: TimelineElement[
         </div>
     </section>
 )
+
+export default Timeline

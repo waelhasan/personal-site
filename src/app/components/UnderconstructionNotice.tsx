@@ -1,4 +1,4 @@
-export default () => (
+const UnderconstructionNotice = () => (
     <h1 style={{
         position: "absolute",
         fontSize: "2rem",
@@ -17,3 +17,5 @@ export default () => (
         Under construction
     </h1>
 )
+
+export default UnderconstructionNotice

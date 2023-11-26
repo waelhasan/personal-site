@@ -1,6 +1,6 @@
 import { Important } from "./Important"
 
-export default ({
+const TitledSection = ({
     title,
     titleColor = "var(--foreground-section-title-rgb)",
     children
@@ -37,3 +37,5 @@ export default ({
         </div>
     </figure>
 )
+
+export default TitledSection

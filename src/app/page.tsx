@@ -80,7 +80,8 @@ const LevelsToFontSizeMap = {
   2: "4rem",
   3: "3rem",
   4: "2rem",
-  5: "1rem",
+  5: "1.5rem",
+  6: "1rem"
 }
 
 const Important = ({ level, color = "var(--foreground-rgb-important)", children }: {
@@ -208,31 +209,47 @@ const Experiences = () => (
         flex: "1"
       }}>
         {info.experience.map((experience, index) => {
+          const formatter = new Intl.DateTimeFormat('en', { month: 'short', year: "numeric" });
           const isOdd = index % 2 === 0
-          const fromTo = new Date(experience.from).getFullYear() + " - " + new Date(experience.to).getFullYear()
+          const fromDate = formatter.format(new Date(experience.from))
+          const toDate = formatter.format(new Date(experience.to))
+
+          const fromTo = `${fromDate} - ${toDate}`
           return (
-            <article
-              key={fromTo}
-              style={{
-                textAlign: isOdd ? "left" : "right",
-                width: "fit-content",
-                maxWidth: "50rem",
-                fontSize: "1.4rem",
-                margin: "1rem 0",
-                padding: "1rem",
-                border: "1px solid var(--foreground-section-title-rgb)",
-                borderBottomRightRadius: "40px",
-                [isOdd ? "borderTopRightRadius" : "borderTopLeftRadius"]: "40px",
-                borderBottomLeftRadius: "40px",
-                ...(isOdd ? { transform: "translateX(calc(100% + 2rem))" } : {})
-              }}>
-              <div>
-                {fromTo}
-              </div>
-              <h1>{experience.title}</h1>
-              <h2>{experience.company.name} ({experience.type[0] + experience.type.slice(1).toLocaleLowerCase()})</h2>
-              <h3 style={{ textAlign: "justify" }}>{experience.summary}</h3>
-            </article>
+            <>
+              <span style={{
+                width: "1rem",
+                borderTop: "1px solid var(--foreground-section-title-rgb)",
+                transform: `translate(${isOdd ? 2 : 1}rem, 1.06rem)`
+              }} />
+              <article
+                key={fromTo}
+                style={{
+                  textAlign: isOdd ? "left" : "right",
+                  width: "fit-content",
+                  maxWidth: "50rem",
+                  fontSize: "1.4rem",
+                  margin: "1rem 0",
+                  padding: "1rem",
+                  border: "1px solid var(--foreground-section-title-rgb)",
+                  borderBottomRightRadius: "40px",
+                  [isOdd ? "borderTopRightRadius" : "borderTopLeftRadius"]: "40px",
+                  borderBottomLeftRadius: "40px",
+                  ...(isOdd ? { transform: "translateX(calc(100% + 2rem))" } : {})
+                }}>
+                <div style={{ fontFamily: "monospace" }}>
+                  {fromTo}
+                </div>
+                <Important level={5} color="var(--darker-foreground-golden-rgb)">
+                  {experience.title}
+                </Important>
+                <br />
+                <Important level={6}>
+                  {experience.company.name + ` (${experience.type[0] + experience.type.slice(1).toLocaleLowerCase()})`}
+                </Important>,
+                <h2 style={{ textAlign: "justify" }}>{experience.summary}</h2>
+              </article>
+            </>
           )
         })}
       </div>
@@ -248,9 +265,9 @@ export default function Home() {
       justifyContent: "center",
       alignItems: "center"
     }}>
-      <Intorduction />
+      {/* <Intorduction />
       <ReasonsToHireMeOrNotToHireMe />
-      <Skills />
+      <Skills /> */}
       <Experiences />
     </main>
   )

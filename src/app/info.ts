@@ -18,7 +18,7 @@ export default {
   ],
   experience: [
     {
-      title: "SENIOR FULL-STACK JS/TS SOFTWARE ENGINEER",
+      title: "Senior Full-Stack JS/TS software engineer",
       company: {
         name: "Andela"
       },
@@ -29,7 +29,7 @@ export default {
       skills: ["JS", "TS", "Nodejs", "Reactjs", "Nextjs", "Graphql", "Contentful"]
     },
     {
-      title: "SENIOR FULL-STACK JAVASCRIPT SOFTWARE ENGINEER",
+      title: "Senior Full-Stack Javascript software engineer",
       company: {
         name: "Index Group"
       },
@@ -40,7 +40,7 @@ export default {
       skills: ["JS", "TS", "Nodejs", "Expressjs", "RESTful services", "Mongodb", "Mongoose", "Deepstream"]
     },
     {
-      title: "SENIOR FULL-STACK SOFTWARE ENGINEER",
+      title: "Senior Full-Stack software engineer",
       company: {
         name: "Asma Systems"
       },
@@ -54,7 +54,7 @@ export default {
       skills: ["JS", "Nodejs", "Reactjs"]
     },
     {
-      title: "JAVA EE DEVELOPER",
+      title: "Java EE developer",
       company: {
         name: "Truemega Technology Solutions"
       },
@@ -65,7 +65,7 @@ export default {
       skills: ["Java", "JEE", "EJB", "PrimeFaces", "JS"]
     },
     {
-      title: "A FREELANCER DEVELOPER",
+      title: "Freelancer developer",
       company: {
         name: "Self employed"
       },
@@ -76,7 +76,7 @@ export default {
       skills: []
     },
     {
-      title: "RESEARCH ASSISTANT",
+      title: "Research assisstant",
       company: {
         name: "C.A.I.R.O Center"
       },

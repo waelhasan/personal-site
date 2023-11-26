@@ -10,6 +10,7 @@
   --foreground-section-title-rgb: rgb(46 141 109);
   --foreground-decoration-rgb: rgb(39 135 102);
   --foreground-golden-rgb: rgb(196 162 10);
+  --darker-foreground-golden-rgb: rgb(97 108 12);
 }
 
 @media (prefers-color-scheme: dark) {

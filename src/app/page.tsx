@@ -1,10 +1,6 @@
 import Image from "next/image"
 import info from "./info"
 
-const CustomizedListItem = ({ children }: { children: string }) => (
-  <li style={{ listStyleType: "disc" }}>{children}</li>
-)
-
 const Skill = ({ title }: { title: string }) => (
   <span style={{
     display: "inline-block",

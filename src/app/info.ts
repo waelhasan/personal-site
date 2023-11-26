@@ -14,7 +14,7 @@ export default {
   ],
   reasonsNotToHireMe: [
     "To do repetitive work, that does not leverage my technical skills",
-    "If you work on an industry that contradicts with my faith and believs, or I prefer to stay away from, which are: porn, weaponary, racism, and insurance."
+    "If you work on an industry that contradicts with my faith and believs, or I prefer to stay away from, which are: insurance, racism, porn, weaponary."
   ],
   experience: [
     {

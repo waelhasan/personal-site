@@ -192,7 +192,6 @@ const Experiences = () => (
     <div style={{
       display: "flex",
       flexDirection: "row",
-      height: `${info.experience.length * 15}rem`,
       marginTop: "7rem"
     }}>
       <div style={{
@@ -222,8 +221,7 @@ const Experiences = () => (
                 key={fromTo}
                 style={{
                   textAlign: isOdd ? "left" : "right",
-                  width: "fit-content",
-                  maxWidth: "50rem",
+                  width: "36rem",
                   fontSize: "1.4rem",
                   margin: "1rem 0",
                   padding: "1rem",
@@ -243,7 +241,13 @@ const Experiences = () => (
                 <Important level={6}>
                   {experience.company.name + ` (${experience.type[0] + experience.type.slice(1).toLocaleLowerCase()})`}
                 </Important>,
-                <h2 style={{ textAlign: "justify" }}>{experience.summary}</h2>
+                <details>
+                  <summary style={{ transition: "all 0.5s" }}>
+                    Read more
+                  </summary>
+                  <h2 style={{ textAlign: "justify" }}>{experience.summary}</h2>
+                  {experience.skills.map(skill => <Skill key={skill} title={skill} />)}
+                </details>
               </article>
             </>
           )

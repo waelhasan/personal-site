@@ -5,7 +5,7 @@ const UnderconstructionNotice = () => (
         textAlign: "center",
         color: "yellow",
         border: "5px dashed yellow",
-        backgroundColor: "indianred",
+        backgroundColor: "var(--red-color)",
         padding: "1rem",
         alignSelf: "flex-start",
         transform: "translate(-15%, 15%) rotateZ(-45deg)"

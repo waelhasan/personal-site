@@ -9,7 +9,7 @@ const SectionsSeparator = () =>
     boxShadow: "0px 0px 20px var(--foreground-section-title-rgb)",
     borderTop: "1px solid var(--foreground-section-title-rgb)",
     width: "60%",
-    margin: "5rem 0"
+    margin: "2rem 0"
   }} />
 
 export default function Home() {

@@ -20,7 +20,7 @@ const ReasonsToHireMeOrNotToHireMe = ({ reasonsNotToHireMe, reasonsToHireMe }: R
             </TitledSection >
         </div>
         <div style={{ flex: 1 }}>
-            <TitledSection title="Why not to hire me?" titleColor="rgb(177 49 112)">
+            <TitledSection title="Why not to hire me?" danger={true}>
                 <ul style={{ padding: "0 1rem" }}>
                     {reasonsNotToHireMe.map(reason => <li key={reason} style={{
                         fontSize: "1.5rem",

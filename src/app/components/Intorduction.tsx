@@ -1,5 +1,6 @@
 import Image from "next/image"
 import { Important } from "./Important";
+import FlippingContents from "./FlippingContents";
 
 const Title = ({ title }: { title: string }) => (
     <span style={{
@@ -54,6 +55,13 @@ const Introduction = ({ fullName, nationality, title }: IntrodcutionProps) => (
             <Important level={3}>6</Important> of them using <Important level={3}>MERN</Important> stack.
             I am a testing enthusiast, I thrive to have a <Important level={3}>100%</Important> test coverage for all of my codes, whether they are frontend projects,
             or backend projects.
+            <br />
+            I am searching for an opportunity for a
+            <FlippingContents contents={[
+                <Important level={4}>Backend Nodejs developer</Important>,
+                <Important level={4}>Frontend Reactjs developer</Important>,
+                <Important level={4}>Full-Stack MERN developer</Important>
+            ]} />
             <DownloadCVButton />
         </div>
         <Image width="500" height="500" src="/pic1.png" alt="Wael Hasan picture" />

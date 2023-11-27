@@ -8,7 +8,8 @@ const UnderconstructionNotice = () => (
         backgroundColor: "var(--red-color)",
         padding: "1rem",
         alignSelf: "flex-start",
-        transform: "translate(-15%, 55%) rotateZ(-45deg)"
+        transform: "translate(-45%, 50%) rotateZ(-45deg)",
+        width: "100%"
     }}>
         <span style={{ fontSize: "3rem" }}>
             ⚠️

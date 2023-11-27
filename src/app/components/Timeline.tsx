@@ -30,7 +30,9 @@ const Timeline = ({ title, elements }: { title: string, elements: TimelineElemen
             top: "0",
             transform: "translateX(-50%)",
             borderBottom: "1px solid var(--foreground-section-title-rgb)",
-            borderRadius: "50%"
+            borderRadius: "50%",
+            width: "max-content",
+            padding: "1rem"
         }}>
             <Important level={4} color="var(--foreground-section-title-rgb)">{title}</Important>
         </h1>

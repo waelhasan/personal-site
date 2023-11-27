@@ -26,9 +26,9 @@ export default function Home() {
       <SectionsSeparator />
       <Skills softSkills={info.softSkills} technicalSkills={info.technicalSkills} />
       <SectionsSeparator />
-      <Timeline title="Employment history" elements={info.experience} />
+      <Timeline id="employment-history" title="Employment history" elements={info.experience} />
       <SectionsSeparator />
-      <Timeline title="Main projects" elements={info.projects} />
+      <Timeline id="main-projects" title="Main projects" elements={info.projects} />
     </main>
   )
 }

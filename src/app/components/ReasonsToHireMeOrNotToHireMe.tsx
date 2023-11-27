@@ -6,9 +6,11 @@ interface ReasonsToHireMeOrNotToHireMeProps {
 }
 
 const ReasonsToHireMeOrNotToHireMe = ({ reasonsNotToHireMe, reasonsToHireMe }: ReasonsToHireMeOrNotToHireMeProps) => (
-    <div style={{
-        display: "flex"
-    }}>
+    <div
+        id="why-to-hire-me"
+        style={{
+            display: "flex"
+        }}>
         <div style={{ flex: 1 }}>
             <TitledSection title="Why to you hire me?">
                 <ul style={{ padding: "0 1rem" }}>

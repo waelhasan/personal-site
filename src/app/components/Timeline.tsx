@@ -13,17 +13,19 @@ interface TimelineElement {
     skills: string[]
 }
 
-const Timeline = ({ title, elements }: { title: string, elements: TimelineElement[] }) => (
-    <section style={{
-        position: "relative",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        textAlign: "center",
-        fontSize: "2rem",
-        margin: "2rem 0",
-        transform: "translateX(-50%)"
-    }}>
+const Timeline = ({ id, title, elements }: { id: string, title: string, elements: TimelineElement[] }) => (
+    <section
+        id={id}
+        style={{
+            position: "relative",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            textAlign: "center",
+            fontSize: "2rem",
+            margin: "2rem 0",
+            transform: "translateX(-50%)"
+        }}>
         <h1 style={{
             position: "absolute",
             left: "100%",

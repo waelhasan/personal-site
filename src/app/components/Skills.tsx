@@ -25,9 +25,12 @@ interface Skills {
 }
 
 export const Skills = (skills: Skills) => (
-    <div style={{
-        display: "flex"
-    }}>
+    <div
+        id="skills"
+        style={{
+            display: "flex"
+        }}
+    >
         <div style={{ flex: 1 }}>
             <TitledSection title="Technical skills">
                 {skills.technicalSkills.map(skill => <Skill key={skill} title={skill} />)}

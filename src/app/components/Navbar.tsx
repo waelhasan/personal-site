@@ -19,8 +19,25 @@ const LanguageSwitcher = () => (
 
 const Navbar = () => {
     return (
-        <header style={{ padding: "10px" }}>
+        <header style={{
+            position: "sticky",
+            top: 0,
+            left: 0,
+            zIndex: 1000,
+            padding: "1rem",
+            display: "flex",
+            justifyContent: "center",
+            gap: "3rem",
+            backgroundColor: "var(--darker-bg-rgb)",
+            fontSize: "1.5rem",
+            margin: "0 0 1rem"
+        }}>
             {/* <LanguageSwitcher /> */}
+            <a href="#introduction">Introduction</a>
+            <a href="#why-to-hire-me">Why to hire me?</a>
+            <a href="#skills">Skills</a>
+            <a href="#employment-history">Prev roles</a>
+            <a href="#main-projects">Main projects</a>
         </header>
     )
 }

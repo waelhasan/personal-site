@@ -44,7 +44,9 @@ const Introduction = ({ fullName, nationality, title }: IntrodcutionProps) => (
         marginBottom: "1rem",
         alignItems: "center"
     }}>
-        <div style={{ fontSize: "2rem" }}>
+        <div
+            id="introduction"
+            style={{ fontSize: "2rem" }}>
             Hi there, <br />I am
             <Important level={1}>{fullName}</Important>,
             an {nationality} <Title title={title} />, with <Important level={3}>8</Important> years of total web development experience,

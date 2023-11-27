@@ -6,7 +6,7 @@ const FreedomSupportNotice = () => (
         margin: "0 auto",
         zIndex: "100",
         position: "relative",
-        boxShadow: "0 5px 30px black",
+        boxShadow: "0 0px 15px var(--foreground-rgb-important)",
         borderRadius: "30px",
         padding: "1rem"
     }}>

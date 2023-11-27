@@ -36,7 +36,7 @@ const Navbar = () => {
             <a href="#introduction">Introduction</a>
             <a href="#why-to-hire-me">Why to hire me?</a>
             <a href="#skills">Skills</a>
-            <a href="#employment-history">Prev roles</a>
+            <a href="#employment-history">Employment history</a>
             <a href="#main-projects">Main projects</a>
         </header>
     )

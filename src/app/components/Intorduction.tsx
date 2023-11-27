@@ -46,22 +46,25 @@ const Introduction = ({ fullName, nationality, title }: IntrodcutionProps) => (
         marginBottom: "1rem",
         alignItems: "center"
     }}>
-        <div
-            id="introduction"
+        <div id="introduction"
             style={{ fontSize: "2rem" }}>
             Hi there, <br />I am
             <Important level={1}>{fullName}</Important>,
             an {nationality} <Title title={title} />, with <Important level={3}>8</Important> years of total web development experience,
             <Important level={3}>6</Important> of them using <Important level={3}>MERN</Important> stack.
+            <br />
             I am a testing enthusiast, I thrive to have a <Important level={3}>100%</Important> test coverage for all of my codes, whether they are frontend projects,
             or backend projects.
             <br />
             I am searching for an opportunity for a
-            <FlippingContents contents={[
-                <Important level={4}>Backend Nodejs developer</Important>,
-                <Important level={4}>Frontend Reactjs developer</Important>,
-                <Important level={4}>Full-Stack MERN developer</Important>
-            ]} />
+            <FlippingContents
+                direction="bottom"
+                contents={[
+                    <Important color="var(--foreground-golden-rgb)" level={4}>Backend Nodejs developer</Important>,
+                    <Important color="var(--foreground-golden-rgb)" level={4}>Frontend Reactjs developer</Important>,
+                    <Important color="var(--foreground-golden-rgb)" level={4}>Full-Stack MERN developer</Important>
+                ]}
+            /> it would be great to have a conversation about it, and have the ability to apply for it.
             <DownloadCVButton />
         </div>
         <Image width="500" height="500" src="/pic1.png" alt="Wael Hasan picture" />

@@ -4,22 +4,50 @@ import { useEffect, useState } from "react"
 
 interface IFlippingContentProps {
     contents: React.ReactNode[]
+    direction?: "top" | "bottom" | "right" | "left"
+    durationMS?: number
+    intervalMS?: number
 }
 
-const FlippingContents = ({ contents }: IFlippingContentProps) => {
+const FlippingContents = ({
+    contents,
+    direction = "top",
+    durationMS = 250,
+    intervalMS = 1500
+}: IFlippingContentProps) => {
     const [currentContentIndex, setCurrentContentIndex] = useState(0)
 
     useEffect(() => {
         const intervalId = setInterval(() => {
-            setCurrentContentIndex(currentIndex => (currentIndex + 1) % contents.length)
-        }, 2000)
+            setCurrentContentIndex(currentIndex => (currentIndex + 1) % (contents.length))
+        }, intervalMS)
 
         return () => clearInterval(intervalId)
-    }, [])
+    }, [contents])
 
     return (
-        <div style={{ height: "fit-content", transition: "all 0.5s" }}>
-            {contents[currentContentIndex]}
+        <div style={{
+            height: "3rem",
+            overflow: "hidden",
+            position: "relative",
+            width: "fit-contents"
+        }}>
+            {contents.map((content, index) => (
+                <div
+                    key={index}
+                    style={{
+                        position: "absolute",
+                        visibility: index === currentContentIndex ? "visible" : "hidden",
+                        [direction]: index === currentContentIndex ?
+                            "0" :
+                            index === currentContentIndex - 1 ||
+                                index === contents.length - 1 && currentContentIndex === 0 ?
+                                "-200%" : "200%",
+                        transition: `all ${durationMS / 1000}s`
+                    }}>
+                    {content}
+                </div>
+            ))}
         </div>
     )
 }

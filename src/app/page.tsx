@@ -4,6 +4,14 @@ import Intorduction from "./components/Intorduction";
 import ReasonsToHireMeOrNotToHireMe from "./components/ReasonsToHireMeOrNotToHireMe";
 import Timeline from "./components/Timeline";
 
+const SectionsSeparator = () =>
+  <div style={{
+    boxShadow: "0px 0px 20px var(--foreground-section-title-rgb)",
+    borderTop: "1px solid var(--foreground-section-title-rgb)",
+    width: "60%",
+    margin: "5rem 0"
+  }} />
+
 export default function Home() {
   return (
     <main style={{
@@ -13,9 +21,13 @@ export default function Home() {
       alignItems: "center"
     }}>
       <Intorduction fullName={info.fullName} nationality={info.nationality} title={info.title} />
+      <SectionsSeparator />
       <ReasonsToHireMeOrNotToHireMe reasonsNotToHireMe={info.reasonsNotToHireMe} reasonsToHireMe={info.reasonsToHireMe} />
+      <SectionsSeparator />
       <Skills softSkills={info.softSkills} technicalSkills={info.technicalSkills} />
+      <SectionsSeparator />
       <Timeline title="Employment history" elements={info.experience} />
+      <SectionsSeparator />
       <Timeline title="Main projects" elements={info.projects} />
     </main>
   )

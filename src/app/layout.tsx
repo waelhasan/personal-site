@@ -4,6 +4,7 @@ import Navbar from './components/Navbar'
 import FreedomSupportNotice from './components/FreedomSupportNotice'
 import UnderconstructionNotice from './components/UnderconstructionNotice'
 import ScrollToTopButton from './components/ScrollToTopButton'
+import Footer from './components/Footer'
 
 export const metadata: Metadata = {
   title: 'Wael Hasan',
@@ -41,6 +42,7 @@ export default function RootLayout({
         <FreedomSupportNotice />
         {children}
         <ScrollToTopButton />
+        <Footer />
       </body>
     </html>
   )

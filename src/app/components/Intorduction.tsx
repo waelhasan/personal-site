@@ -24,7 +24,8 @@ const DownloadCVButton = () => (
             border: "1px solid var(--foreground-rgb-important)",
             borderRadius: "50px",
             width: "fit-content",
-            margin: "2rem 0"
+            margin: "2rem 0",
+            backgroundColor: "var(--light-safe-alternate-bg)"
         }}>
         Download my CV
     </a>

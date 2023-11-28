@@ -7,13 +7,17 @@ interface IFlippingContentProps {
     direction?: "top" | "bottom" | "right" | "left"
     durationMS?: number
     intervalMS?: number
+    width?: string
+    justifyContent?: "left" | "right" | "center"
 }
 
 const FlippingContents = ({
     contents,
     direction = "top",
     durationMS = 250,
-    intervalMS = 1500
+    intervalMS = 1500,
+    width = "10rem",
+    justifyContent = "center"
 }: IFlippingContentProps) => {
     const [currentContentIndex, setCurrentContentIndex] = useState(0)
 
@@ -30,7 +34,10 @@ const FlippingContents = ({
             height: "3rem",
             overflow: "hidden",
             position: "relative",
-            width: "fit-contents"
+            top: ".6rem",
+            width,
+            display: "inline-flex",
+            justifyContent
         }}>
             {contents.map((content, index) => (
                 <div

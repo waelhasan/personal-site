@@ -5,6 +5,7 @@ import FreedomSupportNotice from './components/FreedomSupportNotice'
 import UnderconstructionNotice from './components/UnderconstructionNotice'
 import ScrollToTopButton from './components/ScrollToTopButton'
 import Footer from './components/Footer'
+import { sriracha } from './fonts'
 
 export const metadata: Metadata = {
   title: 'Wael Hasan',
@@ -31,6 +32,7 @@ export default function RootLayout({
                       var(--background-end-rgb)) var(--background-start-rgb)`
       }}>
       <body
+      className={sriracha.className}
         style={{
           position: "relative",
           height: "100%",

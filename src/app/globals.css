@@ -37,3 +37,11 @@
     --darker-foreground-golden-rgb: rgb(54 59 9);
   }
 }
+
+.arrow-before::before {
+  font-size: 2rem;
+  color: #795548;
+  content: "⮞ ";
+  margin-left: -2rem;
+  /* vertical-align: middle; */
+}

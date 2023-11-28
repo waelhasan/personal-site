@@ -38,43 +38,59 @@ interface IntrodcutionProps {
     title: string
 }
 
+const P = ({ children }: { children: React.ReactNode }) => (
+    <p className="arrow-before">
+        {children}
+    </p>
+)
+
 const Introduction = ({ fullName, nationality, title }: IntrodcutionProps) => (
     <div style={{
-        display: "flex",
         maxWidth: "1200px",
         padding: "2rem",
         marginBottom: "1rem",
-        alignItems: "center"
     }}>
         <div id="introduction"
-            style={{ fontSize: "2rem" }}>
-            Hi there, <br />I am
-            <Important level={1}>{fullName}</Important>,
-            an {nationality} <Title title={title} />, with <Important level={3}>8</Important> years of total web development experience,
-            <Important level={3}>6</Important> of them using <Important level={3}>MERN</Important> stack.
-            <br />
-            I am a testing enthusiast, I thrive to have a <Important level={3}>100%</Important> test coverage for all of my codes, whether they are frontend projects,
-            or backend projects.
-            <br />
-            I am searching for an opportunity for a
-            <FlippingContents
-                direction="bottom"
-                width="30rem"
-                contents={
-                    [
-                        "Backend Nodejs developer",
-                        "Frontend Reactjs developer",
-                        "Full-Stack MERN developer"
-                    ].map(title => (
-                        <Important key={title} color="var(--foreground-golden-rgb)" level={4}>
-                            {title}
-                        </Important>
-                    ))
-                }
-            /> it would be great to have a conversation about it, and have the ability to apply for it.
-            <DownloadCVButton />
+            style={{
+                fontSize: "2rem",
+                textAlign: "left",
+                borderRadius: "50%"
+            }}>
+            <p>
+                Hi there,
+            </p>
+            <P>
+                I am <Important level={2}>{fullName}</Important>,
+                an {nationality} <Title title={title} />, with <Important level={3}>8</Important> years of total web development experience,
+                <Important level={3}>6</Important> of them using <Important level={3}>MERN</Important> stack.
+            </P>
+            <Image width="500" height="500" src="/pic1.png" alt="Wael Hasan picture" style={{ float: "right" }} />
+            <P>
+                I build a high quality Functional and Object Oriented code, plus being a testing enthusiast, which makes me
+                thrive to have a <Important level={3}>100%</Important> test coverage for all of my codes,
+                whether they are frontend projects,
+                or backend projects.
+            </P>
+            <P>
+                I am searching for an opportunity for a
+                <FlippingContents
+                    direction="bottom"
+                    width="30rem"
+                    contents={
+                        [
+                            "Backend Nodejs developer",
+                            "Frontend Reactjs developer",
+                            "Full-Stack MERN developer"
+                        ].map(title => (
+                            <Important key={title} color="var(--foreground-golden-rgb)" level={4}>
+                                {title}
+                            </Important>
+                        ))
+                    }
+                />, so if you have an open role that suits me, it would be great to have a conversation about it, and have the ability to apply for it.
+                <DownloadCVButton />
+            </P>
         </div>
-        <Image width="500" height="500" src="/pic1.png" alt="Wael Hasan picture" />
     </div>
 )
 

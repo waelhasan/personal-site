@@ -59,17 +59,18 @@ const Introduction = ({ fullName, nationality, title }: IntrodcutionProps) => (
             I am searching for an opportunity for a
             <FlippingContents
                 direction="bottom"
-                contents={[
-                    <Important key="1" color="var(--foreground-golden-rgb)" level={4}>
-                        Backend Nodejs developer
-                    </Important>,
-                    <Important key="2" color="var(--foreground-golden-rgb)" level={4}>
-                        Frontend Reactjs developer
-                    </Important>,
-                    <Important key="3" color="var(--foreground-golden-rgb)" level={4}>
-                        Full-Stack MERN developer
-                    </Important>
-                ]}
+                width="30rem"
+                contents={
+                    [
+                        "Backend Nodejs developer",
+                        "Frontend Reactjs developer",
+                        "Full-Stack MERN developer"
+                    ].map(title => (
+                        <Important key={title} color="var(--foreground-golden-rgb)" level={4}>
+                            {title}
+                        </Important>
+                    ))
+                }
             /> it would be great to have a conversation about it, and have the ability to apply for it.
             <DownloadCVButton />
         </div>

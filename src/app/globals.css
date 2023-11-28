@@ -13,7 +13,7 @@
   --foreground-golden-rgb: rgb(196 162 10);
   --darker-foreground-golden-rgb: rgb(156 167 70);
   --red-color: rgb(224 97 97);
-  --footer-bg-rg: rgb(112 146 143);
+  --footer-bg-rg: rgb(122, 174, 193);
   --light-safe-alternate-bg: rgb(225, 247, 247);
   --light-danger-alternate-bg: rgb(255, 230, 255);
 }

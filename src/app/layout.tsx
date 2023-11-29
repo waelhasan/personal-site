@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Analytics } from '@vercel/analytics/react'
 import './globals.css'
 import Navbar from './components/Navbar'
 import FreedomSupportNotice from './components/FreedomSupportNotice'
@@ -46,6 +47,7 @@ export default function RootLayout({
         {children}
         <ScrollToTopButton />
         <Footer />
+        <Analytics />
       </body>
     </html>
   )

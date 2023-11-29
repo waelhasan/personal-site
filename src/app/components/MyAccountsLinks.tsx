@@ -7,6 +7,17 @@ export interface IMyAccountsLinksProps {
     bloggerUrl?: string
 }
 
+const CustomizedLink = ({ url, Icon }: { url?: string, Icon: React.JSXElementConstructor<{}> }) => (
+    !!url &&
+    <a className={`
+            text-foregroundSectionTitle hover:text-foregroundRgb
+        `}
+        target="_blank"
+        href={url}>
+        <Icon />
+    </a>
+)
+
 export const MyAccountsLinks = ({ linkedinUrl, githubUrl, npmUrl, bloggerUrl }: IMyAccountsLinksProps) => (
     <div style={{
         display: "inline-flex",
@@ -16,17 +27,9 @@ export const MyAccountsLinks = ({ linkedinUrl, githubUrl, npmUrl, bloggerUrl }: 
         color: "var(--foreground-rgb-important)",
         verticalAlign: "middle"
     }}>
-        {!!linkedinUrl && <a target="_blank" href={linkedinUrl}>
-            <FaLinkedin />
-        </a>}
-        {!!githubUrl && <a target="_blank" href="https://github.com/waelhasan">
-            <FaGithub />
-        </a>}
-        {!!npmUrl && <a target="_blank" href="https://www.npmjs.com/~whasan/">
-            <FaNpm />
-        </a>}
-        {!!bloggerUrl && <a target="_blank" href="https://waelhasan87.blogspot.com/">
-            <FaBlogger />
-        </a>}
+        <CustomizedLink url={linkedinUrl} Icon={FaLinkedin} />
+        <CustomizedLink url={githubUrl} Icon={FaGithub} />
+        <CustomizedLink url={npmUrl} Icon={FaNpm} />
+        <CustomizedLink url={bloggerUrl} Icon={FaBlogger} />
     </div>
 )

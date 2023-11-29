@@ -20,7 +20,12 @@ export default function Home() {
       justifyContent: "center",
       alignItems: "center"
     }}>
-      <Intorduction fullName={info.fullName} nationality={info.nationality} title={info.title} />
+      <Intorduction
+        fullName={info.fullName}
+        nationality={info.nationality}
+        title={info.title}
+        accountsLinks={info.accountsLinks}
+      />
       <SectionsSeparator />
       <ReasonsToHireMeOrNotToHireMe reasonsNotToHireMe={info.reasonsNotToHireMe} reasonsToHireMe={info.reasonsToHireMe} />
       <SectionsSeparator />

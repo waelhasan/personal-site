@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { Important } from "./Important"
 import FlippingContents from "./FlippingContents"
-import MyAccountsLinks from "./MyAccountsLinks"
+import { MyAccountsLinks, IMyAccountsLinksProps } from "./MyAccountsLinks"
 
 const Title = ({ title }: { title: string }) => (
     <span style={{
@@ -37,6 +37,7 @@ interface IntrodcutionProps {
     fullName: string
     nationality: string
     title: string
+    accountsLinks: IMyAccountsLinksProps
 }
 
 const P = ({ children }: { children: React.ReactNode }) => (
@@ -45,7 +46,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
     </p>
 )
 
-const Introduction = ({ fullName, nationality, title }: IntrodcutionProps) => (
+const Introduction = ({ fullName, nationality, title, accountsLinks }: IntrodcutionProps) => (
     <div style={{
         maxWidth: "1200px",
         padding: "2rem",
@@ -90,9 +91,9 @@ const Introduction = ({ fullName, nationality, title }: IntrodcutionProps) => (
                     }
                 />, so if you have an open role that suits me, it would be great to have a conversation about it, and have the ability to apply for it.
                 <DownloadCVButton />
+                <MyAccountsLinks {...accountsLinks} />
             </P>
         </div>
-        <MyAccountsLinks />
     </div>
 )
 

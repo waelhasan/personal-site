@@ -2,6 +2,12 @@ export default {
   fullName: "Wael Hasan",
   nationality: "Egyptian",
   title: "Senior Full-Stack JS/TS web developer",
+  accountsLinks: {
+    linkedinUrl: "https://linkedin.com/in/whsn",
+    githubUrl: "https://github.com/waelhasan",
+    npmUrl: "https://www.npmjs.com/~whasan/",
+    bloggerUrl: "https://waelhasan87.blogspot.com/"
+  },
   technicalSkills: ['HTML5', 'CSS3', 'Javascript', 'Typescript', 'Nodejs', 'Expressjs', 'RESTful API design', 'Graphql', 'Reactjs', 'Redux', 'Nextjs', 'Jest', 'Cypress', 'Storybook', 'SQL', 'Sequelize ORM', 'Mongodb', 'Mongoose ODM', 'Contentful', 'Git', 'Github', 'Linux', 'Bash', 'Design patterns', 'Gulp', 'Socket.io', 'Deepstream', 'Redis', 'Docker', 'AWS', 'TypeORM', 'JSON', 'JSON schema', 'Mocha', 'Chai', 'Enzyme', 'SASS', 'Yeoman'],
   softSkills: ['Teamwork', 'Leadership', 'Humility', 'Problem-Solving', 'Self-starter', 'Pragmatic', 'Communication', 'Collaboration', 'Mentorship', 'Lifelong learner'],
   reasonsToHireMe: [

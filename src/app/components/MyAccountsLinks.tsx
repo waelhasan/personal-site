@@ -1,26 +1,31 @@
 import { FaGithub, FaLinkedin, FaBlogger, FaNpm } from "react-icons/fa"
 
-const MyAccountsLinks = () => (
+export interface IMyAccountsLinksProps {
+    linkedinUrl?: string
+    githubUrl?: string
+    npmUrl?: string
+    bloggerUrl?: string
+}
+
+export const MyAccountsLinks = ({ linkedinUrl, githubUrl, npmUrl, bloggerUrl }: IMyAccountsLinksProps) => (
     <div style={{
-        display: "flex",
+        display: "inline-flex",
         gap: "1rem",
         width: "100%",
         justifyContent: "center",
         fontSize: "4rem"
     }}>
-        <a target="_blank" href="https://linkedin.com/in/whsn">
+        {!!linkedinUrl && <a target="_blank" href={linkedinUrl}>
             <FaLinkedin />
-        </a>
-        <a target="_blank" href="https://github.com/waelhasan">
+        </a>}
+        {!!githubUrl && <a target="_blank" href="https://github.com/waelhasan">
             <FaGithub />
-        </a>
-        <a target="_blank" href="https://www.npmjs.com/~whasan/">
+        </a>}
+        {!!npmUrl && <a target="_blank" href="https://www.npmjs.com/~whasan/">
             <FaNpm />
-        </a>
-        <a target="_blank" href="https://waelhasan87.blogspot.com/">
+        </a>}
+        {!!bloggerUrl && <a target="_blank" href="https://waelhasan87.blogspot.com/">
             <FaBlogger />
-        </a>
+        </a>}
     </div>
 )
-
-export default MyAccountsLinks

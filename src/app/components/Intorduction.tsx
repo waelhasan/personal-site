@@ -1,6 +1,7 @@
 import Image from "next/image"
-import { Important } from "./Important";
-import FlippingContents from "./FlippingContents";
+import { Important } from "./Important"
+import FlippingContents from "./FlippingContents"
+import MyAccountsLinks from "./MyAccountsLinks"
 
 const Title = ({ title }: { title: string }) => (
     <span style={{
@@ -91,6 +92,7 @@ const Introduction = ({ fullName, nationality, title }: IntrodcutionProps) => (
                 <DownloadCVButton />
             </P>
         </div>
+        <MyAccountsLinks />
     </div>
 )
 

@@ -38,7 +38,8 @@ const DownloadCVButton = () => (
 const ValidRolesFlippingContents = () => (
     <FlippingContents
         direction="bottom"
-        width="30rem"
+        intervalMS={2000}
+        width="28rem"
         contents={
             [
                 { title: "Backend Nodejs developer", Icon: FaNode },
@@ -55,6 +56,21 @@ const ValidRolesFlippingContents = () => (
                         color: "var(--foreground-rgb-important)"
                     }} />
                 </>
+            ))
+        }
+    />
+)
+
+const ValidRolesTypesFlippingContents = () => (
+    <FlippingContents
+        direction="left"
+        intervalMS={1000}
+        width="7.1rem"
+        contents={
+            ["Remote", "Onsite"].map(title => (
+                <Important key={title} color="var(--foreground-golden-rgb)" level={4}>
+                    {title}
+                </Important>
             ))
         }
     />
@@ -90,9 +106,9 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
             </p>
             <P>
                 I am <Important level={3}>{fullName}</Important>,
-                an {nationality} <Title title={title} />, with <Important level={3}>8</Important> 
-                years of total web development experience,
-                <Important level={3}>6</Important> of them using <Important level={3}>MERN</Important> stack.
+                an {nationality} <Title title={title} />, with <Important level={3}>8</Important>  years
+                of total web development experience, <Important level={3}>6</Important> of them
+                using <Important level={3}>MERN</Important> stack.
             </P>
             <Image width="500" height="529" src="/pic1.png" alt="Wael Hasan picture" style={{ float: "right" }} />
             <P>
@@ -102,8 +118,8 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
                 or backend projects.
             </P>
             <P>
-                I am searching for an opportunity for a
-                <ValidRolesFlippingContents />, so if you have an open role that suits me, 
+                I am searching for an opportunity for a <ValidRolesTypesFlippingContents />
+                <ValidRolesFlippingContents />, so if you have an open role that suits me,
                 it would be great to have a conversation about it, and have the ability to apply for it.
                 <DownloadCVButton />
                 <MyAccountsLinks {...accountsLinks} />

@@ -43,6 +43,7 @@ const FlippingContents = ({
                 <div
                     key={index}
                     style={{
+                        display: "inline-block",
                         position: "absolute",
                         visibility: index === currentContentIndex ? "visible" : "hidden",
                         [direction]: index === currentContentIndex ?

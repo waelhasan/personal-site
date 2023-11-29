@@ -2,6 +2,8 @@ import Image from "next/image"
 import { Important } from "./Important"
 import FlippingContents from "./FlippingContents"
 import { MyAccountsLinks, IMyAccountsLinksProps } from "./MyAccountsLinks"
+import { FaNode, FaReact } from "react-icons/fa"
+import { IoLogoJavascript } from "react-icons/io5"
 
 const Title = ({ title }: { title: string }) => (
     <span style={{
@@ -31,6 +33,31 @@ const DownloadCVButton = () => (
         }}>
         Download my CV
     </a>
+)
+
+const ValidRolesFlippingContents = () => (
+    <FlippingContents
+        direction="bottom"
+        width="30rem"
+        contents={
+            [
+                { title: "Backend Nodejs developer", Icon: FaNode },
+                { title: "Frontend Reactjs developer", Icon: FaReact },
+                { title: "Full-Stack MERN developer", Icon: IoLogoJavascript }
+            ].map(({ title, Icon }) => (
+                <>
+                    <Important key={title} color="var(--foreground-golden-rgb)" level={4}>
+                        {title}
+                    </Important>
+                    <Icon style={{
+                        display: "inline-block",
+                        marginLeft: "1rem",
+                        color: "var(--foreground-golden-rgb)"
+                    }} />
+                </>
+            ))
+        }
+    />
 )
 
 interface IntrodcutionProps {
@@ -75,21 +102,7 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
             </P>
             <P>
                 I am searching for an opportunity for a
-                <FlippingContents
-                    direction="bottom"
-                    width="30rem"
-                    contents={
-                        [
-                            "Backend Nodejs developer",
-                            "Frontend Reactjs developer",
-                            "Full-Stack MERN developer"
-                        ].map(title => (
-                            <Important key={title} color="var(--foreground-golden-rgb)" level={4}>
-                                {title}
-                            </Important>
-                        ))
-                    }
-                />, so if you have an open role that suits me, it would be great to have a conversation about it, and have the ability to apply for it.
+                <ValidRolesFlippingContents />, so if you have an open role that suits me, it would be great to have a conversation about it, and have the ability to apply for it.
                 <DownloadCVButton />
                 <MyAccountsLinks {...accountsLinks} />
             </P>

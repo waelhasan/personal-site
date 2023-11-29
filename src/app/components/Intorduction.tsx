@@ -52,7 +52,7 @@ const ValidRolesFlippingContents = () => (
                     <Icon style={{
                         display: "inline-block",
                         marginLeft: "1rem",
-                        color: "var(--foreground-golden-rgb)"
+                        color: "var(--foreground-rgb-important)"
                     }} />
                 </>
             ))

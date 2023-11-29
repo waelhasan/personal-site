@@ -13,7 +13,8 @@ export const MyAccountsLinks = ({ linkedinUrl, githubUrl, npmUrl, bloggerUrl }: 
         gap: "1rem",
         width: "100%",
         justifyContent: "center",
-        fontSize: "4rem"
+        fontSize: "4rem",
+        color: "var(--foreground-rgb-important)"
     }}>
         {!!linkedinUrl && <a target="_blank" href={linkedinUrl}>
             <FaLinkedin />

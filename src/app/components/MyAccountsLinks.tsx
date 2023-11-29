@@ -11,10 +11,10 @@ export const MyAccountsLinks = ({ linkedinUrl, githubUrl, npmUrl, bloggerUrl }: 
     <div style={{
         display: "inline-flex",
         gap: "1rem",
-        width: "100%",
         justifyContent: "center",
         fontSize: "4rem",
-        color: "var(--foreground-rgb-important)"
+        color: "var(--foreground-rgb-important)",
+        verticalAlign: "middle"
     }}>
         {!!linkedinUrl && <a target="_blank" href={linkedinUrl}>
             <FaLinkedin />

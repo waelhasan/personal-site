@@ -23,12 +23,12 @@ const DownloadCVButton = () => (
         download={true}
         href="/cv.pdf"
         style={{
-            display: "block",
+            display: "inline-block",
             padding: "1rem 2rem",
             border: "1px solid var(--foreground-rgb-important)",
             borderRadius: "50px",
             width: "fit-content",
-            margin: "2rem 0",
+            margin: "2rem 1rem 0 0",
             backgroundColor: "var(--light-safe-alternate-bg)"
         }}>
         Download my CV

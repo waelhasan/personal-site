@@ -5,6 +5,7 @@
 :root {
   --foreground-rgb: rgb(0, 0, 0);
   --foreground-rgb-important: rgb(39 132 145);
+  --foreground-rgb-important-val: 39 132 145;
   --background-start-rgb: rgb(230 239 241);
   --background-end-rgb: rgb(209 223 233);
   --darker-bg-rgb: rgb(213 225 213);
@@ -15,6 +16,7 @@
   --red-color: rgb(224 97 97);
   --footer-bg-rg: rgb(122, 174, 193);
   --light-safe-alternate-bg: rgb(225, 247, 247);
+  --light-safe-alternate-bg-val: 225 247 247;
   --light-danger-alternate-bg: rgb(255, 230, 255);
 }
 
@@ -23,6 +25,7 @@
     --foreground-rgb: rgb(255, 255, 255);
     /*cyan*/
     --foreground-rgb-important: rgb(0, 255, 255);
+    --foreground-rgb-important-val: 0 255 255;
     --background-start-rgb: rgba(0, 10, 21, 0.9);
     --background-end-rgb: rgb(0, 0, 0);
     --darker-bg-rgb: rgb(0 0 0);
@@ -33,6 +36,7 @@
     --red-color: rgb(177 68 68);
     --footer-bg-rg: rgb(0, 0, 0);
     --light-safe-alternate-bg: rgb(3 38 38 / 50%);
+    --light-safe-alternate-bg-val: 3 38 38;
     --light-danger-alternate-bg: rgb(54 26 54 / 50%);
     --darker-foreground-golden-rgb: rgb(54 59 9);
   }

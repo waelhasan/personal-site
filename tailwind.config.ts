@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        lightSafeAlternate: 'rgb(var(--light-safe-alternate-bg-val) / <alpha-value>)',
+        foregroundRgbImportant: 'rgb(var(--foreground-rgb-important-val) / <alpha-value>)'
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':

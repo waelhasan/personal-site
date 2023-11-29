@@ -20,6 +20,11 @@ const Title = ({ title }: { title: string }) => (
 
 const DownloadCVButton = () => (
     <a
+        className={`
+            transition ease-in-out delay-50 
+            bg-lightSafeAlternate hover:bg-foregroundRgbImportant
+            hover:text-black
+        `}
         download={true}
         href="/cv.pdf"
         style={{
@@ -29,7 +34,6 @@ const DownloadCVButton = () => (
             borderRadius: "50px",
             width: "fit-content",
             margin: "2rem 1rem 0 0",
-            backgroundColor: "var(--light-safe-alternate-bg)"
         }}>
         Download my CV
     </a>

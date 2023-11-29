@@ -64,7 +64,7 @@ const Introduction = ({ fullName, nationality, title }: IntrodcutionProps) => (
                 an {nationality} <Title title={title} />, with <Important level={3}>8</Important> years of total web development experience,
                 <Important level={3}>6</Important> of them using <Important level={3}>MERN</Important> stack.
             </P>
-            <Image width="500" height="500" src="/pic1.png" alt="Wael Hasan picture" style={{ float: "right" }} />
+            <Image width="500" height="529" src="/pic1.png" alt="Wael Hasan picture" style={{ float: "right" }} />
             <P>
                 I build a high quality Functional and Object Oriented code, plus being a testing enthusiast, which makes me
                 thrive to have a <Important level={3}>100%</Important> test coverage for all of my codes,

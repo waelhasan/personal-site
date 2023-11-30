@@ -5,16 +5,22 @@ interface Skill {
 }
 
 export const Skill = ({ title }: Skill) => (
-    <span style={{
-        display: "inline-block",
-        fontSize: "1rem",
-        fontStyle: "italic",
-        border: "1px solid var(--foreground-rgb-important)",
-        padding: "1rem",
-        margin: "10px 10px",
-        borderRadius: "10px",
-        cursor: "pointer"
-    }}>
+    <span
+        className={`
+            transition ease-in-out delay-50 
+            bg-lightSafeAlternate hover:bg-foregroundRgbImportant
+            hover:text-black
+        `}
+        style={{
+            display: "inline-block",
+            fontSize: "1rem",
+            fontStyle: "italic",
+            border: "1px solid var(--foreground-rgb-important)",
+            padding: "1rem",
+            margin: "10px 10px",
+            borderRadius: "10px",
+            cursor: "pointer"
+        }}>
         {title}
     </span>
 )

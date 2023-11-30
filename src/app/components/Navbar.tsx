@@ -17,6 +17,16 @@ const LanguageSwitcher = () => (
     </select>
 )
 
+const CustomizedLink = ({ href, children }: { href: string, children: React.ReactNode }) => (
+    <a href={href}
+        className={`
+            transition ease-in-out delay-50 
+            hover:text-foregroundRgbImportant
+        `}>
+        {children}
+    </a>
+)
+
 const Navbar = () => {
     return (
         <header style={{
@@ -33,11 +43,11 @@ const Navbar = () => {
             margin: "0 0 1rem"
         }}>
             {/* <LanguageSwitcher /> */}
-            <a href="#introduction">Introduction</a>
-            <a href="#why-to-hire-me">Why to hire me?</a>
-            <a href="#skills">Skills</a>
-            <a href="#employment-history">Employment history</a>
-            <a href="#main-projects">Main projects</a>
+            <CustomizedLink href="#introduction">Introduction</CustomizedLink>
+            <CustomizedLink href="#why-to-hire-me">Why to hire me?</CustomizedLink>
+            <CustomizedLink href="#skills">Skills</CustomizedLink>
+            <CustomizedLink href="#employment-history">Employment history</CustomizedLink>
+            <CustomizedLink href="#main-projects">Main projects</CustomizedLink>
         </header>
     )
 }

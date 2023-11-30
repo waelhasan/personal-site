@@ -94,11 +94,11 @@ const P = ({ children }: { children: React.ReactNode }) => (
 )
 
 const Introduction = ({ fullName, nationality, title, accountsLinks }: IntrodcutionProps) => (
-    <div style={{
-        maxWidth: "1200px",
-        padding: "2rem",
-        marginBottom: "1rem",
-    }}>
+    <div className="p-[5rem] xl:p-[3rem]"
+        style={{
+            maxWidth: "1200px",
+            marginBottom: "1rem",
+        }}>
         <div id="introduction"
             style={{
                 fontSize: "2rem",

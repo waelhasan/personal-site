@@ -31,18 +31,13 @@ interface Skills {
 }
 
 export const Skills = (skills: Skills) => (
-    <div
-        id="skills"
-        style={{
-            display: "flex"
-        }}
-    >
-        <div style={{ flex: 1 }}>
+    <div id="skills" className="flex flex-col xl:flex-row">
+        <div className="flex-1">
             <TitledSection title="Technical skills">
                 {skills.technicalSkills.map(skill => <Skill key={skill} title={skill} />)}
             </TitledSection >
         </div>
-        <div style={{ flex: 1 }}>
+        <div className="flex-1">
             <TitledSection title="Soft skills">
                 {skills.softSkills.map(skill => <Skill key={skill} title={skill} />)}
             </TitledSection >

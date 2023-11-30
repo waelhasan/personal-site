@@ -14,44 +14,21 @@ interface TimelineElement {
 }
 
 const Timeline = ({ id, title, elements }: { id: string, title: string, elements: TimelineElement[] }) => (
-    <section
-        id={id}
-        style={{
-            position: "relative",
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "center",
-            textAlign: "center",
-            fontSize: "2rem",
-            margin: "2rem 0",
-            transform: "translateX(-50%)"
-        }}>
-        <h1 style={{
-            position: "absolute",
-            left: "100%",
-            top: "0",
-            transform: "translateX(-50%)",
-            borderBottom: "1px solid var(--foreground-section-title-rgb)",
-            borderRadius: "50%",
-            width: "max-content",
-            padding: "1rem"
-        }}>
+    <section id={id} className="-translate-x-1/2">
+        <h1 className={`
+            absolute left-[100%] -translate-x-1/2
+            rounded-[50%] border-b-[1px] border-b-solid border-b-[foreground-section-title-rgb]
+            w-max
+            p-[1rem]
+        `}>
             <Important level={4} color="var(--foreground-section-title-rgb)">{title}</Important>
         </h1>
-        <div style={{
-            display: "flex",
-            flexDirection: "row",
-            marginTop: "7rem"
-        }}>
-            <div style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "flex-end",
-                borderRight: "1px solid var(--foreground-section-title-rgb)",
-                padding: "1rem",
-                justifyContent: "flex-start",
-                flex: "1"
-            }}>
+        <div className="mt-[7rem]">
+            <div className={`
+                flex flex-col items-end 
+                p-[1rem] 
+                border-r-[1px] border-r-solid border-r-[--foreground-section-title-rgb]
+            `}>
                 {elements.map((experience, index) => {
                     const formatter = new Intl.DateTimeFormat('en', { month: 'short', year: "numeric" });
                     const isOdd = index % 2 === 0

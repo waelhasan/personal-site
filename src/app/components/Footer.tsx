@@ -1,4 +1,6 @@
+import { FaGithub } from "react-icons/fa"
 import FlippingContents from "./FlippingContents"
+import IconLink from "./IconLink"
 import { Important } from "./Important"
 
 const Footer = () => (
@@ -30,6 +32,8 @@ const Footer = () => (
                 ))
             }
         />
+        The code of this site is open source, feel free to take a look, and forge it if you wish
+        <IconLink url="https://github.com/waelhasan/personal-site" Icon={FaGithub} fontSize="3rem" />
     </div>
 )
 

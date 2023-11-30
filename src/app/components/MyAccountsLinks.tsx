@@ -1,4 +1,5 @@
 import { FaGithub, FaLinkedin, FaBlogger, FaNpm } from "react-icons/fa"
+import IconLink from "./IconLink"
 
 export interface IMyAccountsLinksProps {
     linkedinUrl?: string
@@ -6,17 +7,6 @@ export interface IMyAccountsLinksProps {
     npmUrl?: string
     bloggerUrl?: string
 }
-
-const CustomizedLink = ({ url, Icon }: { url?: string, Icon: React.JSXElementConstructor<{}> }) => (
-    !!url &&
-    <a className={`
-            text-foregroundSectionTitle hover:text-foregroundRgb
-        `}
-        target="_blank"
-        href={url}>
-        <Icon />
-    </a>
-)
 
 export const MyAccountsLinks = ({ linkedinUrl, githubUrl, npmUrl, bloggerUrl }: IMyAccountsLinksProps) => (
     <div style={{
@@ -27,9 +17,9 @@ export const MyAccountsLinks = ({ linkedinUrl, githubUrl, npmUrl, bloggerUrl }: 
         color: "var(--foreground-rgb-important)",
         verticalAlign: "middle"
     }}>
-        <CustomizedLink url={linkedinUrl} Icon={FaLinkedin} />
-        <CustomizedLink url={githubUrl} Icon={FaGithub} />
-        <CustomizedLink url={npmUrl} Icon={FaNpm} />
-        <CustomizedLink url={bloggerUrl} Icon={FaBlogger} />
+        <IconLink url={linkedinUrl} Icon={FaLinkedin} />
+        <IconLink url={githubUrl} Icon={FaGithub} />
+        <IconLink url={npmUrl} Icon={FaNpm} />
+        <IconLink url={bloggerUrl} Icon={FaBlogger} />
     </div>
 )

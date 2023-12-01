@@ -1,7 +1,7 @@
 import { Important } from "./Important"
 import { Skill } from "./Skills"
 
-const RightArticle = ({ key, children }: { key: string, children: React.ReactNode }) => (
+const RightArticle = ({ children }: { children: React.ReactNode }) => (
     <>
         {/* The line that fills the gap between individual boxes and the timeline */}
         <span className={`
@@ -10,7 +10,7 @@ const RightArticle = ({ key, children }: { key: string, children: React.ReactNod
             translate-y-[1.11rem] translate-x-[1rem] xl:translate-x-[2rem]
         `} />
         {/* The box that shows element details */}
-        <article key={key} className={`
+        <article className={`
             w-[36rem]
             text-[1.4rem]
             my-[1rem] mx-0
@@ -26,7 +26,7 @@ const RightArticle = ({ key, children }: { key: string, children: React.ReactNod
     </>
 )
 
-const LeftArticle = ({ key, children }: { key: string, children: React.ReactNode }) => (
+const LeftArticle = ({ children }: { children: React.ReactNode }) => (
     <>
         {/* The line that fills the gap between individual boxes and the timeline */}
         <span className={`
@@ -35,7 +35,7 @@ const LeftArticle = ({ key, children }: { key: string, children: React.ReactNode
             translate-x-[1rem] translate-y-[1.11rem]
         `} />
         {/* The box that shows element details */}
-        <article key={key} className={`
+        <article className={`
             w-[36rem]
             text-[1.4rem]
             my-[1rem] mx-0
@@ -63,13 +63,8 @@ interface TimelineElement {
     skills: string[]
 }
 
-const Article = ({ isOdd, experience }: { isOdd: boolean, experience: TimelineElement }) => {
+const Article = ({ fromTo, isOdd, experience }: { fromTo: string, isOdd: boolean, experience: TimelineElement }) => {
     const ParentArticle = isOdd ? LeftArticle : RightArticle
-    const formatter = new Intl.DateTimeFormat('en', { month: 'short', year: "numeric" })
-    const fromDate = formatter.format(new Date(experience.from))
-    const toDate = formatter.format(new Date(experience.to))
-    const fromTo = `${fromDate} - ${toDate}`
-
     return (
         <>
             {/* The circle in timeline */}
@@ -79,7 +74,7 @@ const Article = ({ isOdd, experience }: { isOdd: boolean, experience: TimelineEl
                 bg-[--foreground-section-title-rgb]
                 border-[1px] border-solid rounded-[50%]
             `} />
-            <ParentArticle key={fromTo}>
+            <ParentArticle>
                 <div className="font-mono">
                     {fromTo}
                 </div>
@@ -118,7 +113,13 @@ const Timeline = ({ id, title, elements }: { id: string, title: string, elements
                 p-[1rem] 
                 border-r-[1px] border-r-solid border-r-[--foreground-section-title-rgb]
             `}>
-                {elements.map((experience, index) => <Article isOdd={index % 2 === 0} experience={experience} />)}
+                {elements.map((experience, index) => {
+                    const formatter = new Intl.DateTimeFormat('en', { month: 'short', year: "numeric" })
+                    const fromDate = formatter.format(new Date(experience.from))
+                    const toDate = formatter.format(new Date(experience.to))
+                    const fromTo = `${fromDate} - ${toDate}`
+                    return <Article key={fromTo} fromTo={fromTo} isOdd={index % 2 === 0} experience={experience} />
+                })}
             </div>
         </div>
     </section>

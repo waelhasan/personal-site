@@ -22,10 +22,9 @@ export default function RootLayout({
     <html
       lang="ar"
       className={`
-        h-full
-        w-[100vw]
+        h-full w-[100vw]
         overflow-x-hidden
-        text-[--foreground-rgb]
+        text-[8px] sm:text-[10px] md:text-[12px] lg:text-[14px] xl:text-[16px] text-[--foreground-rgb]
         bg-gradient-to-b from-[--background-start-rgb] to-[--background-end-rgb]
       `}>
       <body

@@ -80,7 +80,7 @@ const Article = ({ isOdd, experience }: { isOdd: boolean, experience: TimelineEl
                 border-[1px] border-solid rounded-[50%]
             `} />
             <ParentArticle key={fromTo}>
-                <div style={{ fontFamily: "monospace" }}>
+                <div className="font-mono">
                     {fromTo}
                 </div>
                 <Important level={5} color="var(--darker-foreground-golden-rgb)">
@@ -94,7 +94,7 @@ const Article = ({ isOdd, experience }: { isOdd: boolean, experience: TimelineEl
                     <summary>
                         Read more
                     </summary>
-                    <h2 style={{ textAlign: "justify" }}>{experience.summary}</h2>
+                    <h2 className="text-justify">{experience.summary}</h2>
                     {experience.skills.map(skill => <Skill key={skill} title={skill} />)}
                 </details>
             </ParentArticle>

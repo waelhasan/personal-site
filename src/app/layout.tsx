@@ -21,26 +21,21 @@ export default function RootLayout({
   return (
     <html
       lang="ar"
-      style={{
-        height: "100%",
-        width: "100vw",
-        overflowX: "hidden",
-        fontFamily: "sans-serif",
-        color: "var(--foreground-rgb)",
-        background: `linear-gradient(
-                      to bottom,
-                      transparent,
-                      var(--background-end-rgb)) var(--background-start-rgb)`
-      }}>
+      className={`
+        h-full
+        w-[100vw]
+        overflow-x-hidden
+        text-[--foreground-rgb]
+        bg-gradient-to-b from-[--background-start-rgb] to-[--background-end-rgb]
+      `}>
       <body
-      className={sriracha.className}
-        style={{
-          position: "relative",
-          height: "100%",
-          width: "100%",
-          overflowX: "hidden",
-          scrollBehavior: "smooth"
-        }}>
+        className={`
+          ${sriracha.className}
+          relative
+          h-full w-full
+          overflow-x-hidden
+          scroll-smooth
+        `}>
         <UnderconstructionNotice />
         <Navbar />
         <FreedomSupportNotice />

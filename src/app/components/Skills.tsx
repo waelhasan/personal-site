@@ -17,7 +17,7 @@ export const Skill = ({ title }: Skill) => (
             fontStyle: "italic",
             border: "1px solid var(--foreground-rgb-important)",
             padding: "1rem",
-            margin: "10px 10px",
+            margin: "0.2rem",
             borderRadius: "10px",
             cursor: "pointer"
         }}>

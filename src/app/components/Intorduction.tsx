@@ -9,12 +9,7 @@ import FlippingContents from "./FlippingContents"
 import myPic from '../../../public/pic1.png'
 
 const Title = ({ title }: { title: string }) => (
-    <span style={{
-        textDecorationLine: "underline",
-        textDecorationStyle: "wavy",
-        textDecorationColor: "var(--foreground-decoration-rgb)",
-        textDecorationThickness: "5px"
-    }}>
+    <span className="underline decoration-wavy decoration-[--foreground-decoration-rgb] decoration-[5px]">
         <Important level={3} color="var(--foreground-golden-rgb)">
             {title}
         </Important>
@@ -54,11 +49,7 @@ const ValidRolesFlippingContents = () => (
                     <Important key={title} color="var(--foreground-golden-rgb)" level={4}>
                         {title}
                     </Important>
-                    <Icon style={{
-                        display: "inline-block",
-                        marginLeft: "1rem",
-                        color: "var(--foreground-rgb-important)"
-                    }} />
+                    <Icon className="inline-block ml-[1rem] text-[--foreground-rgb-important]" />
                 </>
             ))
         }
@@ -99,17 +90,15 @@ const P = ({ children }: { children: React.ReactNode }) => (
 )
 
 const Introduction = ({ fullName, nationality, title, accountsLinks }: IntrodcutionProps) => (
-    <div className="p-[5rem] xl:p-[3rem]"
-        style={{
-            maxWidth: "1200px",
-            marginBottom: "1rem",
-        }}>
+    <div className="
+        p-[5rem] xl:p-[3rem] 
+        max-w-[1200px]
+    ">
         <div id="introduction"
-            style={{
-                fontSize: "2rem",
-                textAlign: "left",
-                borderRadius: "50%"
-            }}>
+            className="
+                text-[2rem] text-left
+                rounded-[50%]
+            ">
             <p>
                 Hi there,
             </p>

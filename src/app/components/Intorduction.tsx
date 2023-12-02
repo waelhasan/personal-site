@@ -1,9 +1,11 @@
 import Image from "next/image"
-import { Important } from "./Important"
-import FlippingContents from "./FlippingContents"
 import { MyAccountsLinks, IMyAccountsLinksProps } from "./MyAccountsLinks"
 import { FaNode, FaReact } from "react-icons/fa"
 import { IoLogoJavascript } from "react-icons/io5"
+import { MdOutlineDoubleArrow } from "react-icons/md"
+import { HiMiniArrowDownTray } from "react-icons/hi2";
+import { Important } from "./Important"
+import FlippingContents from "./FlippingContents"
 import myPic from '../../../public/pic1.png'
 
 const Title = ({ title }: { title: string }) => (
@@ -20,23 +22,20 @@ const Title = ({ title }: { title: string }) => (
 )
 
 const DownloadCVButton = () => (
-    <a
-        className={`
+    <a className={`
+            inline-block
             transition ease-in-out delay-50 
             bg-lightSafeAlternate hover:bg-foregroundRgbImportant
             hover:text-black
+            px-[2rem] py-[1rem]
+            border-[1px] border-solid bordder-[--foreground-rgb-important]
+            rounded-[50px]
+            mt-[2rem] mr-[1rem] mb-0 ml-0
         `}
         download={true}
-        href="/cv.pdf"
-        style={{
-            display: "inline-block",
-            padding: "1rem 2rem",
-            border: "1px solid var(--foreground-rgb-important)",
-            borderRadius: "50px",
-            width: "fit-content",
-            margin: "2rem 1rem 0 0",
-        }}>
+        href="/cv.pdf">
         Download my CV
+        <HiMiniArrowDownTray className="hidden md:inline-block pl-[0.4rem]" />
     </a>
 )
 
@@ -89,7 +88,12 @@ interface IntrodcutionProps {
 }
 
 const P = ({ children }: { children: React.ReactNode }) => (
-    <p className="arrow-before">
+    <p>
+        <MdOutlineDoubleArrow className="
+            inline-block 
+            ml-[-2.5rem] mr-[0.5rem]
+            text-[2rem] text-[#795548] 
+        "/>
         {children}
     </p>
 )

@@ -4,6 +4,7 @@ import FlippingContents from "./FlippingContents"
 import { MyAccountsLinks, IMyAccountsLinksProps } from "./MyAccountsLinks"
 import { FaNode, FaReact } from "react-icons/fa"
 import { IoLogoJavascript } from "react-icons/io5"
+import myPic from '../../../public/pic1.png'
 
 const Title = ({ title }: { title: string }) => (
     <span style={{
@@ -114,7 +115,14 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
                 of total web development experience, <Important level={3}>6</Important> of them
                 using <Important level={3}>MERN</Important> stack.
             </P>
-            <Image width="500" height="529" src="/pic1.png" alt="Wael Hasan picture" style={{ float: "right" }} />
+            <div className={`
+                relative block 
+                md:float-right                
+                mx-auto my-[1rem] 
+                w-[35rem] h-[35rem] 
+            `}>
+                <Image fill src={myPic} alt="Wael Hasan picture" />
+            </div>
             <P>
                 I build a high quality Functional and Object Oriented code, plus being a testing enthusiast, which makes me
                 thrive to have a <Important level={3}>100%</Important> test coverage for all of my codes,
@@ -125,7 +133,7 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
                 I am searching for an opportunity for a <ValidRolesTypesFlippingContents />
                 <ValidRolesFlippingContents />, so if you have an open role that suits me,
                 it would be great to have a conversation about it, and have the ability to apply for it.
-                <br/>
+                <br />
                 <DownloadCVButton />
                 <MyAccountsLinks {...accountsLinks} />
             </P>

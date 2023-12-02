@@ -123,8 +123,8 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
                 or backend projects.
             </P>
             <P>
-                I am searching for an opportunity for a <ValidRolesTypesFlippingContents />
-                <ValidRolesFlippingContents />, so if you have an open role that suits me,
+                I am searching for an opportunity for a <ValidRolesFlippingContents /> 
+                ({' '} <ValidRolesTypesFlippingContents />), so if you have an open role that suits me,
                 it would be great to have a conversation about it, and have the ability to apply for it.
                 <br />
                 <DownloadCVButton />

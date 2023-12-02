@@ -7,20 +7,15 @@ interface Skill {
 export const Skill = ({ title }: Skill) => (
     <span
         className={`
+            inline-block
             transition ease-in-out delay-50 
             bg-lightSafeAlternate hover:bg-foregroundRgbImportant
-            hover:text-black
-        `}
-        style={{
-            display: "inline-block",
-            fontSize: "1rem",
-            fontStyle: "italic",
-            border: "1px solid var(--foreground-rgb-important)",
-            padding: "1rem",
-            margin: "0.2rem",
-            borderRadius: "10px",
-            cursor: "pointer"
-        }}>
+            italic text-[1rem] hover:text-black
+            border-[1px] border-solid border-[--foreground-rgb-important]
+            p-[0.7rem] m-[0.2rem]
+            rounded-[20px]
+            cursor-pointer
+        `}>
         {title}
     </span>
 )

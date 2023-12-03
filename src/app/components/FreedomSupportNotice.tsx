@@ -4,7 +4,7 @@ const FreedomSupportNotice = () => (
         fontSize: "1.5rem",
         width: "61%",
         margin: "0 auto",
-        zIndex: "100",
+        zIndex: "9",
         position: "relative",
         boxShadow: "0 0px 15px var(--foreground-rgb-important)",
         borderRadius: "30px",

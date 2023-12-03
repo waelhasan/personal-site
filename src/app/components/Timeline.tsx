@@ -14,7 +14,7 @@ const RightArticle = ({ children }: { children: React.ReactNode }) => (
             xl:w-fit w-[95%] max-w-fit
             text-[1.4rem]
             my-[1rem] mx-0
-            p-[1rem]
+            py-[1rem] pl-[2rem] xl:px-[1rem]
             border-[1px] border-solid border-[--foreground-section-title-rgb] rounded-b-[40px]
             bg-[--darker-bg-rgb]
             rounded-tl-[40px] xl:rounded-tl-none xl:rounded-tr-[40px]
@@ -38,6 +38,7 @@ const LeftArticle = ({ children }: { children: React.ReactNode }) => (
             xl:w-fit w-[95%] max-w-fit
             text-[1.4rem]
             my-[1rem] mx-0
+            py-[1rem] pl-[2rem]
             p-[1rem]
             border-[1px] border-solid border-[--foreground-section-title-rgb] rounded-b-[40px]
             bg-[--darker-bg-rgb]
@@ -76,11 +77,11 @@ const Article = ({ fromTo, isOdd, experience }: { fromTo: string, isOdd: boolean
                 <div className="font-mono">
                     {fromTo}
                 </div>
-                <Important level={5} color="var(--darker-foreground-golden-rgb)">
+                <Important level={4} color="var(--darker-foreground-golden-rgb)">
                     {experience.title}
                 </Important>
                 <br />
-                <Important level={6}>
+                <Important level={5}>
                     {experience.company.name + ` (${experience.type[0] + experience.type.slice(1).toLocaleLowerCase()})`}
                 </Important>
                 <details className="max-w-[35rem]">

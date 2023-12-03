@@ -1,6 +1,6 @@
 import info from "./info"
 import { Skills } from "./components/Skills"
-import Intorduction from "./components/Intorduction";
+import Intorduction from "./components/Introduction";
 import ReasonsToHireMeOrNotToHireMe from "./components/ReasonsToHireMeOrNotToHireMe";
 import Timeline from "./components/Timeline";
 

@@ -79,15 +79,15 @@ const Navbar = () => {
             />
             {/* For bigger screens */}
             <nav className={`
-                    hidden lg:flex flex-row justify-center
-                    top-0 relative
-                    z-10
-                    p-[1rem]
-                    gap-[3rem]
-                    bg-[--darker-bg-rgb]
-                    text-[1.5rem]
-                    w-full
-                `}>
+                hidden lg:flex flex-row justify-center
+                top-0 relative
+                z-10
+                p-[1rem]
+                gap-[3rem]
+                bg-[--darker-bg-rgb]
+                text-[1.5rem]
+                w-full
+            `}>
                 <Links />
             </nav>
 

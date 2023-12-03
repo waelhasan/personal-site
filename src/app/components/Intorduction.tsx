@@ -30,7 +30,7 @@ const DownloadCVButton = () => (
         download={true}
         href="/cv.pdf">
         Download my CV
-        <HiMiniArrowDownTray className="hidden md:inline-block pl-[0.4rem]" />
+        <HiMiniArrowDownTray className="hidden lg:inline-block pl-[0.4rem]" />
     </a>
 )
 

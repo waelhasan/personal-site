@@ -10,10 +10,9 @@ export interface IMyAccountsLinksProps {
 
 export const MyAccountsLinks = ({ linkedinUrl, githubUrl, npmUrl, bloggerUrl }: IMyAccountsLinksProps) => (
     <div className={`
-        inline-flex
+        inline-flex justify-center
         gap-[0.5rem] sm:gap-[1rem]
-        justify-center
-        text-[2rem] sm:text-[4rem] text-[--foreground-rgb-important]
+        text-[2rem] sm:text-[3rem] text-[--foreground-rgb-important]
         align-middle
     `}>
         <IconLink url={linkedinUrl} Icon={FaLinkedin} />

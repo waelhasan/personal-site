@@ -1,16 +1,14 @@
 const UnderconstructionNotice = () => (
-    <h1 style={{
-        position: "absolute",
-        fontSize: "2rem",
-        textAlign: "center",
-        color: "yellow",
-        border: "5px dashed yellow",
-        backgroundColor: "var(--red-color)",
-        padding: "1rem",
-        alignSelf: "flex-start",
-        transform: "translate(-45%, 50%) rotateZ(-45deg)",
-        width: "100%"
-    }}>
+    <h1 className={`
+        absolute
+        w-full
+        text-[2rem] text-center text-[yellow]
+        border-[5px] border-dashed border-[yellow]
+        bg-[--red-color]
+        p-[1rem]
+        self-start
+        translate-x-[-45%] translate-y-[50%] rotate-[-45deg]
+    `}>
         <span style={{ fontSize: "3rem" }}>
             ⚠️
         </span>

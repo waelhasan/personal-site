@@ -22,11 +22,11 @@ const LanguageSwitcher = () => (
 
 const CustomizedLink = ({
     href,
-    onClick,
+    onClick = () => { },
     children
 }: {
     href: string,
-    onClick: () => void
+    onClick?: () => void
     children: React.ReactNode
 }) => (
     <a href={href}
@@ -39,13 +39,30 @@ const CustomizedLink = ({
     </a>
 )
 
-const Navbar = () => {
-    const [isOpen, setIsOpen] = useState(true)
-    const toggleOpen = () => setIsOpen(isOpen => !isOpen)
+const Links = ({ onClick }: { onClick?: () => void }) => (
+    <>
+        {/* <LanguageSwitcher /> */}
+        <CustomizedLink href="#introduction" onClick={onClick}>
+            Introduction
+        </CustomizedLink>
+        <CustomizedLink href="#why-to-hire-me" onClick={onClick}>
+            Why to hire me?
+        </CustomizedLink>
+        <CustomizedLink href="#skills" onClick={onClick}>
+            Skills
+        </CustomizedLink>
+        <CustomizedLink href="#employment-history" onClick={onClick}>
+            Employment history
+        </CustomizedLink>
+        <CustomizedLink href="#main-projects" onClick={onClick}>
+            Main projects
+        </CustomizedLink>
+    </>
+)
 
-    useLayoutEffect(() => {
-        setIsOpen(window.innerWidth > 1024)
-    }, [])
+const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false)
+    const toggleOpen = () => setIsOpen(isOpen => !isOpen)
 
     return (
         <header className={`
@@ -59,10 +76,10 @@ const Navbar = () => {
                 className="block lg:hidden text-[3.5rem] p-[0.5rem]"
                 onClick={toggleOpen}
             />
-            {isOpen &&
-                <nav className={`
-                    flex flex-col lg:flex-row justify-center
-                    absolute top-[3.5rem] lg:top-0 lg:relative
+            {/* For bigger screens */}
+            <nav className={`
+                    hidden lg:flex flex-row justify-center
+                    top-0 relative
                     z-10
                     p-[1rem]
                     gap-[3rem]
@@ -70,22 +87,22 @@ const Navbar = () => {
                     text-[1.5rem]
                     w-full
                 `}>
-                    {/* <LanguageSwitcher /> */}
-                    <CustomizedLink href="#introduction" onClick={toggleOpen}>
-                        Introduction
-                    </CustomizedLink>
-                    <CustomizedLink href="#why-to-hire-me" onClick={toggleOpen}>
-                        Why to hire me?
-                    </CustomizedLink>
-                    <CustomizedLink href="#skills" onClick={toggleOpen}>
-                        Skills
-                    </CustomizedLink>
-                    <CustomizedLink href="#employment-history" onClick={toggleOpen}>
-                        Employment history
-                    </CustomizedLink>
-                    <CustomizedLink href="#main-projects" onClick={toggleOpen}>
-                        Main projects
-                    </CustomizedLink>
+                <Links />
+            </nav>
+
+            {/* For smaller screens */}
+            {isOpen &&
+                <nav className={`
+                    lg:hidden flex flex-col justify-center
+                    absolute top-[3.5rem]
+                    z-10
+                    p-[1rem]
+                    gap-[3rem]
+                    bg-[--darker-bg-rgb]
+                    text-[1.5rem]
+                    w-full
+                `}>
+                    <Links onClick={toggleOpen} />
                 </nav>
             }
         </header>

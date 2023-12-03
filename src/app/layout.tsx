@@ -24,7 +24,7 @@ export default function RootLayout({
       className={`
         h-full w-[100vw]
         overflow-x-hidden
-        text-[8px] sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[--foreground-rgb]
+        text-[11px] sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[--foreground-rgb]
         bg-gradient-to-b from-[--background-start-rgb] to-[--background-end-rgb]
       `}>
       <body

@@ -71,6 +71,7 @@ const Navbar = () => {
             z-10
             w-full
             bg-[--darker-bg-rgb]
+            mb-[1rem]
         `}>
             <CiMenuBurger
                 className="block lg:hidden text-[3.5rem] p-[0.5rem]"

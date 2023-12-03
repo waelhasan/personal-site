@@ -11,7 +11,7 @@ const UnderconstructionNotice = () => (
         origin-center rotate-[-45deg] translate-x-[-40%] translate-y-[-48%]
     `}>
         <h1 className={`md:p-[1rem]`}>
-            <span style={{ fontSize: "3rem" }}>
+            <span className="text-[2rem] lg:text-[3rem]">
                 ⚠️
             </span>
             <br />

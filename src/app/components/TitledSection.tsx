@@ -29,6 +29,7 @@ const TitledSection = ({
                     position: "absolute",
                     left: "50%",
                     top: "1rem",
+                    width: "max-content",
                     transform: "translateX(-50%)",
                     borderBottom: `1px solid ${titleColor}`,
                     borderRadius: "50%",

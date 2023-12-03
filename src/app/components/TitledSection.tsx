@@ -11,30 +11,28 @@ const TitledSection = ({
 }) => {
     const titleColor = danger ? "rgb(177 49 112)" : "var(--foreground-section-title-rgb)"
     return (
-        <figure style={{
-            position: "relative",
-            border: `1px solid ${titleColor}`,
-            borderRadius: "30px",
-            padding: "2rem",
-            margin: "2rem",
-            background: `var(${danger ? '--light-danger-alternate-bg' : '--light-safe-alternate-bg'})`
-        }}>
-            <div style={{
-                marginTop: "5rem",
-                display: "flex",
-                flexWrap: "wrap",
-                maxWidth: "900px"
+        <figure className="
+                relative
+                border-[1px] border-solid
+                rounded-[30px]
+                p-[2rem] m-[2rem]
+            "
+            style={{
+                borderColor: titleColor,
+                background: `var(${danger ? '--light-danger-alternate-bg' : '--light-safe-alternate-bg'})`
             }}>
-                <figcaption style={{
-                    position: "absolute",
-                    left: "50%",
-                    top: "1rem",
-                    width: "max-content",
-                    transform: "translateX(-50%)",
-                    borderBottom: `1px solid ${titleColor}`,
-                    borderRadius: "50%",
-                    padding: "1.2rem 2rem"
-                }}>
+            <div className="mt-[5rem]">
+                <figcaption className="
+                        absolute left-[50%] top-[1rem]
+                        w-max
+                        rounded-[50%]
+                        py-[1.2rem] px-[2rem]
+                        translate-x-[-50%]
+                        border-b-[1px] border-b-solid
+                    "
+                    style={{
+                        borderBottomColor: titleColor
+                    }}>
                     <Important level={4} color={titleColor}>{title}</Important>
                 </figcaption>
                 <div className="flex flex-wrap justify-evenly md:justify-center lg:justify-start">

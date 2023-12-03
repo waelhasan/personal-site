@@ -12,7 +12,9 @@ const Footer = () => (
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        gap: "1rem"
+        gap: "1rem",
+        padding: "2rem",
+        textAlign: "center"
     }}>
         <span>
             This site is built using these technologies:

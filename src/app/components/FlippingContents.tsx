@@ -30,15 +30,16 @@ const FlippingContents = ({
     }, [contents])
 
     return (
-        <div style={{
-            height: "3rem",
-            overflow: "hidden",
-            position: "relative",
-            top: ".6rem",
-            width,
-            display: "inline-flex",
-            justifyContent
-        }}>
+        <div className={`
+            h-[3rem]
+            overflow-hidden
+            relative inline-flex
+            align-bottom
+        `}
+            style={{
+                width,
+                justifyContent
+            }}>
             {contents.map((content, index) => (
                 <div
                     key={index}

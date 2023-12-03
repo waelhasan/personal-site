@@ -38,7 +38,7 @@ const ValidRolesFlippingContents = () => (
     <FlippingContents
         direction="bottom"
         intervalMS={2000}
-        width="28rem"
+        width="23rem"
         contents={
             [
                 { title: "Backend Nodejs developer", Icon: FaNode },
@@ -51,21 +51,6 @@ const ValidRolesFlippingContents = () => (
                     </Important>
                     <Icon className="inline-block ml-[1rem] text-[--foreground-rgb-important]" />
                 </>
-            ))
-        }
-    />
-)
-
-const ValidRolesTypesFlippingContents = () => (
-    <FlippingContents
-        direction="left"
-        intervalMS={1000}
-        width="7.1rem"
-        contents={
-            ["Remote", "Onsite"].map(title => (
-                <Important key={title} color="var(--foreground-golden-rgb)" level={4}>
-                    {title}
-                </Important>
             ))
         }
     />
@@ -96,7 +81,7 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
     ">
         <div id="introduction"
             className="
-                text-[2rem] text-left
+                text-[1.5rem] lg:text-[2rem] text-left
                 rounded-[50%]
             ">
             <p>
@@ -112,7 +97,7 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
                 relative block 
                 md:float-right                
                 mx-auto my-[1rem] 
-                w-[35rem] h-[35rem] 
+                w-[25rem] h-[25rem] lg:w-[32rem] lg:h-[32rem] 
             `}>
                 <Image fill src={myPic} alt="Wael Hasan picture" />
             </div>
@@ -123,8 +108,8 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
                 or backend projects.
             </P>
             <P>
-                I am searching for an opportunity for a <ValidRolesFlippingContents /> 
-                ({' '} <ValidRolesTypesFlippingContents />), so if you have an open role that suits me,
+                I am searching for an opportunity for a <ValidRolesFlippingContents />,
+                whether it is onsite or remote, so if you have an open role that suits me,
                 it would be great to have a conversation about it, and have the ability to apply for it.
                 <br />
                 <DownloadCVButton />

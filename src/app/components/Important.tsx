@@ -1,11 +1,11 @@
 
 export const LevelsToFontSizeMap = {
-    1: "5rem",
-    2: "4rem",
-    3: "3rem",
-    4: "2rem",
-    5: "1.5rem",
-    6: "1rem"
+    1: "3rem",
+    2: "2.5rem",
+    3: "2rem",
+    4: "1.5rem",
+    5: "1rem",
+    6: "0.5rem"
 }
 
 export const Important = ({ level, color = "var(--foreground-rgb-important)", children }: {

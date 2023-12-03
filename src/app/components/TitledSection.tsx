@@ -37,7 +37,9 @@ const TitledSection = ({
                 }}>
                     <Important level={4} color={titleColor}>{title}</Important>
                 </figcaption>
-                {children}
+                <div className="flex flex-wrap justify-evenly md:justify-center lg:justify-start">
+                    {children}
+                </div>
             </div>
         </figure>
     )

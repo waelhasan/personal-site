@@ -1,20 +1,23 @@
 const UnderconstructionNotice = () => (
-    <h1 className={`
-        absolute
-        w-full
-        text-[2rem] text-center text-[yellow]
+    <div className={`
+        flex
+        w-[40rem]
+        justify-center
+        absolute top-[4rem] left-0 
+        z-[100]
+        text-[1.5rem] text-center text-[yellow]
         border-[5px] border-dashed border-[yellow]
         bg-[--red-color]
-        p-[1rem]
-        self-start
-        translate-x-[-45%] translate-y-[50%] rotate-[-45deg]
+        origin-center rotate-[-45deg] translate-x-[-40%] translate-y-[-48%]
     `}>
-        <span style={{ fontSize: "3rem" }}>
-            ⚠️
-        </span>
-        <br />
-        Under construction
-    </h1>
+        <h1 className={`md:p-[1rem]`}>
+            <span style={{ fontSize: "3rem" }}>
+                ⚠️
+            </span>
+            <br />
+            Under construction
+        </h1>
+    </div>
 )
 
 export default UnderconstructionNotice

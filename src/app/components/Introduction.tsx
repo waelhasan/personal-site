@@ -76,7 +76,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
 
 const Introduction = ({ fullName, nationality, title, accountsLinks }: IntrodcutionProps) => (
     <div className="
-        p-[5rem] xl:p-[3rem] 
+        p-[3rem] 
         max-w-[1200px]
     ">
         <div id="introduction"

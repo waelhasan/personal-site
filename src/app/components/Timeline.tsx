@@ -100,7 +100,7 @@ const Timeline = ({ id, title, elements }: { id: string, title: string, elements
     <section id={id} className="w-full p-[1rem]">
         <h1 className={`
             absolute left-[50%] -translate-x-1/2
-            rounded-[50%] border-b-[1px] border-b-solid border-b-[foreground-section-title-rgb]
+            rounded-[50%] border-b-[1px] border-b-solid border-b-[--foreground-section-title-rgb]
             w-max
             p-[1rem]
         `}>

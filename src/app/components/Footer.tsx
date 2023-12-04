@@ -23,7 +23,7 @@ const Footer = () => (
             direction="top"
             width="12rem"
             contents={
-                ["Typescript", "HTML5", "CSS3", "Reactjs", "Nextjs"].map(tool => (
+                ["Typescript", "HTML5", "CSS3", "Reactjs", "Nextjs", 'Tailwind CSS', 'Git'].map(tool => (
                     <Important
                         key={tool}
                         color="var(--foreground-section-title-rgb)"

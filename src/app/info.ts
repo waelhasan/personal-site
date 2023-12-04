@@ -8,8 +8,17 @@ export default {
     npmUrl: "https://www.npmjs.com/~whasan/",
     bloggerUrl: "https://waelhasan87.blogspot.com/"
   },
-  technicalSkills: ['HTML5', 'CSS3', 'Javascript', 'Typescript', 'Nodejs', 'Expressjs', 'RESTful API design', 'Graphql', 'Reactjs', 'Redux', 'Nextjs', 'Jest', 'Cypress', 'Storybook', 'SQL', 'Sequelize ORM', 'Mongodb', 'Mongoose ODM', 'Contentful', 'Git', 'Github', 'Linux', 'Bash', 'Design patterns', 'Gulp', 'Socket.io', 'Deepstream', 'Redis', 'Docker', 'AWS', 'TypeORM', 'JSON', 'JSON schema', 'Mocha', 'Chai', 'Enzyme', 'SASS', 'Yeoman'],
-  softSkills: ['Teamwork', 'Leadership', 'Humility', 'Problem-Solving', 'Self-starter', 'Pragmatic', 'Communication', 'Collaboration', 'Mentorship', 'Lifelong learner'],
+  technicalSkills: [
+    'HTML5', 'CSS3', 'Javascript', 'Typescript', 'Nodejs', 'Expressjs', 'RESTful API design',
+    'Graphql', 'Reactjs', 'Redux', 'Nextjs', 'Jest', 'Cypress', 'Storybook', 'SQL', 'Sequelize ORM',
+    'Mongodb', 'Mongoose ODM', 'Contentful', 'Git', 'Github', 'Linux', 'Bash', 'Design patterns',
+    'Gulp', 'Socket.io', 'Deepstream', 'Redis', 'Docker', 'JSON', 'JSON schema', 'Mocha', 'Chai',
+    'Enzyme', 'Tailwind CSS', 'SASS', 'Yeoman'
+  ],
+  softSkills: [
+    'Teamwork', 'Leadership', 'Humility', 'Problem-Solving', 'Self-starter', 'Pragmatic',
+    'Communication', 'Collaboration', 'Mentorship', 'Lifelong learner'
+  ],
   reasonsToHireMe: [
     "Passion for being a better software engineer",
     "Passion for learning more about technology in general and JS in particular",

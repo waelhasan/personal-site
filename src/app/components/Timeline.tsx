@@ -16,7 +16,7 @@ const RightArticle = ({ children }: { children: React.ReactNode }) => (
             my-[1rem] mx-0
             py-[1rem] pl-[2rem] xl:px-[1rem]
             border-[1px] border-solid border-[--foreground-section-title-rgb] rounded-b-[40px]
-            bg-[--darker-bg-rgb]
+            bg-[--light-safe-alternate-bg]
             rounded-tl-[40px] xl:rounded-tl-none xl:rounded-tr-[40px]
             xl:translate-x-[calc(100%+2rem)]
         `}>
@@ -41,7 +41,7 @@ const LeftArticle = ({ children }: { children: React.ReactNode }) => (
             py-[1rem] pl-[2rem]
             p-[1rem]
             border-[1px] border-solid border-[--foreground-section-title-rgb] rounded-b-[40px]
-            bg-[--darker-bg-rgb]
+            bg-[--light-safe-alternate-bg]
             xl:text-right
             rounded-tl-[40px]
         `}>

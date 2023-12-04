@@ -25,7 +25,6 @@ const DownloadCVButton = () => (
             px-[2rem] py-[1rem]
             border-[1px] border-solid bordder-[--foreground-rgb-important]
             rounded-[50px]
-            mt-[2rem] mr-[1rem] mb-0 ml-0
         `}
         download={true}
         href="/cv.pdf">
@@ -78,6 +77,7 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
     <div className="
         p-[3rem] 
         max-w-[1200px]
+        flex flex-col gap-[1rem]
     ">
         <div id="introduction"
             className="
@@ -112,9 +112,14 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
                 whether it is onsite or remote, so if you have an open role that suits me,
                 it would be great to have a conversation about it, and have the ability to apply for it.
                 <br />
-                <DownloadCVButton />
-                <MyAccountsLinks {...accountsLinks} />
             </P>
+        </div>
+        <div className="
+            flex gap-[1rem] 
+            text-[1.5rem] lg:text-[2rem] text-left
+        ">
+            <DownloadCVButton />
+            <MyAccountsLinks {...accountsLinks} />
         </div>
     </div>
 )

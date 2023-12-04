@@ -1,6 +1,6 @@
 "use client"
 
-import { useLayoutEffect, useState } from "react"
+import { useState } from "react"
 import { CiMenuBurger } from "react-icons/ci"
 
 const LanguageSwitcher = () => (

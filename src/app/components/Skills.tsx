@@ -38,7 +38,7 @@ export const Skills = (skills: Skills) => (
     <div id="skills" className="flex flex-col xl:flex-row">
         <div className="flex-1">
             <TitledSection title="Technical skills">
-                <div className="flex flex-wrap justify-evenly">
+                <div className="flex flex-wrap justify-evenly gap-[0.5rem]">
                     {skills.technicalSkills.map(({ title, years }) =>
                         <Skill key={title} title={title} years={years} />)}
                 </div>
@@ -46,7 +46,9 @@ export const Skills = (skills: Skills) => (
         </div>
         <div className="flex-1">
             <TitledSection title="Soft skills">
-                {skills.softSkills.map(skill => <Skill key={skill} title={skill} />)}
+                <div className="flex flex-wrap justify-center gap-[0.25rem]">
+                    {skills.softSkills.map(skill => <Skill key={skill} title={skill} />)}
+                </div>
             </TitledSection >
         </div>
     </div>

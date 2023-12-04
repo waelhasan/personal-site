@@ -67,19 +67,19 @@ const Navbar = () => {
     return (
         <header className={`
             flex flex-col items-end
-            sticky right-0 top-0 lg:left-0 
+            sticky right-0 top-0 xl:left-0 
             z-10
             w-full
             bg-[--darker-bg-rgb]
             mb-[1rem]
         `}>
             <CiMenuBurger
-                className="block lg:hidden text-[3.5rem] p-[0.5rem]"
+                className="block xl:hidden text-[3.5rem] p-[0.5rem]"
                 onClick={toggleOpen}
             />
             {/* For bigger screens */}
             <nav className={`
-                hidden lg:flex flex-row justify-center
+                hidden xl:flex flex-row justify-center
                 top-0 relative
                 z-10
                 p-[1rem]
@@ -94,7 +94,7 @@ const Navbar = () => {
             {/* For smaller screens */}
             {isOpen &&
                 <nav className={`
-                    lg:hidden flex flex-col justify-center
+                    xl:hidden flex flex-col justify-center
                     absolute top-[3.5rem]
                     z-10
                     p-[1rem]

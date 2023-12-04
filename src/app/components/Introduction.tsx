@@ -76,12 +76,12 @@ const P = ({ children }: { children: React.ReactNode }) => (
 const Introduction = ({ fullName, nationality, title, accountsLinks }: IntrodcutionProps) => (
     <div className="
         p-[3rem] 
-        max-w-[1200px]
+        w-[90%] max-w-6xl
         flex flex-col gap-[1rem]
     ">
         <div id="introduction"
             className="
-                text-[1.5rem] lg:text-[2rem] text-left
+                text-[1.5rem] lg:text-[1.75rem] text-left
                 rounded-[50%]
             ">
             <p>

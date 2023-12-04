@@ -94,7 +94,7 @@ const Article = ({ fromTo, isOdd, experience }: { fromTo: string, isOdd: boolean
 }
 
 const Timeline = ({ id, title, elements }: { id: string, title: string, elements: TimelineElement[] }) => (
-    <section id={id} className="w-full p-[1rem]">
+    <section id={id} className="w-full p-[1rem] max-w-4xl">
         <h1 className={`
             absolute left-[50%] -translate-x-1/2
             rounded-[50%] border-b-[1px] border-b-solid border-b-[--foreground-section-title-rgb]

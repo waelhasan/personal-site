@@ -19,7 +19,7 @@ const TitledSection = ({
             style={{
                 background: `var(${danger ? '--light-danger-alternate-bg' : '--light-safe-alternate-bg'})`
             }}>
-            <div className="mt-[5rem]">
+            <div className="mt-[5rem] max-w-4xl">
                 <figcaption className="
                         absolute left-[50%] top-[1rem]
                         w-max

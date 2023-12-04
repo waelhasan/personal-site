@@ -13,12 +13,10 @@ const TitledSection = ({
     return (
         <figure className="
                 relative
-                border-[1px] border-solid
                 rounded-[30px]
                 p-[2rem] m-[2rem]
             "
             style={{
-                borderColor: titleColor,
                 background: `var(${danger ? '--light-danger-alternate-bg' : '--light-safe-alternate-bg'})`
             }}>
             <div className="mt-[5rem]">

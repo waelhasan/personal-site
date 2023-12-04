@@ -84,13 +84,10 @@ const Article = ({ fromTo, isOdd, experience }: { fromTo: string, isOdd: boolean
                 <Important level={5}>
                     {experience.company.name + ` (${experience.type[0] + experience.type.slice(1).toLocaleLowerCase()})`}
                 </Important>
-                <details className="max-w-[35rem]">
-                    <summary>
-                        Read more
-                    </summary>
+                <div className="max-w-[35rem]">
                     <h2 className="text-justify">{experience.summary}</h2>
                     {experience.skills.map(skill => <Skill key={skill} title={skill} />)}
-                </details>
+                </div>
             </ParentArticle>
         </>
     )

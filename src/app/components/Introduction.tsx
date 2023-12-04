@@ -74,16 +74,13 @@ const P = ({ children }: { children: React.ReactNode }) => (
 )
 
 const Introduction = ({ fullName, nationality, title, accountsLinks }: IntrodcutionProps) => (
-    <div className="
+    <div id="introduction" className="
         p-[3rem] 
         w-[90%] max-w-6xl
         flex flex-col gap-[1rem]
+        text-[1.5rem] lg:text-[1.75rem] text-left
     ">
-        <div id="introduction"
-            className="
-                text-[1.5rem] lg:text-[1.75rem] text-left
-                rounded-[50%]
-            ">
+        <div>
             <p>
                 Hi there,
             </p>

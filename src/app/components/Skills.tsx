@@ -2,10 +2,18 @@ import TitledSection from "./TitledSection"
 
 interface Skill {
     title: string
-    years?: number
+    experience?: number
 }
 
-export const Skill = ({ title, years }: Skill) => (
+const FlexLi: React.FunctionComponent<{ children: any }> = ({ children }) => (
+    <li className="w-full">
+        <span className="w-[calc(100%-10px)] gap-[10px] inline-flex items-center justify-between">
+            {children}
+        </span>
+    </li>
+)
+
+export const Skill = ({ title, experience }: Skill) => (
     <span className={`
         inline-block
         transition ease-in-out delay-50 
@@ -16,12 +24,22 @@ export const Skill = ({ title, years }: Skill) => (
         rounded-[20px]
         cursor-pointer
     `}>
-        {title}
-        {years && (
-            <>
-                <br />
-                <meter className="text-[2rem]" min={0} max={8} low={1} high={2} value={years} />
-            </>
+        <div className="text-center" style={{
+            textDecorationLine: experience ? "underline" : "none"
+        }}>
+            {title}
+        </div>
+        {experience && (
+            <ul>
+                <FlexLi>
+                    <span>Years:</span>
+                    <span>{experience}</span>
+                </FlexLi>
+                <FlexLi>
+                    Level
+                    <meter className="text-[2rem]" min={0} max={8} low={1} high={2} value={experience} />
+                </FlexLi>
+            </ul>
         )}
     </span>
 )
@@ -29,7 +47,7 @@ export const Skill = ({ title, years }: Skill) => (
 interface Skills {
     technicalSkills: {
         title: string,
-        years: number
+        experience: number
     }[]
     softSkills: string[]
 }
@@ -39,8 +57,8 @@ export const Skills = (skills: Skills) => (
         <div className="flex-1">
             <TitledSection title="Technical skills">
                 <div className="flex flex-wrap justify-evenly gap-[0.5rem]">
-                    {skills.technicalSkills.map(({ title, years }) =>
-                        <Skill key={title} title={title} years={years} />)}
+                    {skills.technicalSkills.map(({ title, experience }) =>
+                        <Skill key={title} title={title} experience={experience} />)}
                 </div>
             </TitledSection >
         </div>

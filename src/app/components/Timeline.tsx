@@ -1,5 +1,5 @@
 import { Important } from "./Important"
-import Skill from "./Skill"
+import { Skill } from "./Skill"
 
 const RightArticle = ({ children }: { children: React.ReactNode }) => (
     <>

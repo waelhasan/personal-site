@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 
-interface Skill {
+export interface ISkill {
     title: string
     years?: number
     level?: number
@@ -16,14 +16,14 @@ const FlexLi: React.FunctionComponent<{ children: any }> = ({ children }) => (
     </li>
 )
 
-const Skill = ({ title, years, level }: Skill) => {
+export const Skill = ({ title, years, level }: Skill) => {
     const [currentLevel, setCurrentLevel] = useState(0)
 
     const incrementCurrentLevel = () => {
         const levelOrZero = level || 0
         setTimeout(() => {
             setCurrentLevel(currentLevel =>
-             currentLevel < levelOrZero ?
+                currentLevel < levelOrZero ?
                     currentLevel + 3 :
                     levelOrZero)
         }, 20)
@@ -72,6 +72,4 @@ const Skill = ({ title, years, level }: Skill) => {
         </span>
     )
 }
-
-export default Skill
 

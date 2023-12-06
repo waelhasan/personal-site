@@ -48,8 +48,16 @@ export default {
     { title: 'Yeoman', years: 1, level: 70 }
   ],
   softSkills: [
-    'Teamwork', 'Leadership', 'Humility', 'Problem-Solving', 'Self-starter', 'Pragmatic',
-    'Communication', 'Collaboration', 'Mentorship', 'Lifelong learner'
+    { title: "Teamwork", years: 8, level: 100 },
+    { title: "Leadership", years: 2, level: 65 },
+    { title: "Humility", years: 8, level: 100 },
+    { title: "Problem-Solving", years: 8, level: 75 },
+    { title: "Self-starter", years: 4, level: 80 },
+    { title: "Pragmatic", years: 8, level: 90 },
+    { title: "Communication", years: 4, level: 80 },
+    { title: "Collaboration", years: 8, level: 100 },
+    { title: "Mentorship", years: 1, level: 70 },
+    { title: "Lifelong learner", years: 8, level: 90 }
   ],
   reasonsToHireMe: [
     "Passion for being a better software engineer",

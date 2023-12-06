@@ -1,13 +1,9 @@
-import Skill from "./Skill"
+import { Skill, ISkill } from "./Skill"
 import TitledSection from "./TitledSection"
 
-interface Skills {
-    technicalSkills: {
-        title: string
-        years: number
-        level: number
-    }[]
-    softSkills: string[]
+interface ISkills {
+    technicalSkills: ISkill[]
+    softSkills: ISkill[]
 }
 
 export const Skills = (skills: Skills) => (
@@ -23,7 +19,8 @@ export const Skills = (skills: Skills) => (
         <div className="flex-1">
             <TitledSection title="Soft skills">
                 <div className="flex flex-wrap justify-center gap-[0.25rem]">
-                    {skills.softSkills.map(skill => <Skill key={skill} title={skill} />)}
+                    {skills.softSkills.map(({ title, years, level }) =>
+                        <Skill key={title} title={title} years={years} level={level} />)}
                 </div>
             </TitledSection >
         </div>

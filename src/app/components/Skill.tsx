@@ -62,7 +62,7 @@ const Skill = ({ title, years, level }: Skill) => {
                             min={0}
                             max={100}
                             low={30}
-                            high={50}
+                            high={60}
                             optimum={100}
                             value={currentLevel}
                         />

@@ -43,11 +43,12 @@ export const Skill = ({ title, years, level }: ISkill) => {
             inline-block
             transition ease-in-out delay-50 
             bg-lightSafeAlternate hover:bg-foregroundRgbImportant
-            text-[1rem] hover:text-black
+            text-[1.5rem] sm:text-[1rem] hover:text-black
             border-[1px] border-solid border-[--foreground-rgb-important]
             p-[0.7rem] m-[0.2rem]
             rounded-[20px]
             cursor-pointer
+            w-full sm:w-fit
         `}>
             <div className="text-center" style={{
                 textDecorationLine: level ? "underline" : "none"
@@ -63,7 +64,7 @@ export const Skill = ({ title, years, level }: ISkill) => {
                     <FlexLi>
                         Level
                         <meter
-                            className="text-[2rem]"
+                            className="text-[3rem] sm:text-[2rem]"
                             min={0}
                             max={100}
                             low={30}

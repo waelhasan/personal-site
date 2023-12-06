@@ -1,6 +1,7 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import useIsVisible from "./useIsVisible"
 
 export interface ISkill {
     title: string
@@ -16,8 +17,10 @@ const FlexLi: React.FunctionComponent<{ children: any }> = ({ children }) => (
     </li>
 )
 
-export const Skill = ({ title, years, level }: Skill) => {
+export const Skill = ({ title, years, level }: ISkill) => {
     const [currentLevel, setCurrentLevel] = useState(0)
+    const ref = useRef(null)
+    const isVisible = useIsVisible(ref)
 
     const incrementCurrentLevel = () => {
         const levelOrZero = level || 0
@@ -30,11 +33,13 @@ export const Skill = ({ title, years, level }: Skill) => {
     }
 
     useEffect(() => {
-        incrementCurrentLevel()
-    }, [currentLevel])
+        isVisible ?
+            incrementCurrentLevel() :
+            setCurrentLevel(0)
+    }, [currentLevel, isVisible])
 
     return (
-        <span className={`
+        <span ref={ref} className={`
             inline-block
             transition ease-in-out delay-50 
             bg-lightSafeAlternate hover:bg-foregroundRgbImportant

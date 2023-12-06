@@ -6,7 +6,7 @@ interface ISkills {
     softSkills: ISkill[]
 }
 
-export const Skills = (skills: Skills) => (
+export const Skills = (skills: ISkills) => (
     <div id="skills" className="flex flex-col xl:flex-row">
         <div className="flex-1">
             <TitledSection title="Technical skills">

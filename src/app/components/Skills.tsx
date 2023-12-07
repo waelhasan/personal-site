@@ -27,19 +27,18 @@ const SkillsGroup = ({ title, skills }: { title: string, skills: ISkill[] }) => 
     }, [])
 
     return (
-        <div className="flex-1 inline-flex mx-auto justify-center">
-            <TitledSection title={title}>
-                <search className="
+        <TitledSection title={title}>
+            <search className="
                     flex justify-center flex-col md:flex-row gap-[1rem] items-center
                     mb-[1rem]
                 ">
-                    <label htmlFor="skills-search">
-                        Search by skill name
-                    </label>
-                    <input
-                        id="skil"
-                        type="search"
-                        className="
+                <label htmlFor="skills-search">
+                    Search by skill name
+                </label>
+                <input
+                    id="skil"
+                    type="search"
+                    className="
                             w-[70%] max-w-[15rem] 
                             text-[--foreground-rgb] 
                             p-[0.5rem] 
@@ -47,16 +46,15 @@ const SkillsGroup = ({ title, skills }: { title: string, skills: ISkill[] }) => 
                             border-[1px] border-solid border-[--foreground-section-title-rgb]
                             bg-[--lighter-safe-alternate-bg]
                         "
-                        value={filter}
-                        onChange={filterBySkillName} 
-                        placeholder="Enter skill name"/>
-                </search>
-                <div className="flex flex-wrap justify-evenly gap-[0.5rem] w-full">
-                    {filteredSkills.map(({ title, years, level }) =>
-                        <Skill key={title} title={title} years={years} level={level} />)}
-                </div>
-            </TitledSection >
-        </div>
+                    value={filter}
+                    onChange={filterBySkillName}
+                    placeholder="Enter skill name" />
+            </search>
+            <div className="flex flex-wrap justify-evenly gap-[0.5rem] w-full">
+                {filteredSkills.map(({ title, years, level }) =>
+                    <Skill key={title} title={title} years={years} level={level} />)}
+            </div>
+        </TitledSection >
     )
 }
 

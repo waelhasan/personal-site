@@ -16,7 +16,6 @@ const HorizontalLinks = ({ children }: { children: ReactNode }) => (
     <div className="
         inline-flex
         gap-[0.5rem] sm:gap-[1rem]
-        
     ">
         {children}
     </div>

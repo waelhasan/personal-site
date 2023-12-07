@@ -18,7 +18,9 @@ export default function Home() {
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
-      alignItems: "center"
+      alignItems: "center",
+      maxWidth: "2000px",
+      margin: "0 auto"
     }}>
       <Intorduction
         fullName={info.fullName}

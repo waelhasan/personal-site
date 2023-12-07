@@ -7,7 +7,7 @@ interface ReasonsToHireMeOrNotToHireMeProps {
 
 const ReasonsToHireMeOrNotToHireMe = ({ reasonsNotToHireMe, reasonsToHireMe }: ReasonsToHireMeOrNotToHireMeProps) => (
     <div id="why-to-hire-me" className="flex flex-col xl:flex-row">
-        <div className="flex-1">
+        <div className="flex-1 inline-flex mx-auto justify-center">
             <TitledSection title="Why to you hire me?">
                 <ul style={{ padding: "0 1rem" }}>
                     {reasonsToHireMe.map(reason => <li key={reason} style={{
@@ -17,7 +17,7 @@ const ReasonsToHireMeOrNotToHireMe = ({ reasonsNotToHireMe, reasonsToHireMe }: R
                 </ul>
             </TitledSection >
         </div>
-        <div className="flex-1">
+        <div className="flex-1 inline-flex mx-auto justify-center">
             <TitledSection title="Why not to hire me?" danger={true}>
                 <ul style={{ padding: "0 1rem" }}>
                     {reasonsNotToHireMe.map(reason => <li key={reason} style={{

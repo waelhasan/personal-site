@@ -21,6 +21,7 @@
   --footer-bg-rg: rgb(122, 174, 193);
   --light-safe-alternate-bg: rgb(225, 247, 247);
   --light-safe-alternate-bg-val: 225 247 247;
+  --lighter-safe-alternate-bg: rgb(223, 237, 237);
   --light-danger-alternate-bg: rgb(255, 230, 255);
 }
 
@@ -43,6 +44,7 @@
     --footer-bg-rg: rgb(0, 0, 0);
     --light-safe-alternate-bg: rgb(3 38 38 / 50%);
     --light-safe-alternate-bg-val: 3 38 38;
+    --lighter-safe-alternate-bg: rgba(9, 53, 53, 0.5);
     --light-danger-alternate-bg: rgb(54 26 54 / 50%);
     --darker-foreground-golden-rgb: rgb(54 59 9);
     --darker-foreground-golden-val: 54 59 9;

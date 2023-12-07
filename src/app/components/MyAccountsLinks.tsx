@@ -49,9 +49,9 @@ export const MyAccountsLinks = ({
     return (
         <div ref={parentRef}
             className="
-            inline-flex items-center
-            text-[2rem] sm:text-[3rem] text-[--foreground-rgb-important]
-        ">
+                inline-flex items-center
+                text-[2rem] sm:text-[3rem] text-[--foreground-rgb-important]
+            ">
             <LinksContainer>
                 <IconLink url={linkedinUrl} Icon={FaLinkedin} />
                 <IconLink url={githubUrl} Icon={FaGithub} />

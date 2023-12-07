@@ -17,13 +17,13 @@ const FlexLi: React.FunctionComponent<{ children: any }> = ({ children }) => (
     </li>
 )
 
-export const Skill = ({ title, years, level }: ISkill) => {
+const useCurrentLevelAnimation = (level: number = 0) => {
     const [currentLevel, setCurrentLevel] = useState(0)
     const ref = useRef(null)
     const isVisible = useIsVisible(ref)
 
     const incrementCurrentLevel = () => {
-        const levelOrZero = level || 0
+        const levelOrZero = level
         setTimeout(() => {
             setCurrentLevel(currentLevel =>
                 currentLevel < levelOrZero ?
@@ -38,6 +38,15 @@ export const Skill = ({ title, years, level }: ISkill) => {
             setCurrentLevel(0)
     }, [currentLevel, isVisible])
 
+    return {
+        ref,
+        currentLevel
+    }
+}
+
+export const Skill = ({ title, years, level }: ISkill) => {
+    const { currentLevel, ref } = useCurrentLevelAnimation(level)
+
     return (
         <span ref={ref} className={`
             inline-block
@@ -48,7 +57,6 @@ export const Skill = ({ title, years, level }: ISkill) => {
             p-[0.7rem] m-[0.2rem]
             rounded-[20px]
             cursor-pointer
-            w-full sm:w-fit
         `}>
             <div className="text-center" style={{
                 textDecorationLine: level ? "underline" : "none"

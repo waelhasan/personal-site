@@ -11,6 +11,8 @@ const IconLink = ({
         <a style={{ fontSize }}
             className={`
                 text-foregroundSectionTitle hover:text-foregroundRgb
+                hover:scale-110
+                duration-75 ease-in-out
             `}
             target="_blank"
             href={url}>

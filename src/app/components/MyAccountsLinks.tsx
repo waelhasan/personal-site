@@ -26,10 +26,11 @@ const VerticalLinks = ({ children }: { children: ReactNode }) => (
         inline-flex flex-col
         fixed top-[50%] left-0
         translate-y-[-50%]
-        z-1000
+        z-[11]
         gap-[0.5rem] sm:gap-[1rem]
         bg-[--darker-bg-rgb]
         p-[1rem]
+        text-[3rem]
     ">
         {children}
     </div>

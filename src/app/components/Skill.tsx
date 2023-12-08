@@ -22,9 +22,9 @@ const useCurrentLevelAnimation = (level: number = 0) => {
     const ref = useRef(null)
     const isVisible = useIsVisible(ref)
 
-    const incrementCurrentLevel = () => {
+    const incrementCurrentLevel = (): NodeJS.Timeout => {
         const levelOrZero = level
-        setTimeout(() => {
+        return setTimeout(() => {
             setCurrentLevel(currentLevel =>
                 currentLevel < levelOrZero ?
                     currentLevel + 3 :
@@ -33,9 +33,10 @@ const useCurrentLevelAnimation = (level: number = 0) => {
     }
 
     useEffect(() => {
-        isVisible ?
+        const timer = isVisible ?
             incrementCurrentLevel() :
             setCurrentLevel(0)
+        return () => { !!timer && clearTimeout(timer) }
     }, [currentLevel, isVisible])
 
     return {

@@ -1,13 +1,16 @@
+import { FC, ReactNode } from "react"
 import { Important } from "./Important"
 
-const TitledSection = ({
+interface ITitledSectionProps {
+    title: string,
+    danger?: boolean,
+    children: ReactNode
+}
+
+export const TitledSection: FC<ITitledSectionProps> = ({
     title,
     danger = false,
     children
-}: {
-    title: string,
-    danger?: boolean,
-    children: React.ReactNode
 }) => {
     const titleColor = danger ? "rgb(177 49 112)" : "var(--foreground-section-title-rgb)"
     return (
@@ -42,4 +45,13 @@ const TitledSection = ({
     )
 }
 
-export default TitledSection
+interface IMultipleTitledSectionedProps {
+    id: string
+    children: ReactNode
+}
+
+export const MultipleTitledSectioned: FC<IMultipleTitledSectionedProps> = ({ id, children }) => (
+    <div id={id} className="flex flex-col xl:flex-row w-full justify-evenly">
+        {children}
+    </div>
+)

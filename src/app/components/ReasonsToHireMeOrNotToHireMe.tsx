@@ -1,4 +1,4 @@
-import TitledSection from "./TitledSection";
+import { MultipleTitledSectioned, TitledSection } from "./TitledSection";
 
 interface ReasonsToHireMeOrNotToHireMeProps {
     reasonsToHireMe: string[]
@@ -6,7 +6,7 @@ interface ReasonsToHireMeOrNotToHireMeProps {
 }
 
 const ReasonsToHireMeOrNotToHireMe = ({ reasonsNotToHireMe, reasonsToHireMe }: ReasonsToHireMeOrNotToHireMeProps) => (
-    <div id="why-to-hire-me" className="flex flex-col xl:flex-row">
+    <MultipleTitledSectioned id="why-to-hire-me">
         <TitledSection title="Why to you hire me?">
             <ul style={{ padding: "0 1rem" }}>
                 {reasonsToHireMe.map(reason => <li key={reason} style={{
@@ -23,7 +23,7 @@ const ReasonsToHireMeOrNotToHireMe = ({ reasonsNotToHireMe, reasonsToHireMe }: R
                 }}>{reason}</li>)}
             </ul>
         </TitledSection >
-    </div>
+    </MultipleTitledSectioned>
 )
 
 export default ReasonsToHireMeOrNotToHireMe

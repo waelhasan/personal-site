@@ -2,7 +2,7 @@
 
 import { ChangeEventHandler, useCallback, useState } from "react"
 import { Skill, ISkill } from "./Skill"
-import TitledSection from "./TitledSection"
+import { MultipleTitledSectioned, TitledSection } from "./TitledSection"
 
 interface ISkills {
     technicalSkills: ISkill[]
@@ -59,8 +59,8 @@ const SkillsGroup = ({ title, skills }: { title: string, skills: ISkill[] }) => 
 }
 
 export const Skills = (skills: ISkills) => (
-    <div id="skills" className="flex flex-col xl:flex-row w-full justify-evenly">
+    <MultipleTitledSectioned id="skills">
         <SkillsGroup title="Technical skills" skills={skills.technicalSkills} />
         <SkillsGroup title="Soft skills" skills={skills.softSkills} />
-    </div>
+    </MultipleTitledSectioned>
 )

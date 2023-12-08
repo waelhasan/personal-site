@@ -1,6 +1,6 @@
 "use client"
 
-import { ChangeEventHandler, useCallback, useState } from "react"
+import { ChangeEventHandler, useCallback, useEffect, useState } from "react"
 import { Skill, ISkill } from "./Skill"
 import { MultipleTitledSectioned, TitledSection } from "./TitledSection"
 
@@ -11,34 +11,57 @@ interface ISkills {
 
 const SkillsGroup = ({ title, skills }: { title: string, skills: ISkill[] }) => {
     const [filteredSkills, setFilteredSkills] = useState(skills)
-    const [filter, setFilter] = useState("")
+    const [skillNameFilter, setSkillNameFilter] = useState("")
+    const [skillTypeFilter, setSkillTypeFilter] = useState("BOTH")
 
-    const filterBySkillName: ChangeEventHandler<HTMLInputElement> = useCallback(e => {
-        const value = e.target.value
-
-        setFilter(value)
+    useEffect(() => {
         setFilteredSkills(
-            skills.filter(
-                skill => !!value ?
-                    skill.title.toLowerCase().includes(e.target.value.toLowerCase()) :
-                    true
-            )
+            skills
+                // Filter using skill name filter
+                .filter(
+                    skill => !!skillNameFilter ?
+                        skill.title.toLowerCase().includes(skillNameFilter.toLowerCase()) :
+                        true
+                )
+                // filter using type filter
+                .filter(
+                    skill => !!skillTypeFilter ?
+                        [
+                            skillTypeFilter === "BOTH" ?
+                                ["FRONTEND", "BACKEND"] :
+                                skillTypeFilter,
+                            "BOTH"
+                        ]
+                            .flat()
+                            .includes(skill.type!) :
+                        true
+                )
         )
-    }, [])
+    }, [skillNameFilter, skillTypeFilter])
+
+    const filterBySkillName: ChangeEventHandler<HTMLInputElement> = e => setSkillNameFilter(e.target.value)
+    const filterBySkillType: ChangeEventHandler<HTMLSelectElement> = e => setSkillTypeFilter(e.target.value)
 
     return (
         <TitledSection title={title}>
-            <search className="
-                    flex justify-center flex-col md:flex-row gap-[1rem] items-center
-                    mb-[1rem]
+            <search className="">
+                <fieldset className="
+                    flex md:inline-flex justify-center flex-col md:flex-row gap-[1rem] items-center 
+                    w-[100%] 
+                    mx-auto mb-[1rem]
+                    p-[0.5rem]
+                    border-[1px] border-solid border-[--foreground-rgb-important]
                 ">
-                <label htmlFor="skills-search">
-                    Search by skill name
-                </label>
-                <input
-                    id="skil"
-                    type="search"
-                    className="
+                    <legend>
+                        Filter
+                    </legend>
+                    <label htmlFor="skill-name-filter">
+                        Search by skill name
+                    </label>
+                    <input
+                        id="skill-name-filter"
+                        type="search"
+                        className="
                             w-[70%] max-w-[15rem] 
                             text-[--foreground-rgb] 
                             p-[0.5rem] 
@@ -46,9 +69,25 @@ const SkillsGroup = ({ title, skills }: { title: string, skills: ISkill[] }) => 
                             border-[1px] border-solid border-[--foreground-section-title-rgb]
                             bg-[--lighter-safe-alternate-bg]
                         "
-                    value={filter}
-                    onChange={filterBySkillName}
-                    placeholder="Enter skill name" />
+                        value={skillNameFilter}
+                        onChange={filterBySkillName}
+                        placeholder="Enter skill name" />
+                    <label htmlFor="skill-type-filter">
+                        Search by skill name
+                    </label>
+                    <select
+                        id="skill-type-filter"
+                        value={skillTypeFilter}
+                        onChange={filterBySkillType}
+                        className="
+                            flex md:inline-flex justify-center flex-col md:flex-row gap-[1rem] items-center
+                            mb-[1rem]
+                        ">
+                        <option value="BOTH">All</option>
+                        <option value="BACKEND">Back End</option>
+                        <option value="FRONTEND">Front End</option>
+                    </select>
+                </fieldset>
             </search>
             <div className="flex flex-wrap justify-evenly gap-[0.5rem] w-full">
                 {filteredSkills.map(({ title, years, level }) =>

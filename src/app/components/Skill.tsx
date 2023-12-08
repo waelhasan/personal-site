@@ -7,6 +7,7 @@ export interface ISkill {
     title: string
     years?: number
     level?: number
+    type?: "BACKEND" | "FRONTEND" | "BOTH"
 }
 
 const FlexLi: React.FunctionComponent<{ children: any }> = ({ children }) => (

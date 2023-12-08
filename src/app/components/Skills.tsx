@@ -1,6 +1,6 @@
 "use client"
 
-import { useCallback, useState } from "react"
+import { ChangeEventHandler, useCallback, useState } from "react"
 import { Skill, ISkill } from "./Skill"
 import TitledSection from "./TitledSection"
 
@@ -13,7 +13,7 @@ const SkillsGroup = ({ title, skills }: { title: string, skills: ISkill[] }) => 
     const [filteredSkills, setFilteredSkills] = useState(skills)
     const [filter, setFilter] = useState("")
 
-    const filterBySkillName = useCallback((e) => {
+    const filterBySkillName: ChangeEventHandler<HTMLInputElement> = useCallback(e => {
         const value = e.target.value
 
         setFilter(value)

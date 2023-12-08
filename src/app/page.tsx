@@ -3,6 +3,7 @@ import { Skills } from "./components/Skills"
 import Intorduction from "./components/Introduction";
 import ReasonsToHireMeOrNotToHireMe from "./components/ReasonsToHireMeOrNotToHireMe";
 import Timeline from "./components/Timeline";
+import { ISkill } from "./components/Skill";
 
 const SectionsSeparator = () =>
   <div style={{
@@ -29,7 +30,7 @@ export default function Home() {
         accountsLinks={info.accountsLinks}
       />
       <ReasonsToHireMeOrNotToHireMe reasonsNotToHireMe={info.reasonsNotToHireMe} reasonsToHireMe={info.reasonsToHireMe} />
-      <Skills softSkills={info.softSkills} technicalSkills={info.technicalSkills} />
+      <Skills softSkills={info.softSkills} technicalSkills={info.technicalSkills as ISkill[]} />
       <SectionsSeparator />
       <Timeline id="employment-history" title="Employment history" elements={info.experience} />
       <SectionsSeparator />

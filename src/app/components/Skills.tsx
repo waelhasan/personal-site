@@ -1,23 +1,37 @@
 "use client"
 
-import { ChangeEventHandler, useCallback, useEffect, useState } from "react"
+import { ChangeEventHandler, FC, ReactNode, useEffect, useState } from "react"
 import { Skill, ISkill } from "./Skill"
 import { MultipleTitledSectioned, TitledSection } from "./TitledSection"
 
-interface ISkills {
-    technicalSkills: ISkill[]
-    softSkills: ISkill[]
+interface ICustomOptionProps {
+    value: string
+    children: ReactNode
+}
+
+const CustomOption: FC<ICustomOptionProps> = ({ value, children }) => (
+    <option
+        className="
+            text-black 
+            bg-[--lighter-safe-alternate-bg]
+        "
+        value={value}
+    >
+        {children}
+    </option>
+)
+
+interface ISkillsGroupProps {
+    title: string
+    skills: ISkill[]
+    sortByType?: boolean
 }
 
 const SkillsGroup = ({
     title,
     skills,
     sortByType = false
-}: {
-    title: string,
-    skills: ISkill[],
-    sortByType?: boolean
-}) => {
+}: ISkillsGroupProps) => {
     const [filteredSkills, setFilteredSkills] = useState(skills)
     const [skillNameFilter, setSkillNameFilter] = useState("")
     const [skillTypeFilter, setSkillTypeFilter] = useState("BOTH")
@@ -52,19 +66,18 @@ const SkillsGroup = ({
 
     return (
         <TitledSection title={title}>
-            <search className="">
-                <fieldset className="
+            <search className="
+                w-[100%]
+                flex md:inline-flex justify-center flex-col md:flex-row gap-[1rem] items-center 
+                mx-auto mb-[1rem]
+            ">
+                <div className="
                     flex md:inline-flex justify-center flex-col md:flex-row gap-[1rem] items-center 
-                    w-[100%] 
-                    mx-auto mb-[1rem]
+                    w-[80%] 
                     p-[0.5rem]
-                    border-[1px] border-solid border-[--foreground-rgb-important]
                 ">
-                    <legend>
-                        Filter
-                    </legend>
                     <label htmlFor="skill-name-filter">
-                        Search by skill name
+                        Filter by skill name
                     </label>
                     <input
                         id="skill-name-filter"
@@ -83,22 +96,27 @@ const SkillsGroup = ({
                     {sortByType && (
                         <>
                             <label htmlFor="skill-type-filter">
-                                Search by skill name
+                                Filter by skill type
                             </label>
                             <select
+                                className="
+                                    w-[70%] max-w-[10rem] 
+                                    text-[--foreground-rgb] 
+                                    p-[0.25rem] 
+                                    rounded-[1rem]
+                                    border-[1px] border-solid border-[--foreground-section-title-rgb]
+                                    bg-[--lighter-safe-alternate-bg]
+                                    flex md:inline-flex justify-center flex-col md:flex-row gap-[1rem] items-center
+                                "
                                 id="skill-type-filter"
                                 value={skillTypeFilter}
-                                onChange={filterBySkillType}
-                                className="
-                            flex md:inline-flex justify-center flex-col md:flex-row gap-[1rem] items-center
-                            mb-[1rem]
-                        ">
-                                <option value="BOTH">All</option>
-                                <option value="BACKEND">Back End</option>
-                                <option value="FRONTEND">Front End</option>
+                                onChange={filterBySkillType}>
+                                <CustomOption value="BOTH">All</CustomOption>
+                                <CustomOption value="BACKEND">Back End</CustomOption>
+                                <CustomOption value="FRONTEND">Front End</CustomOption>
                             </select>
                         </>)}
-                </fieldset>
+                </div>
             </search>
             <div className="flex flex-wrap justify-evenly gap-[0.5rem] w-full">
                 {filteredSkills.map(({ title, years, level }) =>
@@ -108,7 +126,12 @@ const SkillsGroup = ({
     )
 }
 
-export const Skills = (skills: ISkills) => (
+interface ISkillsProps {
+    technicalSkills: ISkill[]
+    softSkills: ISkill[]
+}
+
+export const Skills = (skills: ISkillsProps) => (
     <MultipleTitledSectioned id="skills">
         <SkillsGroup title="Technical skills" skills={skills.technicalSkills} sortByType={true} />
         <SkillsGroup title="Soft skills" skills={skills.softSkills} />

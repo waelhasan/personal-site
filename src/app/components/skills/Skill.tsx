@@ -1,10 +1,10 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { FC, useEffect, useRef, useState } from "react"
 import useIsVisible from "../useIsVisible"
 import { ISkill } from "./types"
 
-const FlexLi: React.FunctionComponent<{ children: any }> = ({ children }) => (
+const FlexLi: FC<{ children: any }> = ({ children }) => (
     <li className="w-full">
         <span className="w-[calc(100%-10px)] gap-[10px] inline-flex items-center justify-between">
             {children}

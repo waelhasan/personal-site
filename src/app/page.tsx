@@ -26,7 +26,10 @@ export default function Home() {
         title={info.title}
         accountsLinks={info.accountsLinks}
       />
-      <ReasonsToHireMeOrNotToHireMe reasonsNotToHireMe={info.reasonsNotToHireMe} reasonsToHireMe={info.reasonsToHireMe} />
+      <ReasonsToHireMeOrNotToHireMe
+        reasonsNotToHireMe={info.reasonsNotToHireMe}
+        reasonsToHireMe={info.reasonsToHireMe}
+      />
       <Skills softSkills={info.softSkills} technicalSkills={info.technicalSkills as ISkill[]} />
       <SectionsSeparator />
       <Timeline id="employment-history" title="Employment history" elements={info.experience} />

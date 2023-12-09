@@ -2,7 +2,7 @@ const UnderconstructionNotice = () => (
     <div className={`
         flex justify-center
         w-[40rem]
-        absolute top-[4rem] left-0 
+        fixed top-[4rem] left-0 
         z-[100]
         text-[1.5rem] text-center text-[yellow]
         border-[5px] border-dashed border-[yellow]

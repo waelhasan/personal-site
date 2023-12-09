@@ -21,48 +21,116 @@ const CustomOption: FC<ICustomOptionProps> = ({ value, children }) => (
     </option>
 )
 
+type FilterComponent = (props: {
+    addFilterFn: (key: string, fn: (skills: ISkill) => boolean) => void,
+}) => ReactNode
+
+const SkillNameFilter: FilterComponent = ({ addFilterFn }) => {
+    const [filterValue, setFilterValue] = useState("")
+
+    useEffect(() => {
+        addFilterFn('SkillNameFilter', (skill: ISkill) => !!filterValue ?
+            skill.title.toLowerCase().includes(filterValue.toLowerCase()) :
+            true
+        )
+    }, [filterValue])
+
+    const filterBySkillName: ChangeEventHandler<HTMLInputElement> = e => setFilterValue(e.target.value)
+
+    return (
+        <>
+            <label htmlFor="skill-name-filter">
+                Filter by skill name
+            </label>
+            <input
+                id="skill-name-filter"
+                type="search"
+                className="
+                    w-[70%] max-w-[15rem] 
+                    text-[--foreground-rgb] 
+                    p-[0.5rem] 
+                    rounded-[1rem]
+                    border-[1px] border-solid border-[--foreground-section-title-rgb]
+                    bg-[--lighter-safe-alternate-bg]
+                "
+                value={filterValue}
+                onChange={filterBySkillName}
+                placeholder="Enter skill name" />
+        </>
+    )
+}
+
+const SkillTypeFilter: FilterComponent = ({ addFilterFn }) => {
+    const [filterValue, setFilterValue] = useState("BOTH")
+
+    useEffect(() => {
+        addFilterFn('SkillTypeFilter', (skill: ISkill) => !!filterValue ?
+            [
+                filterValue === "BOTH" ?
+                    ["FRONTEND", "BACKEND"] :
+                    filterValue,
+                "BOTH"
+            ]
+                .flat()
+                .includes(skill.type!) :
+            true
+        )
+    }, [filterValue])
+
+    const filterBySkillType: ChangeEventHandler<HTMLSelectElement> = e => setFilterValue(e.target.value)
+
+    return (
+        <>
+            <label htmlFor="skill-type-filter">
+                Filter by skill type
+            </label>
+            <select
+                className="
+                    w-[70%] max-w-[10rem] 
+                    text-[--foreground-rgb] 
+                    p-[0.25rem] 
+                    rounded-[1rem]
+                    border-[1px] border-solid border-[--foreground-section-title-rgb]
+                    bg-[--lighter-safe-alternate-bg]
+                    flex md:inline-flex justify-center flex-col md:flex-row gap-[1rem] items-center
+                "
+                id="skill-type-filter"
+                value={filterValue}
+                onChange={filterBySkillType}>
+                <CustomOption value="BOTH">All</CustomOption>
+                <CustomOption value="BACKEND">Back End</CustomOption>
+                <CustomOption value="FRONTEND">Front End</CustomOption>
+            </select>
+        </>
+    )
+}
+
 interface ISkillsGroupProps {
     title: string
     skills: ISkill[]
-    sortByType?: boolean
+    FilterComponents?: FilterComponent[]
 }
+
+type FilterFunction = (skills: ISkill) => boolean
 
 const SkillsGroup = ({
     title,
     skills,
-    sortByType = false
+    FilterComponents
 }: ISkillsGroupProps) => {
     const [filteredSkills, setFilteredSkills] = useState(skills)
-    const [skillNameFilter, setSkillNameFilter] = useState("")
-    const [skillTypeFilter, setSkillTypeFilter] = useState("BOTH")
+    const [filterFunctions, setFilterFunctions] = useState<{ [key: string]: FilterFunction }>({})
+
+    const AllFilterComponents = [SkillNameFilter, ...(FilterComponents || [])]
+    const addFilterFn = (key: string, fn: FilterFunction) => setFilterFunctions(fns => ({ ...fns, [key]: fn }))
 
     useEffect(() => {
-        setFilteredSkills(
-            skills
-                // Filter using skill name filter
-                .filter(
-                    skill => !!skillNameFilter ?
-                        skill.title.toLowerCase().includes(skillNameFilter.toLowerCase()) :
-                        true
-                )
-                // filter using type filter
-                .filter(
-                    skill => sortByType && !!skillTypeFilter ?
-                        [
-                            skillTypeFilter === "BOTH" ?
-                                ["FRONTEND", "BACKEND"] :
-                                skillTypeFilter,
-                            "BOTH"
-                        ]
-                            .flat()
-                            .includes(skill.type!) :
-                        true
-                )
-        )
-    }, [skillNameFilter, skillTypeFilter])
-
-    const filterBySkillName: ChangeEventHandler<HTMLInputElement> = e => setSkillNameFilter(e.target.value)
-    const filterBySkillType: ChangeEventHandler<HTMLSelectElement> = e => setSkillTypeFilter(e.target.value)
+        let newSkills: ISkill[] = skills
+        for (let ff of Object.values(filterFunctions)) {
+            newSkills = newSkills.filter(ff)
+        }
+        setFilteredSkills(newSkills)
+    }, [filterFunctions])
 
     return (
         <TitledSection title={title}>
@@ -76,46 +144,10 @@ const SkillsGroup = ({
                     w-[80%] 
                     p-[0.5rem]
                 ">
-                    <label htmlFor="skill-name-filter">
-                        Filter by skill name
-                    </label>
-                    <input
-                        id="skill-name-filter"
-                        type="search"
-                        className="
-                            w-[70%] max-w-[15rem] 
-                            text-[--foreground-rgb] 
-                            p-[0.5rem] 
-                            rounded-[1rem]
-                            border-[1px] border-solid border-[--foreground-section-title-rgb]
-                            bg-[--lighter-safe-alternate-bg]
-                        "
-                        value={skillNameFilter}
-                        onChange={filterBySkillName}
-                        placeholder="Enter skill name" />
-                    {sortByType && (
-                        <>
-                            <label htmlFor="skill-type-filter">
-                                Filter by skill type
-                            </label>
-                            <select
-                                className="
-                                    w-[70%] max-w-[10rem] 
-                                    text-[--foreground-rgb] 
-                                    p-[0.25rem] 
-                                    rounded-[1rem]
-                                    border-[1px] border-solid border-[--foreground-section-title-rgb]
-                                    bg-[--lighter-safe-alternate-bg]
-                                    flex md:inline-flex justify-center flex-col md:flex-row gap-[1rem] items-center
-                                "
-                                id="skill-type-filter"
-                                value={skillTypeFilter}
-                                onChange={filterBySkillType}>
-                                <CustomOption value="BOTH">All</CustomOption>
-                                <CustomOption value="BACKEND">Back End</CustomOption>
-                                <CustomOption value="FRONTEND">Front End</CustomOption>
-                            </select>
-                        </>)}
+                    {AllFilterComponents.map(
+                        (FilterComponent, index) =>
+                            <FilterComponent key={index} addFilterFn={addFilterFn} />
+                    )}
                 </div>
             </search>
             <div className="flex flex-wrap justify-evenly gap-[0.5rem] w-full">
@@ -133,7 +165,7 @@ interface ISkillsProps {
 
 export const Skills = (skills: ISkillsProps) => (
     <MultipleTitledSectioned id="skills">
-        <SkillsGroup title="Technical skills" skills={skills.technicalSkills} sortByType={true} />
+        <SkillsGroup title="Technical skills" skills={skills.technicalSkills} FilterComponents={[SkillTypeFilter]} />
         <SkillsGroup title="Soft skills" skills={skills.softSkills} />
     </MultipleTitledSectioned>
 )

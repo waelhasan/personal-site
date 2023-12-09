@@ -3,20 +3,19 @@
 const ScrollToTopButton = () => (
     <div
         className={`
+            fixed top-[100%] left-[100%]
             transition ease-in-out delay-50 
             bg-darkerForegroundGolden hover:bg-golden
+            text-[3rem]
+            rounded-[50%]
+            px-[2rem] py-[1rem]
+            cursor-pointer
+            translate-x-[-150%] translate-y-[-150%]
         `}
-        style={{
-            position: "fixed",
-            top: "100%",
-            left: "100%",
-            fontSize: "3rem",
-            borderRadius: "50%",
-            padding: "1rem 2rem",
-            transform: "translate(-150%, -150%)",
-            cursor: "pointer"
-        }}
-        onClick={() => document.querySelector('body')?.scroll({ left: 0, top: 0, behavior: "smooth" })}>
+        onClick={
+            () => document
+                .querySelector('body')
+                ?.scroll({ left: 0, top: 0, behavior: "smooth" })}>
         ⬆
     </div >
 )

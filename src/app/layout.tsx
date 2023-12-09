@@ -20,21 +20,20 @@ export default function RootLayout({
 }) {
   return (
     <html
-      lang="ar"
-      className={`
+      lang="en"
+      className="
         h-full w-[100vw]
         overflow-x-hidden
         text-[11px] sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[--foreground-rgb]
         bg-gradient-to-b from-[--background-start-rgb] to-[--background-end-rgb]
-      `}>
-      <body
-        className={`
-          ${sriracha.className}
-          relative
-          h-full w-full
-          overflow-x-hidden
-          scroll-smooth
-        `}>
+      ">
+      <body className="
+        ${sriracha.className}
+        relative
+        h-full w-full
+        overflow-x-hidden
+        scroll-smooth
+      ">
         <UnderconstructionNotice />
         <Navbar />
         <FreedomSupportNotice />

@@ -1,14 +1,8 @@
 "use client"
 
 import { useEffect, useRef, useState } from "react"
-import useIsVisible from "./useIsVisible"
-
-export interface ISkill {
-    title: string
-    years?: number
-    level?: number
-    type?: "BACKEND" | "FRONTEND" | "BOTH"
-}
+import useIsVisible from "../useIsVisible"
+import { ISkill } from "./types"
 
 const FlexLi: React.FunctionComponent<{ children: any }> = ({ children }) => (
     <li className="w-full">
@@ -46,7 +40,7 @@ const useCurrentLevelAnimation = (level: number = 0) => {
     }
 }
 
-export const Skill = ({ title, years, level }: ISkill) => {
+const Skill = ({ title, years, level }: ISkill) => {
     const { currentLevel, ref } = useCurrentLevelAnimation(level)
 
     return (
@@ -89,3 +83,4 @@ export const Skill = ({ title, years, level }: ISkill) => {
     )
 }
 
+export default Skill

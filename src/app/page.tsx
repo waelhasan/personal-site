@@ -1,9 +1,9 @@
 import info from "./info"
-import { Skills } from "./components/Skills"
-import Intorduction from "./components/Introduction";
-import ReasonsToHireMeOrNotToHireMe from "./components/ReasonsToHireMeOrNotToHireMe";
-import Timeline from "./components/Timeline";
-import { ISkill } from "./components/Skill";
+import { Skills } from "./components/skills/Skills"
+import Intorduction from "./components/Introduction"
+import ReasonsToHireMeOrNotToHireMe from "./components/ReasonsToHireMeOrNotToHireMe"
+import Timeline from "./components/Timeline"
+import { ISkill } from "./components/skills/types"
 
 const SectionsSeparator = () =>
   <div style={{

@@ -1,23 +1,22 @@
 "use client"
 
+import { FaCircleArrowUp } from "react-icons/fa6";
+
 const ScrollToTopButton = () => (
-    <div
-        className={`
+    <FaCircleArrowUp
+        className="
             fixed top-[100%] left-[100%]
-            transition ease-in-out delay-50 
-            bg-darkerForegroundGolden hover:bg-golden
-            text-[3rem]
-            rounded-[50%]
-            px-[2rem] py-[1rem]
-            cursor-pointer
+            text-[5rem] text-darkerForegroundGolden hover:text-golden
             translate-x-[-150%] translate-y-[-150%]
-        `}
+            transition ease-in-out delay-50
+            cursor-pointer
+        "
         onClick={
             () => document
                 .querySelector('body')
-                ?.scroll({ left: 0, top: 0, behavior: "smooth" })}>
-        ⬆
-    </div >
+                ?.scroll({ left: 0, top: 0, behavior: "smooth" })}
+    />
 )
 
 export default ScrollToTopButton
+

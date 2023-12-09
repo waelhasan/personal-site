@@ -6,23 +6,20 @@ import Timeline from "./components/Timeline"
 import { ISkill } from "./components/skills/types"
 
 const SectionsSeparator = () =>
-  <div style={{
-    boxShadow: "0px 0px 20px var(--foreground-section-title-rgb)",
-    borderTop: "1px solid var(--foreground-section-title-rgb)",
-    width: "60%",
-    margin: "2rem 0"
-  }} />
+  <div className="
+    border-t-[1px] border-t-solid border-t-[--foreground-section-title-rgb]
+    w-[60%]
+    my-[2rem] mx-0
+    shadow-[0_0_20px_var(--foreground-section-title-rgb)]
+  "/>
 
 export default function Home() {
   return (
-    <main style={{
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "center",
-      alignItems: "center",
-      maxWidth: "2000px",
-      margin: "0 auto"
-    }}>
+    <main className="
+      flex flex-col justify-center items-center
+      max-w-[2000px]
+      my-0 mx-auto
+    ">
       <Intorduction
         fullName={info.fullName}
         nationality={info.nationality}

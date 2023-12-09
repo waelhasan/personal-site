@@ -6,11 +6,29 @@ import FreedomSupportNotice from './components/FreedomSupportNotice'
 import UnderconstructionNotice from './components/UnderconstructionNotice'
 import ScrollToTopButton from './components/ScrollToTopButton'
 import Footer from './components/Footer'
-import { sriracha } from './fonts'
 
 export const metadata: Metadata = {
   title: 'Wael Hasan',
   description: "Wael Hasan's personal portfolio",
+  authors: [
+    {
+      name: "Wael Hasan",
+      url: "whma87@gmail.com"
+    }
+  ],
+  keywords: "wael hasan, web developer, frontend web developer, backend web developer, MERN stack web developer, software engineer, portfolio",
+  openGraph: {
+    type: "website",
+    url: "https://waelhasan.vercel.app/",
+    title: "Wael Hasan",
+    description: "Wael Hasan's personal portfolio",
+    siteName: "Wael Hasan",
+    images: [{
+      url: "https://waelhasan.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fpic1.8dad17e8.png&w=3840&q=75",
+    }],
+    countryName: "Egypt",
+    emails: "whma87@gmail.com"
+  }
 }
 
 export default function RootLayout({

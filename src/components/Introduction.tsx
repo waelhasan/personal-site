@@ -6,7 +6,7 @@ import { MdOutlineDoubleArrow } from "react-icons/md"
 import { HiMiniArrowDownTray } from "react-icons/hi2";
 import { Important } from "./Important"
 import FlippingContents from "./FlippingContents"
-import myPic from '../../../public/pic1.png'
+import myPic from '../../public/pic1.png'
 
 const Title = ({ title }: { title: string }) => (
     <span className="underline decoration-wavy decoration-[--foreground-decoration-rgb] decoration-[5px]">

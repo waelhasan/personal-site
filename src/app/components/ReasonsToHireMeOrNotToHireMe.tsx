@@ -1,5 +1,15 @@
 import { MultipleTitledSectioned, TitledSection } from "./TitledSection";
 
+const ReasonsList = ({ reasons }: { reasons: string[] }) => (
+    <ul className="py-0 px-[1rem]">
+        {reasons.map(reason =>
+            <li key={reason} className="text-[1.5rem] list-[circle]">
+                {reason}
+            </li>)
+        }
+    </ul>
+)
+
 interface ReasonsToHireMeOrNotToHireMeProps {
     reasonsToHireMe: string[]
     reasonsNotToHireMe: string[]
@@ -8,20 +18,10 @@ interface ReasonsToHireMeOrNotToHireMeProps {
 const ReasonsToHireMeOrNotToHireMe = ({ reasonsNotToHireMe, reasonsToHireMe }: ReasonsToHireMeOrNotToHireMeProps) => (
     <MultipleTitledSectioned id="why-to-hire-me">
         <TitledSection title="Why to you hire me?">
-            <ul style={{ padding: "0 1rem" }}>
-                {reasonsToHireMe.map(reason => <li key={reason} style={{
-                    fontSize: "1.5rem",
-                    listStyle: "circle"
-                }}>{reason}</li>)}
-            </ul>
+            <ReasonsList reasons={reasonsToHireMe} />
         </TitledSection >
         <TitledSection title="Why not to hire me?" danger={true}>
-            <ul style={{ padding: "0 1rem" }}>
-                {reasonsNotToHireMe.map(reason => <li key={reason} style={{
-                    fontSize: "1.5rem",
-                    listStyle: "circle"
-                }}>{reason}</li>)}
-            </ul>
+            <ReasonsList reasons={reasonsNotToHireMe} />
         </TitledSection >
     </MultipleTitledSectioned>
 )

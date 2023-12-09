@@ -4,18 +4,13 @@ import IconLink from "./IconLink"
 import { Important } from "./Important"
 
 const Footer = () => (
-    <div style={{
-        backgroundColor: "var(--footer-bg-rg)",
-        height: "25rem",
-        fontSize: "1.5rem",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: "1rem",
-        padding: "2rem",
-        textAlign: "center"
-    }}>
+    <div className="
+        flex flex-col justify-center items-center gap-[1rem]
+        text-[1.5rem] text-center
+        h-[25rem]
+        p-[2rem]
+        bg-[--footer-bg-rg]
+    ">
         <span>
             This site is built using these technologies:
         </span>

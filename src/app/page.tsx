@@ -4,6 +4,8 @@ import Intorduction from "../components/Introduction"
 import ReasonsToHireMeOrNotToHireMe from "../components/ReasonsToHireMeOrNotToHireMe"
 import Timeline from "../components/Timeline"
 import { ISkill } from "../components/skills/types"
+import FreedomSupportNotice from "@/components/FreedomSupportNotice"
+import Navbar from "@/components/Navbar"
 
 const SectionsSeparator = () =>
   <div className="
@@ -20,6 +22,10 @@ export default function Home() {
       max-w-[2000px]
       my-0 mx-auto
     ">
+      <Navbar />
+
+      <FreedomSupportNotice />
+
       <Intorduction
         fullName={info.fullName}
         nationality={info.nationality}

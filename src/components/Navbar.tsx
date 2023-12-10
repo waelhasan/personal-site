@@ -69,7 +69,7 @@ const Navbar = () => {
             flex flex-col items-end
             sticky right-0 top-0 xl:left-0 
             z-10
-            w-full
+            w-[100vw]
             bg-[--darker-bg-rgb]
             mb-[1rem]
         `}>

@@ -57,7 +57,7 @@ export default function RootLayout({
         `}>
         <div className="
           flex flex-col justify-between
-          h-[calc(100%-5rem)] w-full
+          h-[100%] w-full
         ">
           <div>
             <UnderconstructionNotice />

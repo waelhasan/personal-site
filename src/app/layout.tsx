@@ -55,12 +55,19 @@ export default function RootLayout({
           overflow-x-hidden
           scroll-smooth
         `}>
-        <UnderconstructionNotice />
         <Navbar />
-        <FreedomSupportNotice />
-        {children}
-        <ScrollToTopButton />
-        <Footer />
+        <div className="
+          flex flex-col justify-between
+          h-[calc(100%-5rem)] w-full
+        ">
+          <div>
+            <UnderconstructionNotice />
+            <FreedomSupportNotice />
+          </div>
+          {children}
+          <ScrollToTopButton />
+          <Footer />
+        </div>
         <SpeedInsights />
         <Analytics />
       </body>

@@ -7,6 +7,8 @@ import FreedomSupportNotice from '../components/FreedomSupportNotice'
 import UnderconstructionNotice from '../components/UnderconstructionNotice'
 import ScrollToTopButton from '../components/ScrollToTopButton'
 import Footer from '../components/Footer'
+import { sriracha } from './fonts';
+
 
 export const metadata: Metadata = {
   title: 'Wael Hasan',
@@ -46,13 +48,13 @@ export default function RootLayout({
         text-[11px] sm:text-[12px] md:text-[14px] lg:text-[14px] xl:text-[16px] text-[--foreground-rgb]
         bg-gradient-to-b from-[--background-start-rgb] to-[--background-end-rgb]
       ">
-      <body className="
-        ${sriracha.className}
-        relative
-        h-full w-full
-        overflow-x-hidden
-        scroll-smooth
-      ">
+      <body className={`
+          ${sriracha.className}
+          relative
+          h-full w-full
+          overflow-x-hidden
+          scroll-smooth
+        `}>
         <UnderconstructionNotice />
         <Navbar />
         <FreedomSupportNotice />

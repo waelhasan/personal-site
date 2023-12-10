@@ -1,9 +1,9 @@
 import info from "./info"
-import { Skills } from "../components/skills/Skills"
-import Intorduction from "../components/Introduction"
-import ReasonsToHireMeOrNotToHireMe from "../components/ReasonsToHireMeOrNotToHireMe"
-import Timeline from "../components/Timeline"
-import { ISkill } from "../components/skills/types"
+import { Skills } from "@/components/skills/Skills"
+import Intorduction from "@/components/Introduction"
+import ReasonsToHireMeOrNotToHireMe from "@/components/ReasonsToHireMeOrNotToHireMe"
+import Timeline from "@/components/Timeline"
+import { ISkill } from "@/components/skills/types"
 import FreedomSupportNotice from "@/components/FreedomSupportNotice"
 import Navbar from "@/components/Navbar"
 
@@ -23,9 +23,7 @@ export default function Home() {
       my-0 mx-auto
     ">
       <Navbar />
-
       <FreedomSupportNotice />
-
       <Intorduction
         fullName={info.fullName}
         nationality={info.nationality}

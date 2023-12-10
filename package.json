@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/markdown-it": "^13.0.7",
     "@vercel/analytics": "^1.1.1",
     "@vercel/speed-insights": "^1.0.1",
+    "gray-matter": "^4.0.3",
+    "markdown-it": "^14.0.0",
     "next": "14.0.3",
     "react": "^18",
     "react-dom": "^18",

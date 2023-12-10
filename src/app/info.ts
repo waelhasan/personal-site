@@ -144,6 +144,7 @@ export default {
   ],
   projects: [
     {
+      id: "graphql-layer",
       title: "Graphql layer",
       company: {
         name: "Andela"
@@ -152,9 +153,43 @@ export default {
       to: "2022-08-24T08:08:34.527Z",
       summary: "Created and maintained a Graphql Backend layer. It is an intermediate layer, that allows different Front-ends (Web and Mobile) to call a single Back-end layer, which in turn takes care of calling individual specialized RESTful Back-end services, and other third party services.",
       type: "BACKEND",
-      skills: ["JS", "Nodejs", "Graphql", "Contentful", "Redis", "Jest"]
+      skills: ["JS", "Nodejs", "Graphql", "Contentful", "Redis", "Jest"],
+      details: `
+> A backend project, that uses Javascript, Nodejs, Apollo Graphql, Redis, and other technologies.
+I wrote the greatest majority of it: between 90% to 95% of it's implementation, and built 100% of the test suite (which covered all of the implementation I built, resulting in ~1500 test cases, most of them are e2e tests).
+
+## Main features:
+
+- Receive query/mutation requests from different clients, whether mobile applications or web applications, as the only backend they interact with (excluding authentication and authorization service)
+  
+  That meant that the pressure on this service was the heighest; as the traffic from all the UIs passes through it, whther it does the heavy lifting, or just wraps the call to another service in a more secute and standarized way.
+
+  That kind of pressure ment that any weakly written implementations would cause a bottleneck in the system, which caused me to be very strict about the kind of code I write (resulting in a high quality code), combined with the deep documentation I buit for the whole codebase, that made it very much maintainable by anyone that knows functional JS programming.
+
+  Also, to guarantee that the code is always as correct as it was, I created an extensive test suite (mostly e2e tests), which covers all the codebase I built. So it became really easy to add/edit/remove code to it, and make sure that every thing is working as expected in just few minutes.
+
+  But creating this test suite was not easy as it seems; because I needed to mock some 3rd party APIs, but there were no 3rd party packages to mock them (or at least they were not working), so I had to mock these services by hand. And in the case of Contentful's RESTful services and Graphql APIs, I built a whole internal package called \`contentful-cameleon\` for mocking these APIs, which made it possible to have the e2e tests without hitting a realy live instance of Contentful, resulting in at least 5 times faster tests.
+
+- Executes the received queries/mutations, by communicating with other inhouse RESTful services, 3rd party services, and data stores (e.g. Contentful, Mongodb), as the only client for these services/data stores.
+
+  Some of these implementations were repeated over and over, such as calling our own RESTful services, so I built custom reusable higher order functions, that wraps the repeated logic, and can be customized if the default behavior is not applicable in our case. That alone caused the codebase complexity to be way less than if we did not have them, and made building new repetitve features (such as calling a GET endpoint, forwarding the inputs to it, and retrning it's result to the callee) a piece of cake, and instead of taking 2 hour to build such repetitive tasks, it only takes half an hour to build it aong with it's e2e tests, and creating the PR for it!  
+
+- Cache different queries' results, handling general queries and user-specific queries.
+
+  Due to the nature of this layer, it became a bottleneck for the system, so I decided that I should build a dedicated caching mechanism for it. That mechanism depended mainly on using Redis to store the dependencies of each query executed by the service, And when one of the dependencies of a query get's invalidated, the cached result gets removed from Redis store, and implementation get's executed to get the latest actual results (which gets cached for sure).
+
+  Building such caching mechanism took some time, and was challenging in all aspects: implementing it, manually testing it, and creating automated e2e tests for it.
+  In the implementation I needed to listen to all queries, find a way to extract most of the dependencies, and enable the developers to annotate the rest of the dependencies that can not be obtained automatically, in a clear and easy way that does not make their lives miserable. And I managed to do so using functional programming, building really easy to use higher order functions that wrapped the magic away from the developers.
+
+  In the automated e2e testing, I also built some helper utilities that did the testing in an automated way, and by that I mean that the developer only needed to say that this queery is cacheable, and the testing utility would go and do all the needewd work to test that caching is working perfectly, and that the cache gets invalidated when it should be. That was really hard, but I strived to make it happen; as this is the only guarantee that caching will not brake/misbehave and ruin the functionality of such crucial service. 
+
+- Handle error cases from other services/data stores it interacts with, and send the appropriate error 
+
+  Every service has it's own way of expressing errors, RESTful services does it in a specific way, DBs clients does it in another way ...etc. So I needed to make a unified way for error recovery and resporting, and done so using functional utilities that made every thing happend behind the scenes for the developer, and when a specific behavior is needed that is not aligned with the default behavior, developers have the ability to customize error handling behavior in a clean functional way.       
+`
     },
     {
+      id: "community-admin",
       title: "Community admin",
       company: {
         name: "Andela"
@@ -166,6 +201,7 @@ export default {
       skills: ["Ts", "Reactjs", "Graphql", "Contentful", "Cypress"]
     },
     {
+      id: "contentful-chameleon",
       title: "Contentful-chameleon",
       company: {
         name: "Andela"
@@ -177,6 +213,7 @@ export default {
       skills: ["JS", "TS", "Nodejs", "Graphql", "Contentful", "Jest"]
     },
     {
+      id: "camgen",
       title: "Camgen",
       company: {
         name: "Andela"
@@ -188,6 +225,7 @@ export default {
       skills: ["JS", "Yeoman", "Contentful", "Jest"]
     },
     {
+      id: "mosaic",
       title: "Mosaic",
       company: {
         name: "Andela"
@@ -196,9 +234,31 @@ export default {
       to: "2019-08-24T08:08:34.527Z",
       summary: "An internal Contentful App which allows content creators to add data that belongs to dynamic content types.",
       type: "FRONTEND",
-      skills: ["TS", "Reactjs", "Graphql", "Contentful", "Jest"]
+      skills: ["TS", "Reactjs", "Graphql", "Contentful", "Jest"],
+      details: `
+> A front end application that uses Typescript, React, Context API, Contentful SDK, and an inhouse components library. It's main purpose is to enable content creators to choose the React component that they want to show in the web page, then fill the data consumed by that component. 
+Contentful allows a limited number of content types, but we needed a lot more types, so we decided to build a type system separate of Contentful's content types, which allows each entry to define it's type to be one of the components in our component library, and we can compose such entries using Mosaic, then the rendering engine (called \`Retina\`) would take care of rendering all of these entries using appropriate components.
+
+## Main features:
+
+- Show a list of the available components from the components library, and enable the user to choose one of them as the type of the entry.
+
+  That part was done by me and the team leader (he was responsible for extracting components list, and I was responsible of ensuring Mosaic will use this list correctly).
+
+- Show input fields that represents the allowed props of the component, along with their types, which can include complex custom-built types, that requires rendereing custom components to enable entering their data (e.g. rich text props that needs rendering a rich text editor in Mosaic to fill it's data).
+
+  The challenge was getting the specifications of each component (props names and types), so I used Typescript's compiler \`tsc\` to get these metadata about the different types, and converted them to a json schema written to a file in the build of the components library. Then in Mosaic I read that file and use it to show the list of components, and render the input fields. The rendering itself was done using a 3rd party library, which took the json schema of the component and built a form that represents it, but we needed to handle rendering complex props.
+
+  Extraxtring the metadata, then converting it to json schema, and finally consuming it from Mosaic was hard, but was a totally necessary automation to make Mosaic use any version of the component library without human intervention of any kind. So when we needed any component, it was the job of the frontend developer to build it in the components library, then a new version of Mosaic would be automatically built and deployed using the new version of the library, and automatically all new components become available in Mosaic.
+
+- Show a preview of the component with the given data, handling happy scenario, and different types of error cases.
+
+  It was challenging to get the data from the input form, including nested data, and then passing it correctly to the chosen component, but I managed to do so using React, in a clean and maintainable way.
+  The other challenge was handling the error cases, while using function components as the only type of components. I used a custom error boundary package for functional components, called \`react-error-boundary\`, which helped me handling errors, and still use functional components all the time.
+      `
     },
     {
+      id: "sekkah",
       title: "Sekkah system",
       company: {
         name: "Freelancing"

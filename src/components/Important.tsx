@@ -1,3 +1,4 @@
+import { ReactNode } from "react"
 
 export const LevelsToFontSizeMap = {
     1: "3rem",
@@ -10,7 +11,7 @@ export const LevelsToFontSizeMap = {
 
 export const Important = ({ level, color = "var(--foreground-rgb-important)", children }: {
     level: keyof typeof LevelsToFontSizeMap,
-    children: string,
+    children: ReactNode,
     color?: string
 }) => (
     <strong style={{ fontSize: LevelsToFontSizeMap[level], color: color }}>

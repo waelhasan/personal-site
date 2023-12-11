@@ -1,8 +1,8 @@
 import { Important } from "@/components/Important"
 import Article from "./Article"
-import { TimelineElement } from "./types"
+import { IExperience } from "./types"
 
-const Timeline = ({ id, title, elements }: { id: string, title: string, elements: TimelineElement[] }) => (
+const Timeline = ({ id, title, elements }: { id: string, title: string, elements: IExperience[] }) => (
     <section id={id} className="w-full p-[1rem] max-w-4xl">
         <h1 className={`
             absolute left-[50%] -translate-x-1/2

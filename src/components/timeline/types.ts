@@ -1,4 +1,4 @@
-export interface TimelineElement {
+export interface IExperience {
     id: string
     title: string
     company: {

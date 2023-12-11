@@ -3,7 +3,7 @@ import Skill from "@/components/skills/Skill"
 import LeftArticle from "./LeftArticle"
 import RightArticle from "./RightArticle"
 import MoreDetailsBtn from "./MoreDetailsBtn"
-import { TimelineElement } from "./types"
+import { IExperience } from "./types"
 
 const Article = ({
     fromTo,
@@ -12,7 +12,7 @@ const Article = ({
 }: {
     fromTo: string,
     isOdd: boolean,
-    experience: TimelineElement
+    experience: IExperience
 }) => {
     const ParentArticle = isOdd ? LeftArticle : RightArticle
     return (

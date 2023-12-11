@@ -161,7 +161,7 @@ export default {
       type: "BACKEND",
       skills: ["JS", "Nodejs", "Graphql", "Contentful", "Redis", "Jest"],
       details: `
-> A backend project, that uses Javascript, Nodejs, Apollo Graphql, Redis, and other technologies.
+> A backend project, that uses \`Javascript\`, \`Nodejs\`, \`Apollo Graphql\`, \`Redis\`, and other technologies.
 I wrote the greatest majority of it: between 90% to 95% of it's implementation, and built 100% of the test suite (which covered all of the implementation I built, resulting in ~1500 test cases, most of them are e2e tests).
 
 ## Main features:
@@ -242,7 +242,7 @@ I wrote the greatest majority of it: between 90% to 95% of it's implementation, 
       type: "FRONTEND",
       skills: ["TS", "Reactjs", "Graphql", "Contentful", "Jest"],
       details: `
-> A front end application that uses Typescript, React, Context API, Contentful SDK, and an inhouse components library. It's main purpose is to enable content creators to choose the React component that they want to show in the web page, then fill the data consumed by that component. 
+> A front end application that uses \`Typescript\`, \`React\`, \`Context API\`, \`Contentful SDK\`, and an inhouse components library. It's main purpose is to enable content creators to choose the React component that they want to show in the web page, then fill the data consumed by that component. 
 Contentful allows a limited number of content types, but we needed a lot more types, so we decided to build a type system separate of Contentful's content types, which allows each entry to define it's type to be one of the components in our component library, and we can compose such entries using Mosaic, then the rendering engine (called \`Retina\`) would take care of rendering all of these entries using appropriate components.
 
 ## Main features:

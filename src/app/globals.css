@@ -23,6 +23,7 @@
   --light-safe-alternate-bg-val: 225 247 247;
   --lighter-safe-alternate-bg: rgb(223, 237, 237);
   --light-danger-alternate-bg: rgb(255, 230, 255);
+  --dark-brown: rgb(121, 86, 73);
 }
 
 @media (prefers-color-scheme: dark) {

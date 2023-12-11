@@ -67,7 +67,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
         <MdOutlineDoubleArrow className="
             inline-block 
             ml-[-2.5rem] mr-[0.5rem]
-            text-[2rem] text-[#795548] 
+            text-[2rem] text-[--dark-brown] 
         "/>
         {children}
     </p>

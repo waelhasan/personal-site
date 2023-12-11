@@ -2,7 +2,7 @@ import { Important } from "@/components/Important"
 import Skill from "@/components/skills/Skill"
 import LeftArticle from "./LeftArticle"
 import RightArticle from "./RightArticle"
-import MoreDetailsBtn from "./MoreDetailsBtn"
+import MoreDetailsLink from "./MoreDetailsLink"
 import { IExperience } from "./types"
 
 const Article = ({
@@ -39,7 +39,7 @@ const Article = ({
                     <h2 className="text-justify">{experience.summary}</h2>
                     {experience.skills.map(skill => <Skill key={skill} title={skill} />)}
                 </div>
-                {!!experience.details && <MoreDetailsBtn href={`/projects/${experience.id}`} />}
+                {!!experience.details && <MoreDetailsLink href={`/projects/${experience.id}`} />}
             </ParentArticle>
         </>
     )

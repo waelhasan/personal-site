@@ -38,7 +38,7 @@ export default function Home() {
       <SectionsSeparator />
       <Timeline id="employment-history" title="Employment history" elements={info.experience} />
       <SectionsSeparator />
-      <Timeline id="main-projects" title="Main projects" elements={info.projects} />
+      <Timeline id="main-projects" title="Main projects" elements={info.projects} detailsParentPath="projects" />
     </main>
   )
 }

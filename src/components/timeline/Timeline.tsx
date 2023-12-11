@@ -2,7 +2,17 @@ import { Important } from "@/components/Important"
 import Article from "./Article"
 import { IExperience } from "./types"
 
-const Timeline = ({ id, title, elements }: { id: string, title: string, elements: IExperience[] }) => (
+const Timeline = ({
+    id,
+    title,
+    elements,
+    detailsParentPath
+}: {
+    id: string,
+    title: string,
+    elements: IExperience[],
+    detailsParentPath?: string
+}) => (
     <section id={id} className="w-full p-[1rem] max-w-4xl">
         <h1 className={`
             absolute left-[50%] -translate-x-1/2
@@ -24,7 +34,15 @@ const Timeline = ({ id, title, elements }: { id: string, title: string, elements
                         const fromDate = formatter.format(new Date(experience.from))
                         const toDate = formatter.format(new Date(experience.to))
                         const fromTo = `${fromDate} - ${toDate}`
-                        return <Article key={fromTo} fromTo={fromTo} isOdd={index % 2 === 0} experience={experience} />
+                        return (
+                            <Article
+                                key={fromTo}
+                                fromTo={fromTo}
+                                isOdd={index % 2 === 0}
+                                experience={experience}
+                                detailsParentPath={detailsParentPath}
+                            />
+                        )
                     })}
                 </div>
             </div>

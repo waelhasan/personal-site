@@ -8,11 +8,13 @@ import { IExperience } from "./types"
 const Article = ({
     fromTo,
     isOdd,
-    experience
+    experience,
+    detailsParentPath
 }: {
     fromTo: string,
     isOdd: boolean,
-    experience: IExperience
+    experience: IExperience,
+    detailsParentPath?: string
 }) => {
     const ParentArticle = isOdd ? LeftArticle : RightArticle
     return (
@@ -39,7 +41,7 @@ const Article = ({
                     <h2 className="text-justify">{experience.summary}</h2>
                     {experience.skills.map(skill => <Skill key={skill} title={skill} />)}
                 </div>
-                {!!experience.details && <MoreDetailsLink href={`/projects/${experience.id}`} />}
+                {!!experience.details && !!detailsParentPath && <MoreDetailsLink href={`/${detailsParentPath}/${experience.id}`} />}
             </ParentArticle>
         </>
     )

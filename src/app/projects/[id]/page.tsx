@@ -9,7 +9,7 @@ export default function Home(props: any) {
   return (
     <main className="
       flex flex-col justify-center items-center
-      mx-auto mt-[15rem] mb-[5rem]
+      mx-auto mt-[3rem] mb-[5rem]
     ">
       <Important level={1}>
         <span className='

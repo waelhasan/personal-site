@@ -168,7 +168,7 @@ I wrote the greatest majority of it: between 90% to 95% of it's implementation, 
 
 - Receive query/mutation requests from different clients, whether mobile applications or web applications, as the only backend they interact with (excluding authentication and authorization service)
   
-  That meant that the pressure on this service was the heighest; as the traffic from all the UIs passes through it, whther it does the heavy lifting, or just wraps the call to another service in a more secute and standarized way.
+  That meant that the pressure on this service was the heighest; as the traffic from all the UIs passes through it, whether it does the heavy lifting, or just wraps the call to another service in a more secure and standarized way.
 
   That kind of pressure ment that any weakly written implementations would cause a bottleneck in the system, which caused me to be very strict about the kind of code I write (resulting in a high quality code), combined with the deep documentation I buit for the whole codebase, that made it very much maintainable by anyone that knows functional JS programming.
 
@@ -176,22 +176,22 @@ I wrote the greatest majority of it: between 90% to 95% of it's implementation, 
 
   But creating this test suite was not easy as it seems; because I needed to mock some 3rd party APIs, but there were no 3rd party packages to mock them (or at least they were not working), so I had to mock these services by hand. And in the case of Contentful's RESTful services and Graphql APIs, I built a whole internal package called \`contentful-cameleon\` for mocking these APIs, which made it possible to have the e2e tests without hitting a realy live instance of Contentful, resulting in at least 5 times faster tests.
 
-- Executes the received queries/mutations, by communicating with other inhouse RESTful services, 3rd party services, and data stores (e.g. Contentful, Mongodb), as the only client for these services/data stores.
+- Executes the received queries/mutations, by communicating with other inhouse RESTful services, 3rd party services, and data stores (e.g. \`Contentful\`, \`Mongodb\`), as the only client for these services/data stores.
 
   Some of these implementations were repeated over and over, such as calling our own RESTful services, so I built custom reusable higher order functions, that wraps the repeated logic, and can be customized if the default behavior is not applicable in our case. That alone caused the codebase complexity to be way less than if we did not have them, and made building new repetitve features (such as calling a GET endpoint, forwarding the inputs to it, and retrning it's result to the callee) a piece of cake, and instead of taking 2 hour to build such repetitive tasks, it only takes half an hour to build it aong with it's e2e tests, and creating the PR for it!  
 
 - Cache different queries' results, handling general queries and user-specific queries.
 
-  Due to the nature of this layer, it became a bottleneck for the system, so I decided that I should build a dedicated caching mechanism for it. That mechanism depended mainly on using Redis to store the dependencies of each query executed by the service, And when one of the dependencies of a query get's invalidated, the cached result gets removed from Redis store, and implementation get's executed to get the latest actual results (which gets cached for sure).
+  Due to the nature of this layer, it became a bottleneck for the system, so I decided that I should build a dedicated caching mechanism for it. That mechanism depended mainly on using \`Redis\` to store the dependencies of each query executed by the service, And when one of the dependencies of a query get's invalidated, the cached result gets removed from Redis store, and implementation get's executed to get the latest actual results (which gets cached for sure).
 
   Building such caching mechanism took some time, and was challenging in all aspects: implementing it, manually testing it, and creating automated e2e tests for it.
   In the implementation I needed to listen to all queries, find a way to extract most of the dependencies, and enable the developers to annotate the rest of the dependencies that can not be obtained automatically, in a clear and easy way that does not make their lives miserable. And I managed to do so using functional programming, building really easy to use higher order functions that wrapped the magic away from the developers.
 
-  In the automated e2e testing, I also built some helper utilities that did the testing in an automated way, and by that I mean that the developer only needed to say that this queery is cacheable, and the testing utility would go and do all the needewd work to test that caching is working perfectly, and that the cache gets invalidated when it should be. That was really hard, but I strived to make it happen; as this is the only guarantee that caching will not brake/misbehave and ruin the functionality of such crucial service. 
+  In the automated e2e testing, I also built some helper utilities that did the testing in an automated way, and by that I mean that the developer only needed to say that this queery is cacheable, and the testing utility would go and do all the needed work to test that caching is working perfectly, and that the cache gets invalidated when it should be. That was really hard, but I strived to make it happen; as this is the only guarantee that caching will not brake/misbehave and ruin the functionality of such crucial service. 
 
 - Handle error cases from other services/data stores it interacts with, and send the appropriate error 
 
-  Every service has it's own way of expressing errors, RESTful services does it in a specific way, DBs clients does it in another way ...etc. So I needed to make a unified way for error recovery and resporting, and done so using functional utilities that made every thing happend behind the scenes for the developer, and when a specific behavior is needed that is not aligned with the default behavior, developers have the ability to customize error handling behavior in a clean functional way.       
+  Every service has it's own way of expressing errors, RESTful services does it in a specific way, DBs clients does it in another way ...etc. So I needed to make a unified way for error recovery and resporting, and done so using functional utilities that made every thing happen behind the scenes for the developer, and when a specific behavior is needed that is not aligned with the default behavior, developers have the ability to customize error handling behavior in a clean functional way.       
 `
     },
     {

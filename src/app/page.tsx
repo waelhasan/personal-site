@@ -4,7 +4,7 @@ import Intorduction from "@/components/Introduction"
 import ReasonsToHireMeOrNotToHireMe from "@/components/ReasonsToHireMeOrNotToHireMe"
 import Timeline from "@/components/timeline/Timeline"
 import { ISkill } from "@/components/skills/types"
-import FreedomSupportNotice from "@/components/FreedomSupportNotice"
+// import FreedomSupportNotice from "@/components/FreedomSupportNotice"
 import Navbar from "@/components/Navbar"
 
 const SectionsSeparator = () =>
@@ -23,7 +23,7 @@ export default function Home() {
       my-0 mx-auto
     ">
       <Navbar />
-      <FreedomSupportNotice />
+      {/* <FreedomSupportNotice /> */}
       <Intorduction
         fullName={info.fullName}
         nationality={info.nationality}

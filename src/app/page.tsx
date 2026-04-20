@@ -28,6 +28,8 @@ export default function Home() {
         fullName={info.fullName}
         nationality={info.nationality}
         title={info.title}
+        totalExperience={info.totalExperience}
+        mernExperience={info.mernExperience}
         accountsLinks={info.accountsLinks}
       />
       <ReasonsToHireMeOrNotToHireMe

@@ -2,6 +2,8 @@ export default {
   fullName: "Wael Hasan",
   nationality: "Egyptian",
   title: "Senior Full-Stack JS/TS web developer",
+  totalExperience: 10,
+  mernExperience: 8,
   accountsLinks: {
     linkedinUrl: "https://linkedin.com/in/whsn",
     githubUrl: "https://github.com/waelhasan",

@@ -59,6 +59,8 @@ interface IntrodcutionProps {
     fullName: string
     nationality: string
     title: string
+    totalExperience: number
+    mernExperience: number
     accountsLinks: IMyAccountsLinksProps
 }
 
@@ -73,7 +75,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
     </p>
 )
 
-const Introduction = ({ fullName, nationality, title, accountsLinks }: IntrodcutionProps) => (
+const Introduction = ({ fullName, nationality, title, totalExperience, mernExperience, accountsLinks }: IntrodcutionProps) => (
     <div id="introduction" className="
         p-[3rem] 
         w-[90%] max-w-6xl
@@ -86,8 +88,8 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
             </p>
             <P>
                 I am <Important level={3}>{fullName}</Important>,
-                an {nationality} <Title title={title} />, with <Important level={3}>10</Important>  years
-                of total web development experience, <Important level={3}>8</Important> of them
+                an {nationality} <Title title={title} />, with <Important level={3}>{totalExperience}</Important>  years
+                of total web development experience, <Important level={3}>{mernExperience}</Important> of them
                 using <Important level={3}>MERN</Important> stack.
             </P>
             <div className={`

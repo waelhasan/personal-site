@@ -9,22 +9,26 @@ export default {
     bloggerUrl: "https://waelhasan87.blogspot.com/"
   },
   technicalSkills: [
-    { title: 'HTML5', years: 8, level: 90, type: "FRONTEND" },
-    { title: 'CSS3', years: 8, level: 80, type: "FRONTEND" },
-    { title: 'Javascript', years: 8, level: 90, type: "BOTH" },
-    { title: 'Typescript', years: 4, level: 70, type: "BOTH" },
-    { title: 'Nodejs', years: 6, level: 70, type: "BACKEND" },
-    { title: 'Expressjs', years: 3, level: 80, type: "BACKEND" },
-    { title: 'RESTful API design', years: 3, level: 80, type: "BACKEND" },
+    { title: 'System analysis', years: 6, level: 75, type: "BOTH" },
+    { title: 'HTML5', years: 10, level: 90, type: "FRONTEND" },
+    { title: 'CSS3', years: 10, level: 80, type: "FRONTEND" },
+    { title: 'Javascript', years: 9, level: 90, type: "BOTH" },
+    { title: 'Typescript', years: 6, level: 70, type: "BOTH" },
+    { title: 'System design', years: 6, level: 75, type: "BOTH" },
+    { title: 'Nodejs', years: 8, level: 70, type: "BACKEND" },
+    { title: 'Expressjs', years: 8, level: 80, type: "BACKEND" },
+    { title: 'RESTful API design', years: 8, level: 80, type: "BACKEND" },
     { title: 'Graphql', years: 3, level: 70, type: "BACKEND" },
-    { title: 'Reactjs', years: 5, level: 80, type: "FRONTEND" },
+    { title: 'Reactjs', years: 8, level: 80, type: "FRONTEND" },
     { title: 'Redux', years: 1, level: 50, type: "FRONTEND" },
-    { title: 'Nextjs', years: 3, level: 75, type: "FRONTEND" },
+    { title: 'Nextjs', years: 5, level: 75, type: "FRONTEND" },
     { title: 'Jest', years: 3, level: 60, type: "BOTH" },
     { title: 'Cypress', years: 3, level: 70, type: "FRONTEND" },
     { title: 'Storybook', years: 1, level: 55, type: "FRONTEND" },
+    { title: 'Relational DB design', years: 3, level: 75, type: "BACKEND" },
     { title: 'SQL', years: 3, level: 70, type: "BACKEND" },
     { title: 'Sequelize ORM', years: 1, level: 60, type: "BACKEND" },
+    { title: 'Document DB design', years: 2, level: 75, type: "BACKEND" },
     { title: 'Mongodb', years: 2, level: 70, type: "BACKEND" },
     { title: 'Mongoose ODM', years: 2, level: 70, type: "BACKEND" },
     { title: 'Contentful', years: 3, level: 70, type: "BACKEND" },
@@ -33,31 +37,30 @@ export default {
     { title: 'Linux', years: 5, level: 60, type: "BOTH" },
     { title: 'Bash', years: 5, level: 60, type: "BOTH" },
     { title: 'Design patterns', years: 8, level: 70, type: "BOTH" },
+    { title: 'Docker', years: 5, level: 60, type: "BOTH" },
+    { title: 'Tailwind CSS', years: 1, level: 50, type: "FRONTEND" },
     { title: 'Gulp', years: 1, level: 70, type: "BOTH" },
     { title: 'Socket.io', years: 1, level: 60, type: "BACKEND" },
     { title: 'Deepstream', years: 1, level: 70, type: "BACKEND" },
     { title: 'Redis', years: 1, level: 60, type: "BACKEND" },
-    { title: 'Docker', years: 1, level: 60, type: "BOTH" },
-    { title: 'JSON', years: 6, level: 80, type: "BOTH" },
     { title: 'JSON schema', years: 1, level: 80, type: "BOTH" },
     { title: 'Mocha', years: 1, level: 70, type: "BOTH" },
     { title: 'Chai', years: 1, level: 70, type: "BOTH" },
     { title: 'Enzyme', years: 1, level: 70, type: "FRONTEND" },
-    { title: 'Tailwind CSS', years: 1, level: 50, type: "FRONTEND" },
     { title: 'SASS', years: 1, level: 50, type: "FRONTEND" },
     { title: 'Yeoman', years: 1, level: 70, type: "BOTH" }
   ],
   softSkills: [
-    { title: "Teamwork", years: 8, level: 100 },
+    { title: "Teamwork", years: 10, level: 100 },
     { title: "Leadership", years: 2, level: 65 },
-    { title: "Humility", years: 8, level: 100 },
-    { title: "Problem-Solving", years: 8, level: 75 },
-    { title: "Self-starter", years: 4, level: 80 },
-    { title: "Pragmatic", years: 8, level: 90 },
-    { title: "Communication", years: 4, level: 80 },
-    { title: "Collaboration", years: 8, level: 100 },
-    { title: "Mentorship", years: 1, level: 70 },
-    { title: "Lifelong learner", years: 8, level: 90 }
+    { title: "Humility", years: 10, level: 100 },
+    { title: "Problem-Solving", years: 10, level: 75 },
+    { title: "Self-starter", years: 6, level: 80 },
+    { title: "Pragmatic", years: 10, level: 90 },
+    { title: "Communication", years: 10, level: 80 },
+    { title: "Collaboration", years: 10, level: 100 },
+    { title: "Mentorship", years: 2, level: 70 },
+    { title: "Lifelong learner", years: 20, level: 90 }
   ],
   reasonsToHireMe: [
     "Passion for being a better software engineer",
@@ -69,9 +72,35 @@ export default {
   ],
   reasonsNotToHireMe: [
     "To do repetitive work, that does not leverage my technical skills",
-    "If you work on an industry that contradicts with my faith and believs, or I prefer to stay away from, which are: insurance, racism, porn, weaponary."
+    "If you work on an industry that contradicts with my faith and believs, or I prefer to stay away from, which are: banking, insurance, racism, porn, weaponary."
   ],
   experience: [
+    {
+      id: "8",
+      title: "Freelancer senior software engineer",
+      company: {
+        name: "Self employed"
+      },
+      from: "2024-09-01T08:08:34.527Z",
+      summary: "Architect, document, develop and maintain web applications and APIs.",
+      type: "REMOTE",
+      skills: []
+    },
+    {
+      id: "7",
+      title: "Senior backend MERN software engineer",
+      company: {
+        name: "Unifi Solutions"
+      },
+      from: "2024-01-01T08:08:34.527Z",
+      to: "2024-09-01T08:08:34.527Z",
+      summary: `- Participated in the design and implementation of a scalable IoT platform using a microservices architecture with Apache Kafka, Redis, and Kubernetes.
+- Solution Implementation: Involved in the deployment of innovative software solutions, enhancing system performance and security for top-tier clients.
+- Technology Integration: Integrated advanced technologies and intuitive interfaces
+to deliver high-quality, user-centric software products.`,
+      type: "REMOTE",
+      skills: ["JS", "TS", "Nodejs", "Expressjs", "RESTful services", "IoT", "Event Driven Architecture", "Mongodb", "Mongoose", "Jest"]
+    },
     {
       id: "6",
       title: "Senior Full-Stack JS/TS software engineer",

@@ -32,7 +32,7 @@ const Timeline = ({
                     {elements.map((experience, index) => {
                         const formatter = new Intl.DateTimeFormat('en', { month: 'short', year: "numeric" })
                         const fromDate = formatter.format(new Date(experience.from))
-                        const toDate = formatter.format(new Date(experience.to))
+                        const toDate = !!experience.to ? formatter.format(new Date(experience.to)) : "Current"
                         const fromTo = `${fromDate} - ${toDate}`
                         return (
                             <Article

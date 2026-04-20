@@ -78,7 +78,7 @@ export default {
   ],
   experience: [
     {
-      id: "8",
+      id: "9",
       title: "Freelancer senior software engineer",
       company: {
         name: "Self employed"
@@ -89,7 +89,7 @@ export default {
       skills: []
     },
     {
-      id: "7",
+      id: "8",
       title: "Senior backend MERN software engineer",
       company: {
         name: "Unifi Solutions"
@@ -104,7 +104,7 @@ to deliver high-quality, user-centric software products.`,
       skills: ["JS", "TS", "Nodejs", "Expressjs", "RESTful services", "IoT", "Event Driven Architecture", "Mongodb", "Mongoose", "Jest"]
     },
     {
-      id: "6",
+      id: "7",
       title: "Senior Full-Stack JS/TS software engineer",
       company: {
         name: "Andela"
@@ -116,7 +116,7 @@ to deliver high-quality, user-centric software products.`,
       skills: ["JS", "TS", "Nodejs", "Reactjs", "Nextjs", "Graphql", "Contentful"]
     },
     {
-      id: "5",
+      id: "6",
       title: "Senior Full-Stack Javascript software engineer",
       company: {
         name: "Index Group"
@@ -126,6 +126,18 @@ to deliver high-quality, user-centric software products.`,
       summary: "Worked for Index Group mainly as a Back-end senior developer.",
       type: "ONSITE",
       skills: ["JS", "TS", "Nodejs", "Expressjs", "RESTful services", "Mongodb", "Mongoose", "Deepstream"]
+    },
+    {
+      id: "5",
+      title: "Freelancer senior software engineer",
+      company: {
+        name: "Self employed"
+      },
+      from: "2018-02-01T08:08:34.527Z",
+      to: "2018-10-01T08:08:34.527Z",
+      summary: "Architect, document, develop and maintain web applications and APIs.",
+      type: "REMOTE",
+      skills: []
     },
     {
       id: "4",

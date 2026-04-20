@@ -86,7 +86,7 @@ export default {
       from: "2024-09-01T08:08:34.527Z",
       summary: "Architect, document, develop and maintain web applications and APIs.",
       type: "REMOTE",
-      skills: []
+      skills: ["System analysis", "System design", "JS", "TS", "Nodejs", "Reactjs", "..."]
     },
     {
       id: "8",

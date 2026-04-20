@@ -5,7 +5,7 @@ export interface IExperience {
         name: string
     },
     from: string
-    to: string
+    to?: string
     summary: string
     type: string //"BACKEND" | "FONTEND" | "BOTH"
     skills: string[]

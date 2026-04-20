@@ -86,8 +86,8 @@ const Introduction = ({ fullName, nationality, title, accountsLinks }: Introdcut
             </p>
             <P>
                 I am <Important level={3}>{fullName}</Important>,
-                an {nationality} <Title title={title} />, with <Important level={3}>8</Important>  years
-                of total web development experience, <Important level={3}>6</Important> of them
+                an {nationality} <Title title={title} />, with <Important level={3}>10</Important>  years
+                of total web development experience, <Important level={3}>8</Important> of them
                 using <Important level={3}>MERN</Important> stack.
             </P>
             <div className={`

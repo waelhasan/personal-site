@@ -30,7 +30,7 @@ const Article = ({
                 <div className="font-mono">
                     {fromTo}
                 </div>
-                <Important level={4} color="var(--darker-foreground-golden-rgb)">
+                <Important level={4}>
                     {experience.title}
                 </Important>
                 <br />

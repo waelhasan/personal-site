@@ -77,7 +77,7 @@ const P = ({ children }: { children: React.ReactNode }) => (
 
 const Introduction = ({ fullName, nationality, title, totalExperience, mernExperience, accountsLinks }: IntrodcutionProps) => (
     <div id="introduction" className="
-        p-[3rem] 
+        p-[3rem] pt-[1rem] 
         w-[90%] max-w-6xl
         flex flex-col gap-[1rem]
         text-[1.5rem] lg:text-[1.75rem] text-left
@@ -88,9 +88,8 @@ const Introduction = ({ fullName, nationality, title, totalExperience, mernExper
             </p>
             <P>
                 I am <Important level={3}>{fullName}</Important>,
-                an {nationality} <Title title={title} />, with <Important level={3}>{totalExperience}</Important>  years
-                of total web development experience, <Important level={3}>{mernExperience}</Important> of them
-                using <Important level={3}>MERN</Important> stack.
+                an experienced {nationality} <Title title={title} />, with <Important level={3}>{totalExperience}</Important> years of web development experience,
+                <Important level={3}> {mernExperience}</Important> of them using <Important level={3}>MERN</Important> stack.
             </P>
             <div className={`
                 relative block 
@@ -101,15 +100,27 @@ const Introduction = ({ fullName, nationality, title, totalExperience, mernExper
                 <Image fill src={myPic} alt="Wael Hasan picture" />
             </div>
             <P>
-                I build a high quality Functional and Object Oriented code, plus being a testing enthusiast, which makes me
-                thrive to have a <Important level={3}>100%</Important> test coverage for all of my codes,
-                whether they are frontend projects,
-                or backend projects.
+                Proficient in a wide range of technologies including
+                {
+                    [" JS", ", TS", ", Nodejs", ", Reactjs", ", Nextjs", ", Expressjs", ", FP", ", OOP"]
+                        .map(skill => <Important level={4}>{skill}</Important>)
+                }.
             </P>
             <P>
-                I am searching for an opportunity for a <ValidRolesFlippingContents />,
-                whether it is onsite or remote, so if you have an open role that suits me,
-                it would be great to have a conversation about it, and have the ability to apply for it.
+                Known for 
+                <Important level={4}> teamwork</Important>, 
+                <Important level={4}> leadership</Important>, 
+                <Important level={4}> problem-solving</Important>, 
+                and a commitment to <Important level={4}>continuous learning</Important>, 
+                with a strong focus on <Important level={4}>pragmatic solutions</Important> and <Important level={4}>collaboration</Important>.
+            </P>
+            <P>
+                Strive to have a <Important level={3}>100%</Important> test coverage for frontend and backend projects.
+            </P>
+            <P>
+                Currenlty searching for an opportunity as a <ValidRolesFlippingContents />
+                (onsite or remote), so if you have an open role that suits me,
+                it would be great to have a conversation about it.
                 <br />
             </P>
         </div>

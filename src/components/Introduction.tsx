@@ -59,7 +59,7 @@ interface IntrodcutionProps {
     fullName: string
     nationality: string
     title: string
-    totalExperience: number
+    totalExperience: string
     mernExperience: number
     accountsLinks: IMyAccountsLinksProps
 }
@@ -103,7 +103,7 @@ const Introduction = ({ fullName, nationality, title, totalExperience, mernExper
                 Proficient in a wide range of technologies including
                 {
                     [" JS", ", TS", ", Nodejs", ", Reactjs", ", Nextjs", ", Expressjs", ", FP", ", OOP"]
-                        .map(skill => <Important level={4}>{skill}</Important>)
+                        .map(skill => <Important key={skill} level={4}>{skill}</Important>)
                 }.
             </P>
             <P>

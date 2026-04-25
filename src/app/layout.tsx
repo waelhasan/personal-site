@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { Analytics } from '@vercel/analytics/react';
 import './globals.css'
-import UnderconstructionNotice from '../components/UnderconstructionNotice'
+// import UnderconstructionNotice from '../components/UnderconstructionNotice'
 import ScrollToTopButton from '../components/ScrollToTopButton'
 import Footer from '../components/Footer'
 import { sriracha } from './fonts';
@@ -57,9 +57,9 @@ export default function RootLayout({
           flex flex-col justify-between
           h-[100%] w-full
         ">
-          <div>
+          {/* <div>
             <UnderconstructionNotice />
-          </div>
+          </div> */}
           {children}
           <ScrollToTopButton />
           <Footer />

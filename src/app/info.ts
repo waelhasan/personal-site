@@ -90,7 +90,7 @@ export default {
     },
     {
       id: "9",
-      title: "Senior backend MERN software engineer",
+      title: "Senior backend MERN software engineer/team lead",
       company: {
         name: "Unifi Solutions"
       },
@@ -109,9 +109,9 @@ to deliver high-quality, user-centric software products.`,
       company: {
         name: "Andela"
       },
-      from: "2019-11-01T08:08:34.527Z",
-      to: "2022-08-24T08:08:34.527Z",
-      summary: "Worked as a contractor SSE with Andela Inc, which outsourced me to work with Understood for All Inc (remotely). I developed, maintained, tested, and documented multiple Front-end(s) and back-end(s), using technologies such as: JS, TS, Nodejs, Reactjs, Nextjs, Graphql, Contentful, ...etc.",
+      from: "2020-11-19T08:08:34.527Z",
+      to: "2022-08-31T08:08:34.527Z",
+      summary: "The same role with Andela Inc and Understood for all, but as a contractor SSE; as Andela's business model has changed after the first year. See below role for more information about the position.",
       type: "REMOTE",
       skills: ["JS", "TS", "Nodejs", "Reactjs", "Nextjs", "Graphql", "Contentful"],
       fileName: "experience-letter-5.pdf"
@@ -122,9 +122,9 @@ to deliver high-quality, user-centric software products.`,
       company: {
         name: "Andela"
       },
-      from: "2019-11-01T08:08:34.527Z",
-      to: "2022-08-24T08:08:34.527Z",
-      summary: "Worked as a full time employee SSE with Andela Inc, which outsourced me to work with Understood for All Inc (remotely). I developed, maintained, tested, and documented multiple Front-end(s) and back-end(s), using technologies such as: JS, TS, Nodejs, Reactjs, Nextjs, Graphql, Contentful, ...etc.",
+      from: "2019-11-18T08:08:34.527Z",
+      to: "2020-11-18T08:08:34.527Z",
+      summary: "Worked as a full time employee SSE with Andela Inc, which outsourced me to work with Understood for All Inc (remotely). I developed, maintained, tested, and documented multiple frontend(s) and backend(s).",
       type: "REMOTE",
       skills: ["JS", "TS", "Nodejs", "Reactjs", "Nextjs", "Graphql", "Contentful"],
       fileName: "experience-letter-4.pdf"

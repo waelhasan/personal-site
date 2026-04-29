@@ -10,4 +10,5 @@ export interface IExperience {
     type: string //"BACKEND" | "FONTEND" | "BOTH"
     skills: string[]
     details?: string
+    fileName: string
 }

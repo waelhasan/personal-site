@@ -78,7 +78,7 @@ export default {
   ],
   experience: [
     {
-      id: "9",
+      id: "10",
       title: "Freelancer senior software engineer",
       company: {
         name: "Self employed"
@@ -89,7 +89,7 @@ export default {
       skills: ["System analysis", "System design", "JS", "TS", "Nodejs", "Reactjs", "..."]
     },
     {
-      id: "8",
+      id: "9",
       title: "Senior backend MERN software engineer",
       company: {
         name: "Unifi Solutions"
@@ -104,8 +104,8 @@ to deliver high-quality, user-centric software products.`,
       skills: ["JS", "TS", "Nodejs", "Expressjs", "RESTful services", "IoT", "Event Driven Architecture", "Mongodb", "Mongoose", "Jest"]
     },
     {
-      id: "7",
-      title: "Senior Full-Stack JS/TS software engineer",
+      id: "8",
+      title: "Senior Full-Stack JS/TS software engineer (Contractor)",
       company: {
         name: "Andela"
       },
@@ -113,7 +113,21 @@ to deliver high-quality, user-centric software products.`,
       to: "2022-08-24T08:08:34.527Z",
       summary: "Worked as a contractor SSE with Andela Inc, which outsourced me to work with Understood for All Inc (remotely). I developed, maintained, tested, and documented multiple Front-end(s) and back-end(s), using technologies such as: JS, TS, Nodejs, Reactjs, Nextjs, Graphql, Contentful, ...etc.",
       type: "REMOTE",
-      skills: ["JS", "TS", "Nodejs", "Reactjs", "Nextjs", "Graphql", "Contentful"]
+      skills: ["JS", "TS", "Nodejs", "Reactjs", "Nextjs", "Graphql", "Contentful"],
+      fileName: "experience-letter-5.pdf"
+    },
+    {
+      id: "7",
+      title: "Senior Full-Stack JS/TS software engineer (Employee)",
+      company: {
+        name: "Andela"
+      },
+      from: "2019-11-01T08:08:34.527Z",
+      to: "2022-08-24T08:08:34.527Z",
+      summary: "Worked as a full time employee SSE with Andela Inc, which outsourced me to work with Understood for All Inc (remotely). I developed, maintained, tested, and documented multiple Front-end(s) and back-end(s), using technologies such as: JS, TS, Nodejs, Reactjs, Nextjs, Graphql, Contentful, ...etc.",
+      type: "REMOTE",
+      skills: ["JS", "TS", "Nodejs", "Reactjs", "Nextjs", "Graphql", "Contentful"],
+      fileName: "experience-letter-4.pdf"
     },
     {
       id: "6",
@@ -125,7 +139,8 @@ to deliver high-quality, user-centric software products.`,
       to: "2019-10-01T08:08:34.527Z",
       summary: "Worked for Index Group mainly as a Back-end senior developer.",
       type: "ONSITE",
-      skills: ["JS", "TS", "Nodejs", "Expressjs", "RESTful services", "Mongodb", "Mongoose", "Deepstream"]
+      skills: ["JS", "TS", "Nodejs", "Expressjs", "RESTful services", "Mongodb", "Mongoose", "Deepstream"],
+      fileName: "experience-letter-3.jpg"
     },
     {
       id: "5",
@@ -152,7 +167,8 @@ to deliver high-quality, user-centric software products.`,
       - Express js and handlebars, Ext js, or React js on the front end.
       - MongeDB as a database`,
       type: "ONSITE",
-      skills: ["JS", "Nodejs", "Reactjs"]
+      skills: ["JS", "Nodejs", "Reactjs"],
+      fileName: "experience-letter-2.jpg"
     },
     {
       id: "3",
@@ -188,7 +204,8 @@ to deliver high-quality, user-centric software products.`,
       to: "2011-11-01T08:08:34.527Z",
       summary: "Image processing development using C++ and OpenCV.",
       type: "ONSITE",
-      skills: ["C++", "OpenCV"]
+      skills: ["C++", "OpenCV"],
+      fileName: "experience-letter-1.jpg"
     }
   ],
   projects: [

@@ -7,6 +7,7 @@ import { HiMiniArrowDownTray } from "react-icons/hi2";
 import { Important } from "./Important"
 import FlippingContents from "./FlippingContents"
 import myPic from '../../public/pic1.png'
+import DownloadButton from "./DownloadButton"
 
 const Title = ({ title }: { title: string }) => (
     <span className="underline decoration-wavy decoration-[--foreground-decoration-rgb] decoration-[5px]">
@@ -14,23 +15,6 @@ const Title = ({ title }: { title: string }) => (
             {title}
         </Important>
     </span>
-)
-
-const DownloadCVButton = () => (
-    <a className={`
-            inline-block
-            transition ease-in-out delay-50 
-            bg-lightSafeAlternate hover:bg-foregroundRgbImportant
-            hover:text-black
-            px-[2rem] py-[1rem]
-            border-[1px] border-solid bordder-[--foreground-rgb-important]
-            rounded-[50px]
-        `}
-        download={true}
-        href="/cv.pdf">
-        Download my CV
-        <HiMiniArrowDownTray className="hidden lg:inline-block pl-[0.4rem]" />
-    </a>
 )
 
 const ValidRolesFlippingContents = () => (
@@ -107,11 +91,11 @@ const Introduction = ({ fullName, nationality, title, totalExperience, mernExper
                 }.
             </P>
             <P>
-                Known for 
-                <Important level={4}> teamwork</Important>, 
-                <Important level={4}> leadership</Important>, 
-                <Important level={4}> problem-solving</Important>, 
-                and a commitment to <Important level={4}>continuous learning</Important>, 
+                Known for
+                <Important level={4}> teamwork</Important>,
+                <Important level={4}> leadership</Important>,
+                <Important level={4}> problem-solving</Important>,
+                and a commitment to <Important level={4}>continuous learning</Important>,
                 with a strong focus on <Important level={4}>pragmatic solutions</Important> and <Important level={4}>collaboration</Important>.
             </P>
             <P>
@@ -128,7 +112,7 @@ const Introduction = ({ fullName, nationality, title, totalExperience, mernExper
             flex gap-[1rem] 
             text-[1.5rem] lg:text-[2rem] text-left
         ">
-            <DownloadCVButton />
+            <DownloadButton size="big" fileName="cv.pdf" title="Download my CV" />
             <MyAccountsLinks {...accountsLinks} />
         </div>
     </div>

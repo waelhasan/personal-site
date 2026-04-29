@@ -4,6 +4,7 @@ import LeftArticle from "./LeftArticle"
 import RightArticle from "./RightArticle"
 import MoreDetailsLink from "./MoreDetailsLink"
 import { IExperience } from "./types"
+import DownloadButton from "../DownloadButton"
 
 const Article = ({
     fromTo,
@@ -42,6 +43,7 @@ const Article = ({
                     {experience.skills.map(skill => <Skill key={skill} title={skill} />)}
                 </div>
                 {!!experience.details && !!detailsParentPath && <MoreDetailsLink href={`/${detailsParentPath}/${experience.id}`} />}
+                {!!experience.fileName && <DownloadButton size="small" title="download experience letter" fileName={experience.fileName} />}
             </ParentArticle>
         </>
     )
